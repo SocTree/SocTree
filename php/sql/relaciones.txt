@@ -1,0 +1,7 @@
+ALTER TABLE tbl_events ADD CONSTRAINT FK_event_usuari FOREIGN KEY (usu_id) REFERENCES tbl_usuario(usu_id);
+ALTER TABLE tbl_participants ADD CONSTRAINT FK_event_part FOREIGN KEY (eve_id) REFERENCES tbl_events(eve_id);
+ALTER TABLE tbl_participants ADD CONSTRAINT FK_usuari_part FOREIGN KEY (usu_id) REFERENCES tbl_usuario(usu_id);
+ALTER TABLE tbl_moneder ADD CONSTRAINT FK_moneder_usuari FOREIGN KEY (usu_id) REFERENCES tbl_usuario(usu_id);
+ALTER TABLE tbl_valoracio ADD CONSTRAINT FK_part_val FOREIGN KEY (part_id) REFERENCES tbl_participants(part_id);
+ALTER TABLE tbl_marcador ADD CONSTRAINT FK_marcador_usuari FOREIGN KEY (usu_id) REFERENCES tbl_usuario(usu_id);
+ALTER TABLE tbl_marcador ADD CONSTRAINT FK_tipus_marcador FOREIGN KEY (tip_marc_id) REFERENCES tbl_tipus_marcador(tip_marc_id)
