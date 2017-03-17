@@ -1,0 +1,2 @@
+Header = Banner + Logo + Menu
+
