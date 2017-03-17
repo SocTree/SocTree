@@ -1,12 +1,12 @@
 <?php session_start();
 extract($_REQUEST); //Recibimos $email i $password
 
-include('./conexion/conexion.php');
+include('../conexio/conexio.php');
 
 //Encriptamos la password con hash sha512
 $password = hash('sha512',$password);
 
-$sql = "SELECT * FROM tbl_usuari WHERE usu_email = $email AND usu_password = $password;";
+$sql = "SELECT * FROM tbl_usuari WHERE usu_email = '$email' AND usu_password = '$password';";
 
 $resultado=mysqli_query($conexion, $sql);
 	if (mysqli_num_rows($resultado) != 0 ) {
@@ -16,7 +16,7 @@ $resultado=mysqli_query($conexion, $sql);
 			if ($email == $usu_email && $password == $usu_password) {
 				$_SESSION['usu_id'] = $usuario['usu_id'];
 				header('Location:../../index.php');
-			}
+			}else{echo "error";}
 		}
 	}
 	
