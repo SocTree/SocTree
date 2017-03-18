@@ -1,0 +1,13 @@
+CREATE TABLE `post` (
+
+  `article_id` int(11) NOT NULL AUTO_INCREMENT,
+
+  `article_name` varchar(255) NOT NULL,
+
+  `article_content` text NOT NULL,
+
+  `img` varchar(50) NOT NULL,
+
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+
+);
