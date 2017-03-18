@@ -1,0 +1,6 @@
+Tipo letra         | uso 
+-------------------------------
+Rancho             | titulos
+Caveat+brush       | titulos
+Shadows+into+light | normal
+Kalam              | normal
