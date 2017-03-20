@@ -12,6 +12,7 @@ extract($_REQUEST);
 
 //recojemos una variable $usu_id contenedora del id del usuario de la sesion:
 // $usu_id = $_SESSION['usu_id'];
+$eve_estat = "finalitzat";
 //usu_id temporal para pruebas:
 $usu_id = 1;
 
