@@ -25,7 +25,7 @@ session_start();
 	<input type="date" name="eve_data"><br><br>
 	Lloc:
 	<input type="text" name="eve_localitzacio"><br><br>
-	<?php //echo "<input type='hidden' name='$_SESSION['usu_id']><br><br>" ?>
+	<?php //echo "<input type='hidden' name='usu_id' value='$_SESSION['usu_id']><br><br>" ?>
 
 	<!-- Aun no se si el estado lo controlamos nosotros o el dueño del evento. Lo pongo por si acaso -->
 	Estat:
