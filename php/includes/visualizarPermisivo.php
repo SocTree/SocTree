@@ -1,5 +1,11 @@
 <?php session_start();
+
+//Este include lo usaremos en las páginas que los NO usuarios puedan ver el contenido.
+//Deja una variable "$usu", en la vista pondremos un if comprobando si la variable $usu está seteada
+//Si no lo está en vez de darle las opciones de usuarios les mostraremos la variable $msgNoUsuarios.
 if (isset($_SESSION['usu_id'])) {
 	$usu = $_SESSION['usu_id'];
+}else{
+	$msgNoUsuarios = "Para participar <a href='login.php'>logeate </a> o <a href='registrate.php'>registrate.</a>"
 }
  ?>
