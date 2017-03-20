@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2017 a las 18:41:00
+-- Tiempo de generación: 20-03-2017 a las 17:05:58
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -71,14 +71,13 @@ CREATE TABLE `tbl_events` (
   `eve_id` int(11) NOT NULL,
   `eve_nom` varchar(50) NOT NULL,
   `eve_descripcio` text NOT NULL,
-  `eve_tipus` varchar(20) NOT NULL,
+  `eve_tipus` enum('Esports','Gastronomic','3R','DIY','Solidari') NOT NULL,
   `eve_data` date NOT NULL,
   `eve_localitzacio` varchar(50) NOT NULL,
   `usu_id` int(11) DEFAULT NULL,
   `eve_estat` enum('actiu','inactiu','finalitzat','') NOT NULL,
   `eve_min_part` int(11) NOT NULL,
-  `eve_max_part` int(11) NOT NULL,
-  `eve_actual_part` int(11) NOT NULL
+  `eve_max_part` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -225,6 +224,17 @@ CREATE TABLE `tbl_tipus_marcador` (
   `tip_marc_tipus` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tbl_tipus_marcador`
+--
+
+INSERT INTO `tbl_tipus_marcador` (`tip_marc_id`, `tip_marc_tipus`) VALUES
+(1, 'Esportius'),
+(2, 'Fonts'),
+(3, 'Ecochange'),
+(4, 'mascotes'),
+(5, 'Punts verds');
+
 -- --------------------------------------------------------
 
 --
@@ -281,19 +291,24 @@ ALTER TABLE `tbl_categoria_tip`
 -- Indices de la tabla `tbl_comentaris`
 --
 ALTER TABLE `tbl_comentaris`
-  ADD PRIMARY KEY (`com_id`);
+  ADD PRIMARY KEY (`com_id`),
+  ADD KEY `FK_tip_comentaris` (`tip_id`),
+  ADD KEY `FK_usu_comentaris` (`usu_id`),
+  ADD KEY `FK_resposta_comentaris` (`com_id_resposta`);
 
 --
 -- Indices de la tabla `tbl_ecochange`
 --
 ALTER TABLE `tbl_ecochange`
-  ADD PRIMARY KEY (`eco_id`);
+  ADD PRIMARY KEY (`eco_id`),
+  ADD KEY `FK_ecochange_patr` (`patr_id`);
 
 --
 -- Indices de la tabla `tbl_events`
 --
 ALTER TABLE `tbl_events`
-  ADD PRIMARY KEY (`eve_id`);
+  ADD PRIMARY KEY (`eve_id`),
+  ADD KEY `FK_event_usuari` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_foto`
@@ -305,43 +320,55 @@ ALTER TABLE `tbl_foto`
 -- Indices de la tabla `tbl_icona_marcador`
 --
 ALTER TABLE `tbl_icona_marcador`
-  ADD PRIMARY KEY (`ico_id`);
+  ADD PRIMARY KEY (`ico_id`),
+  ADD KEY `FK_icono_marcador` (`tip_marc_id`);
 
 --
 -- Indices de la tabla `tbl_inter_blog`
 --
 ALTER TABLE `tbl_inter_blog`
-  ADD PRIMARY KEY (`inter_blog_id`);
+  ADD PRIMARY KEY (`inter_blog_id`),
+  ADD KEY `FK_interblog_com` (`com_id`),
+  ADD KEY `FK_interblog_usu` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_inter_event`
 --
 ALTER TABLE `tbl_inter_event`
-  ADD PRIMARY KEY (`inter_eve_id`);
+  ADD PRIMARY KEY (`inter_eve_id`),
+  ADD KEY `FK_intereve_eve` (`eve_id`),
+  ADD KEY `FK_intereve_usu` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_inter_tip`
 --
 ALTER TABLE `tbl_inter_tip`
-  ADD PRIMARY KEY (`inter_tip_id`);
+  ADD PRIMARY KEY (`inter_tip_id`),
+  ADD KEY `FK_intertip_tip` (`tip_id`),
+  ADD KEY `FK_intertip_usu` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_marcador`
 --
 ALTER TABLE `tbl_marcador`
-  ADD PRIMARY KEY (`marc_id`);
+  ADD PRIMARY KEY (`marc_id`),
+  ADD KEY `FK_marcador_usuari` (`usu_id`),
+  ADD KEY `FK_tipus_marcador` (`tip_marc_id`);
 
 --
 -- Indices de la tabla `tbl_moneder`
 --
 ALTER TABLE `tbl_moneder`
-  ADD PRIMARY KEY (`mon_id`);
+  ADD PRIMARY KEY (`mon_id`),
+  ADD KEY `FK_moneder_usuari` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_participants`
 --
 ALTER TABLE `tbl_participants`
-  ADD PRIMARY KEY (`part_id`);
+  ADD PRIMARY KEY (`part_id`),
+  ADD KEY `FK_event_part` (`eve_id`),
+  ADD KEY `FK_usuari_part` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_patrocinador`
@@ -353,7 +380,11 @@ ALTER TABLE `tbl_patrocinador`
 -- Indices de la tabla `tbl_tip`
 --
 ALTER TABLE `tbl_tip`
-  ADD PRIMARY KEY (`tip_id`);
+  ADD PRIMARY KEY (`tip_id`),
+  ADD KEY `FK_cat_tip` (`cat_tip_id`),
+  ADD KEY `FK_foto_tip` (`foto_id`),
+  ADD KEY `FK_video_tip` (`video_id`),
+  ADD KEY `FK_usuario_tip` (`usu_id`);
 
 --
 -- Indices de la tabla `tbl_tipus_marcador`
@@ -371,7 +402,8 @@ ALTER TABLE `tbl_usuari`
 -- Indices de la tabla `tbl_valoracio`
 --
 ALTER TABLE `tbl_valoracio`
-  ADD PRIMARY KEY (`val_id`);
+  ADD PRIMARY KEY (`val_id`),
+  ADD KEY `FK_part_val` (`part_id`);
 
 --
 -- Indices de la tabla `tbl_video`
@@ -457,7 +489,7 @@ ALTER TABLE `tbl_tip`
 -- AUTO_INCREMENT de la tabla `tbl_tipus_marcador`
 --
 ALTER TABLE `tbl_tipus_marcador`
-  MODIFY `tip_marc_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tip_marc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `tbl_usuari`
 --
@@ -473,6 +505,92 @@ ALTER TABLE `tbl_valoracio`
 --
 ALTER TABLE `tbl_video`
   MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `tbl_comentaris`
+--
+ALTER TABLE `tbl_comentaris`
+  ADD CONSTRAINT `FK_resposta_comentaris` FOREIGN KEY (`com_id_resposta`) REFERENCES `tbl_comentaris` (`com_id`),
+  ADD CONSTRAINT `FK_tip_comentaris` FOREIGN KEY (`tip_id`) REFERENCES `tbl_tip` (`tip_id`),
+  ADD CONSTRAINT `FK_usu_comentaris` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_ecochange`
+--
+ALTER TABLE `tbl_ecochange`
+  ADD CONSTRAINT `FK_ecochange_patr` FOREIGN KEY (`patr_id`) REFERENCES `tbl_patrocinador` (`patr_id`);
+
+--
+-- Filtros para la tabla `tbl_events`
+--
+ALTER TABLE `tbl_events`
+  ADD CONSTRAINT `FK_event_usuari` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_icona_marcador`
+--
+ALTER TABLE `tbl_icona_marcador`
+  ADD CONSTRAINT `FK_icono_marcador` FOREIGN KEY (`tip_marc_id`) REFERENCES `tbl_tipus_marcador` (`tip_marc_id`);
+
+--
+-- Filtros para la tabla `tbl_inter_blog`
+--
+ALTER TABLE `tbl_inter_blog`
+  ADD CONSTRAINT `FK_interblog_com` FOREIGN KEY (`com_id`) REFERENCES `tbl_comentaris` (`com_id`),
+  ADD CONSTRAINT `FK_interblog_usu` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_inter_event`
+--
+ALTER TABLE `tbl_inter_event`
+  ADD CONSTRAINT `FK_intereve_eve` FOREIGN KEY (`eve_id`) REFERENCES `tbl_events` (`eve_id`),
+  ADD CONSTRAINT `FK_intereve_usu` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_inter_tip`
+--
+ALTER TABLE `tbl_inter_tip`
+  ADD CONSTRAINT `FK_intertip_tip` FOREIGN KEY (`tip_id`) REFERENCES `tbl_tip` (`tip_id`),
+  ADD CONSTRAINT `FK_intertip_usu` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_marcador`
+--
+ALTER TABLE `tbl_marcador`
+  ADD CONSTRAINT `FK_marcador_usuari` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`),
+  ADD CONSTRAINT `FK_tipus_marcador` FOREIGN KEY (`tip_marc_id`) REFERENCES `tbl_tipus_marcador` (`tip_marc_id`);
+
+--
+-- Filtros para la tabla `tbl_moneder`
+--
+ALTER TABLE `tbl_moneder`
+  ADD CONSTRAINT `FK_moneder_usuari` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_participants`
+--
+ALTER TABLE `tbl_participants`
+  ADD CONSTRAINT `FK_event_part` FOREIGN KEY (`eve_id`) REFERENCES `tbl_events` (`eve_id`),
+  ADD CONSTRAINT `FK_usuari_part` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
+
+--
+-- Filtros para la tabla `tbl_tip`
+--
+ALTER TABLE `tbl_tip`
+  ADD CONSTRAINT `FK_cat_tip` FOREIGN KEY (`cat_tip_id`) REFERENCES `tbl_categoria_tip` (`cat_tip_id`),
+  ADD CONSTRAINT `FK_foto_tip` FOREIGN KEY (`foto_id`) REFERENCES `tbl_foto` (`foto_id`),
+  ADD CONSTRAINT `FK_usuario_tip` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`),
+  ADD CONSTRAINT `FK_video_tip` FOREIGN KEY (`video_id`) REFERENCES `tbl_video` (`video_id`);
+
+--
+-- Filtros para la tabla `tbl_valoracio`
+--
+ALTER TABLE `tbl_valoracio`
+  ADD CONSTRAINT `FK_part_val` FOREIGN KEY (`part_id`) REFERENCES `tbl_participants` (`part_id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
