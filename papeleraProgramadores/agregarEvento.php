@@ -15,7 +15,7 @@ session_start();
 	Descripció:<br>
 	<textarea name="eve_descripcio" maxlength="500"></textarea><br><br>
 	Tipus:
-	<select name="eve_tipus" form="anadirEvento">
+	<select name="eve_tipus">
 	  <option value="esport">Esport</option>
 	  <option value="gastronòmic">Gastronòmic</option>
 	  <option value="3R">3R</option>
@@ -29,7 +29,7 @@ session_start();
 
 	<!-- Aun no se si el estado lo controlamos nosotros o el dueño del evento. Lo pongo por si acaso -->
 	Estat:
-	<select name="eve_estat" form="anadirEvento">
+	<select name="eve_estat">
 	  <option value="actiu">Actiu</option>
 	  <option value="inactiu">Inactiu</option>
 	  <option value="finalitzat">Finalitzat</option>
