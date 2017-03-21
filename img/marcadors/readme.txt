@@ -34,6 +34,9 @@ Esports    | Ars Olimpics | olimpic-rings.png
  -Parc per a nens | balancin | parknens.png
  -fonts | persona bebe agua | drinking.png
  -Ej. rehabilitació | flecsions |  fitness-exercises.png
-
+--------------------------------------------------------
+--------------------------------------------------------
+Punt Verd | Cap amb planta | puntverd.png
+-reciclatje |Reciclaje  | arrow.png
  
  
