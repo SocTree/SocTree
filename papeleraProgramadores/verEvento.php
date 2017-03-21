@@ -1,7 +1,6 @@
-<?php
+<?php 
 	include '../php/includes/visualizarPermisivo.php';
 	include '../php/conexio/conexio.php';
-
 	//recogemos el id del evento
 	$eve_id = $_GET['eve_id'];
  ?>
@@ -20,17 +19,50 @@
 		$titol = $evento['eve_nom'];
 		$descripcio = $evento['eve_descripcio'];
 		$eve_id = $evento['eve_id'];
-		if (isset($usu)) {
-			echo "<a href=''>";
+		$max_part = $evento['eve_max_part'];
+		?>
+<table style="border: 1px;">
+	<tr>
+		<?php 
+			echo "
+			<th>$titol</th></tr>
+			<tr><th>$descripcio</th></tr>
+			";
+		?>
+</tr>
+</table>
+
+		<?php
+		//Consulta para ver si quedan plazas.
+		$sql1 = "SELECT * FROM `tbl_participants` WHERE eve_id = $eve_id";
+		$verCapacidad = mysqli_query($conexion, $sql1);
+		if (mysqli_num_rows($verCapacidad)) {
+			$contador = 0;
+			while ($capacidad = mysqli_fetch_array($verCapacidad)) {
+			$contador++;	
+			}
+		}else {
+			$contador = 0;
+		}
+
+		if (isset($usu) && $contador<$max_part) {
+			//si hay usuario y plazas.
+			echo "<a href='../php/proc/participar.proc.php?eve_id=$eve_id'>participar!</a>";
+		}elseif (isset($usu) && $contador == $max_part) {
+			//esto debería ir en rojo
+			echo "<h1>No quedan plazas!</h1>";
+		}elseif (!isset($usu)) {
+			echo "<a href='provandoLogin.html'>logueate/regístrate para participar!</a>";
 		}
 	// 	";
- //      }
- //    }
-
-
-	
-	
+      }
+    }
  ?>
+	
+
+
+	
+	
 
 </body>
 </html>
