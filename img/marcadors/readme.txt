@@ -9,7 +9,20 @@ Esports    | Ars Olimpics | olimpic-rings.png
  -Voley    | pl voley     | black.png
  -Bitlles  | Bitlles      | game.png
  -Rocodromo| Persona escalant| climbing-with-rope.png
+ -----------------------------------------------------
+ -----------------------------------------------------
  EcoTendas | Tenda | business.png
   -Hort    | Ma + planta | nature.png
-  -Mercat  | tenda amb rodes | restaurant.png
-
+  -Mercat  | tenda amb rodes | mercat.png
+  -restaurant| cuberts  | restaurant.png
+ -----------------------------------------------------
+ -----------------------------------------------------
+ Mascotes | petjada | animal-prints.png
+ - Park Mascotes| gos | walking-dog-sign.png 
+ - Platja Mascotes| snorkel | diving-goggles.png
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Ruta |Dos punts| route.png
+ -bicicleta | bicicleta | people.png
+ 
+ 
