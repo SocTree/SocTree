@@ -9,7 +9,7 @@ session_start();
 	<title></title>
 </head>
 <body>
-<form name="anadirEvento" action="../php/proc/agregarEvento.proc.php">
+<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
 	Nom del projecte:
 	<input type="textArea" name="eve_name"><br><br>
 	Descripció:<br>

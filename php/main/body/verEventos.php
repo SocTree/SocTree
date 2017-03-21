@@ -1,5 +1,5 @@
 <?php
-	include '../php/conexio/conexio.php';
+	include '../../conexio/conexio.php';
  ?>
 <!DOCTYPE html>
 <html>
@@ -9,12 +9,12 @@
 <body>
 <div>
 <?php 
-	$sql = "SELECT * FROM `tbl_events`";
-	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'esport'";
-	$sqlGastronomic = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'gastronomic'";
-	$sql3R = "SELECT * FROM `tbl_events` WHERE eve_tipus = '3R'";
-	$sqlDiy = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'diy'";
-	$sqlSolidari = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'solidari'";
+	$sql = "SELECT * FROM `tbl_events` WHERE eve_estat = actiu";
+	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'esport' AND eve_estat = actiu";
+	$sqlGastronomic = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'gastronomic' AND eve_estat = actiu";
+	$sql3R = "SELECT * FROM `tbl_events` WHERE eve_tipus = '3R' AND eve_estat = actiu";
+	$sqlDiy = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'diy' AND eve_estat = actiu";
+	$sqlSolidari = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'solidari' AND eve_estat = actiu";
 
 	//decidiendo sql a usar:
 	switch ($_GET['eve_tipus']) {

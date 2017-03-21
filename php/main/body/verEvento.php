@@ -1,6 +1,6 @@
 <?php 
-	include '../php/includes/visualizarPermisivo.php';
-	include '../php/conexio/conexio.php';
+	include '../../includes/visualizarPermisivo.php';
+	include '../../conexio/conexio.php';
 	//recogemos el id del evento
 	$eve_id = $_GET['eve_id'];
  ?>
