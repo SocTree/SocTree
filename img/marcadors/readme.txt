@@ -9,5 +9,7 @@ Esports    | Ars Olimpics | olimpic-rings.png
  -Voley    | pl voley     | black.png
  -Bitlles  | Bitlles      | game.png
  -Rocodromo| Persona escalant| climbing-with-rope.png
- 
+ EcoTendas | Tenda | business.png
+  -Hort    | Ma + planta | nature.png
+  -Mercat  | tenda amb rodes | restaurant.png
 
