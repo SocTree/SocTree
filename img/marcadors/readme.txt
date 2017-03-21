@@ -24,5 +24,8 @@ Esports    | Ars Olimpics | olimpic-rings.png
  ----------------------------------------------------
  Ruta |Dos punts| route.png
  -bicicleta | bicicleta | people.png
- 
+ -running | running | sports.png
+ -caminar | caminar amb basto |  hiking.png
+
+
  
