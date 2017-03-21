@@ -26,6 +26,14 @@ Esports    | Ars Olimpics | olimpic-rings.png
  -bicicleta | bicicleta | people.png
  -running | running | sports.png
  -caminar | caminar amb basto |  hiking.png
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Parc |Columpi| park.png
+ -skate | skate pista | sport.png
+ -Ej. jovenes | pesas | pesas.png
+ -Parc per a nens | balancin | parknens.png
+ -fonts | persona bebe agua | drinking.png
+ -Ej. rehabilitació | flecsions |  fitness-exercises.png
 
-
+ 
  
