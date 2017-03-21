@@ -10,14 +10,14 @@ extract($_REQUEST);
 //y en oculto, el id del usuario que crea este punto de interes
 
 
-$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_foto`, `marc_adreca`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', NULL, '$marc_adreca', $usu_id)" ; 
+$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca', $usu_id)" ; 
 	
 	echo $consulta;
 
 
 
-	$anadir = mysqli_query($conexion,$sql);
+	$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	header("../mapa_puntos_interes.php")
+	header("../includes/visualizarPuntosInteres.php");
 ?>
