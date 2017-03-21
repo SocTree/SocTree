@@ -2,9 +2,9 @@ Color             | RGB    | Anotacion
 ---------------------------------------------
 Verde             | 33cc33 | Arbol
 Marron            | 660000 | Marron tronco
-Verde lima        | 80ff00 | bonito
 Verde fondo claro | caf1ca | utilizar para fondo claro
 Blanco            | ffffff | blanco
 Marron fondo claro| d7bdbd | utilizar para fondo claro
 Verde fuerte      | 218221 | Marcos 
 Marron fuere      | 420000 | Marcos
+Negro             | 000000 | Ps eso negro

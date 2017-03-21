@@ -28,12 +28,7 @@ session_start();
 	<?php //echo "<input type='hidden' name='usu_id' value='$_SESSION['usu_id']><br><br>" ?>
 
 	<!-- Aun no se si el estado lo controlamos nosotros o el dueño del evento. Lo pongo por si acaso -->
-	Estat:
-	<select name="eve_estat">
-	  <option value="actiu">Actiu</option>
-	  <option value="inactiu">Inactiu</option>
-	  <option value="finalitzat">Finalitzat</option>
-	</select><br><br>
+	
 	Participants:
 		<li>Mínim:<input type="number" name="eve_min_part"><br><br></li>
 		<li>Màxim:<input type="number" name="eve_max_part"><br><br></li>
