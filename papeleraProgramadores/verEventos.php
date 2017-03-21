@@ -10,6 +10,33 @@
 <div>
 <?php 
 	$sql = "SELECT * FROM `tbl_events`";
+	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'esport'";
+	$sqlGastronomic = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'gastronomic'";
+	$sql3R = "SELECT * FROM `tbl_events` WHERE eve_tipus = '3R'";
+	$sqlDiy = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'diy'";
+	$sqlSolidari = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'solidari'";
+
+	//decidiendo sql a usar:
+	switch ($_GET['eve_tipus']) {
+		case 'esport':
+			$sql = $sqlEsport;
+			break;
+		case 'gastronomic':
+			$sql = $sqlGastronomic;
+			break;
+		case '3R':
+			$sql = $sql3R;
+			break;
+		case 'diy':
+			$sql = $sqlDiy;
+			break;
+		case 'solidari':
+			$sql = $sqlSolidari;
+			break;
+		
+		default:
+			break;
+	}
 	$eventos=mysqli_query($conexion, $sql);
     if (mysqli_num_rows($eventos) != 0){
       $contador3 = 0;
