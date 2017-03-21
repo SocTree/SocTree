@@ -2,7 +2,7 @@ Marcardors | Descripcio   | Nom imatge
 ----------------------------------
 Esports    | Ars Olimpics | olimpic-rings.png
  -Futbol   | Pilota Futbol| material.png
- -Basquet  | Pilota Basket| sports.png
+ -Basquet  | Pilota Basket| tool.png
  -Fronton  | pilota tenis | ball.png
  -Tennis   | pilota tenis | ball.png
  -Ping pong| raqueta + pl | pingpong.png
