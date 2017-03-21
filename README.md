@@ -8,6 +8,7 @@ Notas de programadores:<br>
   
 Regalitos para diseño (con hamör): <br>
   -Hay que poner bonito el verEventos y verEvento. (R)<br>
-  -Poner CSS a agregar eventos. (R)
+  -Poner CSS a agregar eventos. (R) <br>
+  -NOTA: en el menú dinamico, los "submenus" de eventos deben tener una variable de url llamada "eve_tipus" con la palabra del menú (esport, gastronomic...) (R) <br>
   
 

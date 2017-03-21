@@ -1,5 +1,5 @@
 <?php
-include("/conexio/conexio.php");
+include("../conexio/conexio.php");
 $consulta = "SELECT * FROM `tbl_tipus_marcador`" ; 
 	//echo $consulta;
 
