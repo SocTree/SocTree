@@ -6,6 +6,6 @@
 if (isset($_SESSION['usu_id'])) {
 	$usu = $_SESSION['usu_id'];
 }else{
-	$msgNoUsuarios = "Para participar <a href='login.php'>logeate </a> o <a href='registrate.php'>registrate.</a>";
+	$msgNoUsuarios = "Per participar <a href='login.php'>fes login </a> o <a href='registrate.php'>registra't.</a>";
 }
  ?>
