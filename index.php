@@ -2,7 +2,7 @@
 <?php include("php/main/header/header.php"); ?>
 <!-- fin header -->
 	<div class="jumbotron">
-		<img src="img/redes/fondo.jpg" style="width: 100%; ">
+		<img src="img/socialmedia/fondo.jpg" style="width: 100%; ">
 	</div>
 	<!-- modal que se usará luego NO BORRAR!! -->
 	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>

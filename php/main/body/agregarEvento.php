@@ -9,32 +9,47 @@ session_start();
 	<title></title>
 </head>
 <body>
-<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
-	Nom del projecte:
-	<input type="textArea" name="eve_name"><br><br>
-	Descripció:<br>
-	<textarea name="eve_descripcio" maxlength="500"></textarea><br><br>
-	Tipus:
-	<select name="eve_tipus">
-	  <option value="esport">Esport</option>
-	  <option value="gastronòmic">Gastronòmic</option>
-	  <option value="3R">3R</option>
-	  <option value="diy">DIY</option>
-	</select><br><br>
-	Dia de l'event:
-	<input type="date" name="eve_data"><br><br>
-	Lloc:
-	<input type="text" name="eve_localitzacio"><br><br>
-	<?php //echo "<input type='hidden' name='usu_id' value='$_SESSION['usu_id']><br><br>" ?>
+<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+          	<h4 class="modal-title">Afegir Event</h4>
+		</div>
+		<div class="modal-body">
+			<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
+				Nom del projecte:
+				<input type="textArea" name="eve_name"><br><br>
+				Descripció:<br>
+				<textarea name="eve_descripcio" maxlength="500"></textarea><br><br>
+				Tipus:
+				<select name="eve_tipus">
+				  <option value="esport">Esport</option>
+				  <option value="gastronòmic">Gastronòmic</option>
+				  <option value="3R">3R</option>
+				  <option value="diy">DIY</option>
+				</select><br><br>
+				Dia de l'event:
+				<input type="date" name="eve_data"><br><br>
+				Lloc:
+				<input type="text" name="eve_localitzacio"><br><br>
+				<?php //echo "<input type='hidden' name='usu_id' value='$_SESSION['usu_id']><br><br>" ?>
 
-	<!-- Aun no se si el estado lo controlamos nosotros o el dueño del evento. Lo pongo por si acaso -->
+				<!-- Aun no se si el estado lo controlamos nosotros o el dueño del evento. Lo pongo por si acaso -->
+				
+				Participants:
+					<li>Mínim:<input type="number" name="eve_min_part"><br><br></li>
+					<li>Màxim:<input type="number" name="eve_max_part"><br><br></li>
+		</div>
+		<div class="modal-footer">
+				<input type="submit" class="btn btn-success" name="enviar">
+			</form>
+		</div>
+	</div>
+</div>
+
 	
-	Participants:
-		<li>Mínim:<input type="number" name="eve_min_part"><br><br></li>
-		<li>Màxim:<input type="number" name="eve_max_part"><br><br></li>
-	<input type="submit" name="enviar">
 
 
-</form>
+
 </body>
 </html>

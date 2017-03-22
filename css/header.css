@@ -1,0 +1,27 @@
+.menu {
+	float: right;
+	margin: 2%;
+	background-color: #caf1ca;
+	padding: 1.5%;
+	min-width: 120px;
+	text-align: center;
+	border-radius: 10px;
+	color: black;
+}
+.menu:hover, .menu:active{
+	background-color: #33cc33;
+	color: white;
+}
+.nombre {
+	float: right;
+	margin: 2%;
+	padding: 1.5%;
+	color: black;
+}
+a {
+	color: black;
+}
+a:hover {
+	/*color: #218221;*/
+	color: #33cc33;
+}
