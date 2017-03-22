@@ -31,8 +31,8 @@ if ($marc_adreça == ""){
 
 
 
-	//$anadir = mysqli_query($conexion,$consulta);
+	$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	//header("../includes/visualizarPuntosInteres.php");
+	header("../includes/visualizarPuntosInteres.php");
 ?>
