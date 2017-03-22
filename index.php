@@ -1,5 +1,5 @@
 <!-- Header -->
-<?php include("php/main/header/header.php"); ?>
+<?php include("php/main/header/header.php");?>
 <!-- fin header -->
 	<div class="jumbotron">
 		<img src="img/socialmedia/fondo.jpg" style="width: 100%; ">

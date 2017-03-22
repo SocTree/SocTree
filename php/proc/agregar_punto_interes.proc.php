@@ -19,7 +19,7 @@ $marc_coordenadas = "{".$latitud.", ".$longitud."}";
 
 echo $marc_coordenadas;
 
-if ($marc_adreça == ""){
+if ($marc_adreca == ""){
 	$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_coordenadas`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_coordenadas', $usu_id)" ; 
 }else{
 	$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca', $usu_id)" ; 
@@ -34,5 +34,5 @@ if ($marc_adreça == ""){
 	$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	header("../includes/visualizarPuntosInteres.php");
+	header("Location:../includes/visualizarPuntosInteres.php");
 ?>
