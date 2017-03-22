@@ -1,6 +1,9 @@
 
 /*PARTE DEL CSS QUE NOS IMPORTA PARA EL SLIDER*/
 
+.jumbotron{
+	background-image: url("../../../img/web/slider/fondo.jpg");
+}
 
 /* Browser Resets */
 .flex-container a:active,
@@ -72,7 +75,7 @@ html[xmlns] .slides { display: block; }
 /* Edit it if you want */
 .flex-container {
 	min-width: 150px;
-	max-width: 960px;
+	max-width: 460px;
 }
 
 .flexslider .slides { zoom: 1; }
