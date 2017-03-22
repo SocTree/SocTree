@@ -11,3 +11,13 @@
 <!-- cierra el div del container que esta en el header NO BORRAR!! -->
 </div>	
 <!-- termina el div del container -->
+<script>
+$(document).ready(function () {
+	$('.flexslider').flexslider({
+		animation: 'fade',
+		controlsContainer: '.flexslider'
+	});
+});
+</script>
+</body>
+</html>

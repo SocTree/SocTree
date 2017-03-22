@@ -110,7 +110,7 @@ html[xmlns] .slides { display: block; }
 	height: 13px;
 	top: 11px;
 	left: 11px;
-	background: url(../img/arrows.png) no-repeat;
+	background: url(../img/web/slider/arrows.png) no-repeat;
 }
 
 .flex-direction-nav a:after {

@@ -2,39 +2,17 @@
 <html>
 <head>
 	<title></title>
+	<!-- PARTE DEL HEAD RELATIVA AL HEADER -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
-	<style type="text/css">
-		.menu {
-			float: right;
-			margin: 2%;
-			background-color: #caf1ca;
-			padding: 1.5%;
-			min-width: 120px;
-			text-align: center;
-			border-radius: 10px;
-			color: black;
-		}
-		.menu:hover, .menu:active{
-			background-color: #33cc33;
-			color: white;
-		}
-		.nombre {
-			float: right;
-			margin: 2%;
-			padding: 1.5%;
-			color: black;
-		}
-		a {
-			color: black;
-		}
-		a:hover {
-			/*color: #218221;*/
-			color: #33cc33;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<!-- PARTE DEL HEAD RELATIVA AL SLIDE -->
+	<link rel="stylesheet" href="css/slider.css" type="text/css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<style>.flex-container{position: relative;margin: 0 auto; top: 0%; padding: 50px;} </style> 
 </head>
 <body>
 <div class="container">
@@ -62,4 +40,23 @@
 		</div>
 	</div>	
 </header>
-<br/>
+<!-- Aquí empieza el slider -->
+<div class="jumbotron">
+	<div class="flex-container">
+		<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<a href="#"><img src="img/web/slider/slide1.jpg" /></a>
+				</li>
+				
+				<li>
+					<img src="img/web/slider/slide2.jpg" />
+				</li>
+				
+				<li>
+					<img src="img/web/slider/slide3.jpg" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
