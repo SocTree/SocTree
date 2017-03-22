@@ -1,6 +1,27 @@
 <!-- Header -->
 <?php include("php/main/header/header.php");?>
 <!-- fin header -->
+<!-- Inicio slider -->
+<div class="jumbotron">
+	<div class="flex-container">
+		<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<a href="#"><img src="img/web/slider/slide1.jpg" /></a>
+				</li>
+				
+				<li>
+					<img src="img/web/slider/slide2.jpg" />
+				</li>
+				
+				<li>
+					<img src="img/web/slider/slide3.jpg" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- fin slider -->
 	<div class="jumbotron">
 		<img src="img/socialmedia/fondo.jpg" style="width: 100%; ">
 	</div>

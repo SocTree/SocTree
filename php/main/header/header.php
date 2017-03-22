@@ -41,23 +41,4 @@
 		</div>
 	</div>	
 </header>
-<!-- Aquí empieza el slider -->
-<div class="jumbotron">
-	<div class="flex-container">
-		<div class="flexslider">
-			<ul class="slides">
-				<li>
-					<a href="#"><img src="img/web/slider/slide1.jpg" /></a>
-				</li>
-				
-				<li>
-					<img src="img/web/slider/slide2.jpg" />
-				</li>
-				
-				<li>
-					<img src="img/web/slider/slide3.jpg" />
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+</br>
