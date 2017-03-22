@@ -10,14 +10,29 @@ extract($_REQUEST);
 //y en oculto, el id del usuario que crea este punto de interes
 
 
-$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca', $usu_id)" ; 
+
+//si $marc_adreça = "" significa que han usado la geolocalización por lo tanto en la consulta tendremos que indicar las coordenadas en lugar de la direccion
+
+//ej{lat: 41.3495464, lng: 2.1076887}
+
+$marc_coordenadas = "{".$latitud.", ".$longitud."}";
+
+echo $marc_coordenadas;
+
+if ($marc_adreça == ""){
+	$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_coordenadas`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_coordenadas', $usu_id)" ; 
+}else{
+	$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca', $usu_id)" ; 
 	
+} 
+
+
 	echo $consulta;
 
 
 
-	$anadir = mysqli_query($conexion,$consulta);
+	//$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	header("../includes/visualizarPuntosInteres.php");
+	//header("../includes/visualizarPuntosInteres.php");
 ?>
