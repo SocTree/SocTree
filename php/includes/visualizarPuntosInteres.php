@@ -51,14 +51,14 @@
             if(peticion_http.status == 200) {
               ///creamos los markers
               datosCargados=eval('('+peticion_http.responseText+')');
-              for(var i=0;i<datosCargados.amigos.length;i++){
-                var myLatLng = {lat: datosCargados.amigos[i].posicion.lat, lng: datosCargados.amigos[i].posicion.lng};
+              for(var i=0;i<datosCargados.marcadores.length;i++){
+                var myLatLng = {lat: datosCargados.marcadores[i].posicion.lat, lng: datosCargados.marcadores[i].posicion.lng};
                 var marker = new google.maps.Marker({
                   map: map,
                   position: myLatLng,
                   opacity:1,
                   animation:google.maps.Animation.DROP,  //DROP, BOUNCE
-                  title: datosCargados.amigos[i].nombre
+                  title: datosCargados.marcadores[i].nombre
                 });
                 var contentString;
                 var infowindow = new google.maps.InfoWindow();
@@ -66,7 +66,7 @@
                 google.maps.event.addListener(marker,'click', (function(marker,i) {
                   return function() {
                     contentString = '<div id="content">'+
-                        '<img src="cliente/imagenes/'+datosCargados.amigos[i].foto+'" alt="'+datosCargados.amigos[i].nombre+'" height="42" width="42"><p>'+datosCargados.amigos[i].nombre+'</p>'+
+                        '<img src="cliente/imagenes/'+datosCargados.marcadores[i].foto+'" alt="'+datosCargados.marcadores[i].nombre+'" height="42" width="42"><p>'+datosCargados.marcadores[i].nombre+'</p>'+
                         '</div>';
                     infowindow.setContent(contentString);
                     infowindow.open(map, marker);

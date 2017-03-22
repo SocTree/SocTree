@@ -51,8 +51,8 @@ function getLocation() {
 function showPosition(position) {
 
 	//ej{lat: 41.3495464, lng: 2.1076887}
-    x.value = "lat: "+ position.coords.latitude;
-    y.value = "lng: "+position.coords.longitude;
+    x.value = '"lat": '+ position.coords.latitude;
+    y.value = '"lng": '+ position.coords.longitude;
     document.getElementById("marc_adreca").value = "";
     document.getElementById("marc_adreca").disabled = 'true' ;
 }
