@@ -1,5 +1,6 @@
 <?php
 	include '../../conexio/conexio.php';
+	include '../header/header.php' ;
  ?>
 <!DOCTYPE html>
 <html>
@@ -57,10 +58,6 @@
       }
     }
 
-
-
-	
-	
  ?>
 
 </body>
