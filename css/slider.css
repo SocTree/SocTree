@@ -2,7 +2,7 @@
 /*PARTE DEL CSS QUE NOS IMPORTA PARA EL SLIDER*/
 
 .jumbotron{
-	background-image: url("../img/web/slider/fondo.jpg");
+	background-image: url("../img/web/slider/fondo.jpg") ;
 }
 
 /* Browser Resets */
@@ -94,13 +94,14 @@ html[xmlns] .slides { display: block; }
 	text-indent: -9999px; /*si ponemos 1px aparece next and previus*/
 	z-index: 9999;
 
-	background-color: #82d344;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#82d344), to(#51af34));
-	background-image: -webkit-linear-gradient(top, #82d344, #51af34);
-	background-image: -moz-linear-gradient(top, #82d344, #51af34);
-	background-image: -o-linear-gradient(top, #82d344, #51af34);
-	background-image: linear-gradient(to bottom, #82d344, #51af34);
+	background-color: #218221;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#218221), to(#51af34));
+	background-image: -webkit-linear-gradient(top, #218221, #51af34);
+	background-image: -moz-linear-gradient(top, #218221, #51af34);
+	background-image: -o-linear-gradient(top, #218221, #51af34);
+	background-image: linear-gradient(to bottom, #218221, #51af34);
 }
+/*82d344*/
 
 .flex-direction-nav a:before {
 	display: block;
@@ -190,7 +191,7 @@ html[xmlns] .slides { display: block; }
 }
 
 .flex-control-paging li a.flex-active {
-	background-color: #218221;
+	background-color: #ffffff;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff));
 	background-image: -webkit-linear-gradient(top, #ffffff);
 	background-image: -moz-linear-gradient(top, #ffffff);
