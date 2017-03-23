@@ -45,8 +45,8 @@
 
 				<?php 
 				}else{ ?>
-				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalLogin">Inicia sesio</button>
-		        <div class="modal fade" id="ModalLogin" role="dialog"><?php include_once("php/main/body/login.php"); ?></div>
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Inicia sessió</button>
+		        <div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>
 		           
 					
 					<?php }
