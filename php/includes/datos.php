@@ -24,8 +24,9 @@
 
 
 	$resultado = mysqli_query($conexion, $consulta) or die (mysqli_error());
-	$ajax = '{"marcadores": [{  ';
+	$ajax = '{"marcadores": [  ';
 	echo $ajax;
+	$cont = 0;
 	if(mysqli_num_rows($resultado)>0){
 
 	while($fila = mysqli_fetch_array($resultado)){
@@ -46,33 +47,39 @@
 				//$lng = substr ($lng, 0, strlen($lng) - 1);
 				//echo $lng."<br>";
 				//echo "/////<br>";
+				if($cont == 0){
+					echo '{"posicion": {';
+				}else{
+					echo ',{"posicion": {';
+				}
 				
-				echo '"posicion": {';
 				echo $lat.",";
 				echo $lng." },";
 				echo '"nombre": "'.$fila['marc_nom_lloc'].'",';
 				echo '"tipo": "'.$fila['tip_marc_tipus'].'",';
 				echo '"descripcion": "'.$fila['marc_descripcio'].'",';
 				echo '"usuario": "'.$fila['usu_nom'].'"';
-				echo '},{';
+				echo '}';
+				$cont++;
 		}else{
 
 			$coords = getCoordinates($fila['marc_adreca']);
 
 			$lat = $coords[0];
 			$lng = $coords[1];
-
-			echo '"posicion": {';
+			if($cont == 0){
+					echo '{"posicion": {';
+				}else{
+					echo ',{"posicion": {';
+				}
 				echo '"lat": '.$lat.",";
-
 				echo ' "lng": '.$lng." },";
-
-
 				echo '"nombre": "'.$fila['marc_nom_lloc'].'",';
 				echo '"tipo": "'.$fila['tip_marc_tipus'].'",';
 				echo '"descripcion": "'.$fila['marc_descripcio'].'",';
 				echo '"usuario": "'.$fila['usu_nom'].'"';
-				echo '},{';
+				echo '}';
+				$cont++;
 		}
 		
 		}
