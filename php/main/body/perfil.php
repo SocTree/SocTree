@@ -1,6 +1,6 @@
 <?php 
 //Pagina de visualitzacio i modificacio del usuari
-//include '../../includes/visualizarRestrictivo.php';
+include '../../includes/visualizarRestrictivo.php';
 extract($_REQUEST);
 
 ?>
@@ -42,20 +42,6 @@ extract($_REQUEST);
   				ajax.send();
 				}
 
-				function enviarPass(url){
-			
-				  var ajax=objetoAjax();
-				 
-				  ajax.open("POST", url, true);
-				  ajax.onreadystatechange=function() {
-				  	if (ajax.readyState==4) {
-						document.getElementById('info-usu').innerHTML = ajax.responseText;
-					}
-				  }
-  				ajax.send();
-				}
-
-
 
 				function validarForm(){
 					
@@ -92,6 +78,7 @@ extract($_REQUEST);
 						alert(msg);
 						return false;
 					} else {
+						enviarDatos();
 						return true;
 					}
 				}
@@ -111,7 +98,7 @@ extract($_REQUEST);
 						form.usu_nova_pass.style.borderColor="red";
 			}
 			if(form.usu_rep_nova.value == ""){
-				msg += "\n Has de repetir la nova contrasnya";
+				msg += "\n Has de repetir la nova contrasenya";
 						form.usu_rep_nova.style.borderColor="red";
 			}
 
@@ -125,7 +112,7 @@ extract($_REQUEST);
 						alert(msg);
 						return false;
 					} else {
-						enviarPass('../../proc/usuario_mod_password.php');
+						return true;
 					}
 
 		}
@@ -142,6 +129,14 @@ extract($_REQUEST);
 			if(isset($err)){
 				if ($err == 1){
 					echo "Error: el correu introduït ja existeix";
+				} elseif ($err == 1){
+					echo "Error al canviar la contrasenya";
+				}
+			}
+
+			if (isset($corr)){
+				if($corr==1){
+					echo "contrasenya modificada correctament";
 				}
 			}
 		?>

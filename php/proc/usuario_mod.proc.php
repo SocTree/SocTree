@@ -1,6 +1,7 @@
 <?php 
 include '../conexio/conexio.php';
-$usu = 1;
+include '../includes/visualizarRestrictivo.proc.php';
+
 extract($_REQUEST);
 
 $sql_correo = "SELECT * FROM tbl_usuari WHERE usu_email='$usu_email' AND usu_id != '$usu' ";

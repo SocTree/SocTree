@@ -1,6 +1,5 @@
 <?php 
 include '../../conexio/conexio.php';
-	$usu=1;
 
 	$sql_usuari = "SELECT * FROM tbl_usuari WHERE usu_id='$usu'";
 	$usuaris=mysqli_query($conexion, $sql_usuari);

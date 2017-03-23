@@ -2,7 +2,7 @@
 //Esta pagina muestra el contacto del patrocinador despues de haber realizado la 'compra' para que el usario se ponga en contacto
 
 include '../../conexio/conexio.php';
-//include '../../includes/visualizarRestrictivo.php';
+include '../../includes/visualizarRestrictivo.php';
 ?>
 <!DOCTYPE html>
 <html>
