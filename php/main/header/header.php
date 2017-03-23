@@ -26,7 +26,12 @@
 			<div class="col-sm-offset-4 col-sm-8">
 				<div class="nombre">
 				<?php  
-				include 'php/includes/visualizarPermisivo.php';
+				if (file_exists('../../includes/visualizarPermisivo.php')) {
+					include '../../includes/visualizarPermisivo.php';
+				}else{
+					include 'php/includes/visualizarPermisivo.php';
+				}
+				
 
 				if (isset($usu))  {
 					echo "<a href=''>";
