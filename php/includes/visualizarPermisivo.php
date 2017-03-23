@@ -5,6 +5,9 @@
 //Si no lo está en vez de darle las opciones de usuarios les mostraremos la variable $msgNoUsuarios.
 if (isset($_SESSION['usu_id'])) {
 	$usu = $_SESSION['usu_id'];
+	$nom = $_SESSION['usu_nom'];
+	$cognom = $_SESSION['usu_cognom'];
+
 }else{
 	$msgNoUsuarios = "Per participar <a href='login.php'>fes login </a> o <a href='registrate.php'>registra't.</a>";
 }

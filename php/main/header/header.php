@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,10 +25,29 @@
 		<div class="col-sm-7 col-xs-8">
 			<div class="col-sm-offset-4 col-sm-8">
 				<div class="nombre">
-					Nombre de usuario &nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href=""><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>&nbsp;&nbsp;
-					<a href=""><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
-					<a href=""><i class="fa fa-power-off fa-lg" aria-hidden="true"></i></a>
+				<?php  
+				include 'php/includes/visualizarPermisivo.php';
+
+				if (isset($usu))  {
+					echo "<a href=''>";
+					echo $nom;
+					echo  ' ,'+ $cognom +'</a> &nbsp;&nbsp;|&nbsp;&nbsp;'; ?>
+
+					<a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>&nbsp;&nbsp;
+					<a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
+					<a href='php/proc/destroysesion.proc.php' ><i class="fa fa-power-off fa-lg" aria-hidden="true"></i></a>
+
+				<?php 
+				}else{ ?>
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalLogin">Inicia sesio</button>
+		        <div class="modal fade" id="ModalLogin" role="dialog"><?php include_once("php/main/body/login.php"); ?></div>
+		           
+					
+					<?php }
+					?>
+
+					 
+					
 				</div>				
 			</div>
 			<div class="col-sm-12">
