@@ -21,7 +21,7 @@ $resultado=mysqli_query($conexion, $sql);
 				echo $_SESSION['usu_id'];
 					echo $_SESSION['usu_nom'];
 						echo $_SESSION['usu_cognom'];
-				//header('Location:../../index.php');
+				header('Location:../../index.php');
 			}else{echo "error";}
 		}
 	}

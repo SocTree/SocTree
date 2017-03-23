@@ -31,7 +31,8 @@
 				if (isset($usu))  {
 					echo "<a href=''>";
 					echo $nom;
-					echo  ' ,'+ $cognom +'</a> &nbsp;&nbsp;|&nbsp;&nbsp;'; ?>
+					echo  ', '. $cognom .'</a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
+					?>
 
 					<a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>&nbsp;&nbsp;
 					<a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
