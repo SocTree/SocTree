@@ -92,7 +92,7 @@ html[xmlns] .slides { display: block; }
 	top: 50%;
 	cursor: pointer;
 	text-indent: -9999px; /*si ponemos 1px aparece next and previus*/
-	z-index: 9999;
+	z-index:2;
 
 	background-color: #218221;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#218221), to(#51af34));

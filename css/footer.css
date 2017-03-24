@@ -1,0 +1,11 @@
+footer {
+	width: 100%;
+	background-color: #218221; 
+	bottom: 0;  
+	padding: 1%; 
+	color: white;
+	background: -webkit-linear-gradient(#33cc33,green);
+   	background: -moz-linear-gradient(white,#33cc33, #218221);
+   	background: -o-linear-gradient(white,#33cc33, #218221);
+   	border-top: 5px solid #218221;
+}

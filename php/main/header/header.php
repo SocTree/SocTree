@@ -9,6 +9,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	<!-- PARTE DEL HEAD RELATIVA AL SLIDE -->
 	<link rel="stylesheet" href="css/slider.css" type="text/css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
@@ -16,8 +17,8 @@
 	<style>.flex-container{position: relative;margin: 0 auto; top: 0%; padding: 50px;} </style> 
 </head>
 <body>
-<div class="container">
-<header>	
+<div style="position: fixed;width: 100%;top: 0;background-color: white;z-index: 1000">
+<div class="container">	
 	<div class="row">
 	<br/>
 		<div class="col-sm-5 col-xs-4">
@@ -39,6 +40,7 @@
 				<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
 			</div>
 		</div>
-	</div>	
-</header>
+	</div>
+</div>
+</div>
 </br>
