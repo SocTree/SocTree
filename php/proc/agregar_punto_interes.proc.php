@@ -17,12 +17,16 @@ extract($_REQUEST);
 
 $marc_coordenadas = "{".$latitud.", ".$longitud."}";
 
-echo $marc_coordenadas;
+//echo $marc_coordenadas;
+
 
 if ($marc_adreca == ""){
-	$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_coordenadas`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_coordenadas', $usu_id)" ; 
+	$consulta = "INSERT INTO `tbl_marcador` (`marc_nom_lloc`, `marc_descripcio`, `marc_coordenadas`,`ico_id`, `usu_id`) VALUES (  '$marc_nom_lloc', '$marc_descripcio', '$marc_coordenadas', '$ico_id', $usu_id)" ; 
 }else{
-	$consulta = "INSERT INTO `tbl_marcador` (`tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `usu_id`) VALUES ( $tip_marc_tipus , '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca', $usu_id)" ; 
+
+	$marc_adreca = addslashes ($marc_adreca);	
+
+	$consulta = "INSERT INTO `tbl_marcador` ( `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `ico_id`, `usu_id`) VALUES ( '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca ', '$ico_id' , $usu_id)" ; 
 	
 } 
 
@@ -34,5 +38,5 @@ if ($marc_adreca == ""){
 	$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	header("Location:../includes/visualizarPuntosInteres.php");
+	header('location: ../includes/visualizarPuntosInteres.php ');
 ?>
