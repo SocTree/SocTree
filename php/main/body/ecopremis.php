@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<script type="text/javascript">
-		function objetoAjax(val){
+		function objetoAjax(){
 					var xmlhttp=false;
 					try {
 						xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
