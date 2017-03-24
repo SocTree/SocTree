@@ -20,7 +20,7 @@ include("../conexio/conexio.php");
 
 		while($marc = mysqli_fetch_array($res)){
 
-			echo "<option value=".$marc['ico_id'].">". strstr($marc['ico_nom'], '.' , true)." <img src='../../img/marcadors/".$marc['ico_nom']."'> </option>";
+			echo "<option value=".$marc['ico_id'].">". strstr($marc['ico_nom'], '.' , true)."  </option>";
 
 		}
 		

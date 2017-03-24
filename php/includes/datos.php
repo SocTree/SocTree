@@ -1,5 +1,6 @@
 <?php
 
+	
  	include("../conexio/conexio.php");
  	
  	function getCoordinates($address){
@@ -18,9 +19,11 @@
     return array($lat, $lng);
 }
 $valor = $_GET['valor'];
+
+//echo $valor;
 	switch ($valor) {
 		case 0:
-			$consulta = "SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom  FROM `tbl_marcador`, tbl_icona_marcador, tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id" ;
+			$consulta = "SELECT DISTINCT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom , tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador, tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id GROUP BY tbl_marcador.marc_nom_lloc"  ;
 			break;
 		default:
 			$consulta = " SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom FROM `tbl_marcador`, tbl_icona_marcador,  tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.ico_id = ".$valor;
@@ -54,6 +57,8 @@ $valor = $_GET['valor'];
 				$lng = substr($lng, 1);
 				$lng = substr($lng,  0, -1 );
 				//$lng = substr ($lng, 0, strlen($lng) - 1);
+
+				$tipo = strstr ($fila['ico_nom'], '.',true); 
 				//echo $lng."<br>";
 				//echo "/////<br>";
 				if($cont == 0){
@@ -65,14 +70,16 @@ $valor = $_GET['valor'];
 				echo $lat.",";
 				echo $lng." },";
 				echo '"nombre": "'.$fila['marc_nom_lloc'].'",';
-				echo '"tipo": "'.$fila['tip_marc_tipus'].'",';
+				echo '"tipo": "'.$tipo.'",';
 				echo '"descripcion": "'.$fila['marc_descripcio'].'",';
-				echo '"usuario": "'.$fila['usu_nom'].'"';
+				echo '"usuario": "'.$fila['usu_nom'].'"';			
 				echo '}';
 				$cont++;
 		}else{
 
 			$coords = getCoordinates($fila['marc_adreca']);
+
+			$tipo = strstr ($fila['ico_nom'], '.',true); 
 
 			$lat = $coords[0];
 			$lng = $coords[1];
@@ -84,7 +91,7 @@ $valor = $_GET['valor'];
 				echo '"lat": '.$lat.",";
 				echo ' "lng": '.$lng." },";
 				echo '"nombre": "'.$fila['marc_nom_lloc'].'",';
-				echo '"tipo": "'.$fila['tip_marc_tipus'].'",';
+				echo '"tipo": "'.$tipo.'",';
 				echo '"descripcion": "'.$fila['marc_descripcio'].'",';
 				echo '"usuario": "'.$fila['usu_nom'].'"';
 				echo '}';

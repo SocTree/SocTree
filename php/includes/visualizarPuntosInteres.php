@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <style type="text/css">
       html, body { height: 90%; margin: 0; padding: 0; }
       #map { height: 100%; }
@@ -19,13 +20,15 @@
  
 
     <script type="text/javascript">
+
+
         var map;
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 41.3495464, lng: 2.1076887},
             //mapTypeId: google.maps.MapTypeId.SATELLITE,
             mapTypeId:google.maps.MapTypeId.SATELLITE,
-            zoom: 10
+            zoom: 14
           });
           cargaContenido();
         }
@@ -56,15 +59,18 @@
             var valor = document.getElementById("filtro").value
             
           //alert(valor);
-           switch(valor) {
-                                case valor:
-                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;                                
-                              default:
-                                    peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);
-                                    break;
-                                
-            }
+
+
+          ///hacer if
+
+          if(!valor == 0){
+             peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+          }else{
+
+           
+            peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);
+          }
+           
 
             //peticion_http.open("GET", "datos.php", true);
             peticion_http.send(null);
@@ -80,12 +86,23 @@
 
               for(var i=0;i<datosCargados.marcadores.length;i++){
                 var myLatLng = {lat: datosCargados.marcadores[i].posicion.lat, lng: datosCargados.marcadores[i].posicion.lng};
+                
+                //var icono = new GIcon(G_DEFAULT_ICON);
+            
+                //icono.image = "../../img/marcadors/"+datosCargados.marcadores[i].tipo+".png";
+
+                //var tamanoIcono = new GSize(17,17);
+                //icono.iconSize = tamanoIcono;
+                //icono.iconAnchor = new GPoint(11, 16);
+
+
                 var marker = new google.maps.Marker({
                   map: map,
                   position: myLatLng,
                   opacity:1,
                   animation:google.maps.Animation.DROP,  //DROP, BOUNCE
-                  title: datosCargados.marcadores[i].nombre
+                  title: datosCargados.marcadores[i].nombre,
+                  icon: "../../img/marcadors/"+datosCargados.marcadores[i].tipo+".png"
                 });
                 var contentString;
                 var infowindow = new google.maps.InfoWindow();
