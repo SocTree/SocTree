@@ -20,10 +20,10 @@
 $valor = $_GET['valor'];
 	switch ($valor) {
 		case 0:
-			$consulta = "SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom  FROM `tbl_marcador`, tbl_tipus_marcador, tbl_usuari WHERE tbl_tipus_marcador.tip_marc_id = tbl_marcador.tip_marc_id AND tbl_usuari.usu_id = tbl_marcador.usu_id" ;
+			$consulta = "SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom  FROM `tbl_marcador`, tbl_icona_marcador, tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id" ;
 			break;
 		default:
-			$consulta = " SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom FROM `tbl_marcador`, tbl_tipus_marcador, tbl_usuari WHERE tbl_tipus_marcador.tip_marc_id = tbl_marcador.tip_marc_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.tip_marc_id = ".$valor;
+			$consulta = " SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom FROM `tbl_marcador`, tbl_icona_marcador,  tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.ico_id = ".$valor;
 			break;
 	}
 	

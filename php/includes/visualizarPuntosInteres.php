@@ -14,7 +14,7 @@
       <?php include("select_dinamico_bd.php"); ?>
 
         </select>
-        <button onclick="initMap()" >Filtrar</button>
+       
   
  
 
@@ -25,7 +25,7 @@
             center: {lat: 41.3495464, lng: 2.1076887},
             //mapTypeId: google.maps.MapTypeId.SATELLITE,
             mapTypeId:google.maps.MapTypeId.SATELLITE,
-            zoom: 15
+            zoom: 10
           });
           cargaContenido();
         }
@@ -55,30 +55,12 @@
             
             var valor = document.getElementById("filtro").value
             
-            //alert(valor);
+          //alert(valor);
            switch(valor) {
-                                case '0':
+                                case valor:
                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                case '1':
-                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                case '2':
-                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                case '3':
-                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                case '4':
-                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                case '5':
-                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                case '6':
-                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;
-                                default:
+                                    break;                                
+                              default:
                                     peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);
                                     break;
                                 

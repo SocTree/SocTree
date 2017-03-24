@@ -18,10 +18,12 @@ $usu_id = 1;
 <form name="crear_punt_interes" action="../proc/agregar_punto_interes.proc.php">
 
   <input type="text" name="marc_nom_lloc" placeholder="nom del punt d'interés">
-  <select name="tip_marc_tipus"  >
-              
+  <select name="ico_id"  >
+   <option value=''>Selecciona tipus marcador</option>           
   <?php include("select_dinamico_bd.php"); ?>
+
   </select>
+
   <input type="text" id="marc_adreca"  name="marc_adreca" placeholder="adreça del punt d'interes"> <br> <input type="text" id="latitud"  name="latitud" > 
 <input type="text" id="longitud"  name="longitud"  >
 <?php 
