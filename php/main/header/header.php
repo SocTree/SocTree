@@ -28,7 +28,12 @@
 					?>
 					<a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>&nbsp;&nbsp;
 					<a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
-					<a href='php/proc/destroysesion.proc.php' ><i class="fa fa-power-off fa-lg" aria-hidden="true"></i></a>
+					<a href= <?php 
+					if (file_exists('../../proc/destroysesion.proc.php')) {
+						echo "'../../proc/destroysesion.proc.php'";
+						}else{
+							echo  "'php/proc/destroysesion.proc.php'";}
+					  ?> ><i class="fa fa-power-off fa-lg" aria-hidden="true"></i></a>
 				<?php 
 				}else{ ?>
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Inicia sessió</button>

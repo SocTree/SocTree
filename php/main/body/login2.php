@@ -20,8 +20,8 @@
       <div class="modal-body">
         
 			<form name="login" action="php/proc/login.proc.php">
+        <input type="text" placeholder="Email" class="form-control" name="email"><bR>   
             <input type="password" placeholder="Password" class="form-control" name="password"><bR>
-		    <input type="text" placeholder="Email" class="form-control" name="email"><bR>   
       </div>
       <div class="modal-footer">
         No tens compte,<a href="#modal-2" data-toggle="modal" data-dismiss="modal">registra't.</a> &nbsp;
