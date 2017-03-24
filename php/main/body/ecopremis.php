@@ -26,7 +26,7 @@
 			
 				  var ajax=objetoAjax();
 				 
-				  ajax.open("POST", 'filtro.php', true);
+				  ajax.open("POST", 'filtro_ecopremis.php', true);
 				  ajax.onreadystatechange=function() {
 				  	if (ajax.readyState==4) {
 						document.getElementById('tabla').innerHTML = ajax.responseText;
