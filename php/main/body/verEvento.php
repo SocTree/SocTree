@@ -33,6 +33,7 @@
 </table>
 
 		<?php
+		
 		//Consulta para ver si quedan plazas.
 		$sql1 = "SELECT * FROM `tbl_participants` WHERE eve_id = $eve_id";
 		$verCapacidad = mysqli_query($conexion, $sql1);
