@@ -1,10 +1,11 @@
 .event_main{
 	width: 100%;
-	background-color: #33cc33;   
+	background-color: #33cc33; 
+	bottom: 0;  
 	padding: 1%; 
 	color: white;
-	background: -webkit-linear-gradient(#218221,green);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#218221), to(#33cc33));
    	background: -moz-linear-gradient(white,#218221, #33cc33);
    	background: -o-linear-gradient(white,#218221, #33cc33);
-   	border-top: 5px solid #33cc33;
+   	border-bottom: 5px solid #218221;
 }
