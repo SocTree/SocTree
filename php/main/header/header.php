@@ -17,14 +17,14 @@
 	<style>.flex-container{position: relative;margin: 0 auto; top: 0%; padding: 50px;} </style> 
 </head>
 <body>
-<!-- <div style="position: fixed;width: 100%;top: 0;background-color: white;z-index: 1000"> -->
-<div class="container">	
+<div class="menufijo">
+ 	<div class="container">	
 	<div class="row">
 	<br/>
 		<div class="col-sm-5">
 			<img src="img/web/logo/gif.gif" width="200">
 		</div>
-		<div class="col-sm-7">
+		<div class="col-sm-7 ">
 			<div class="col-sm-offset-4 col-sm-8">
 				<div class="nombre">
 				<?php  
@@ -44,20 +44,24 @@
 				<?php 
 				}else{ ?>
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Inicia sessió</button>
-		        <div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>					
+		        				
 					<?php }
 					?>
 				</div>
-				<div class="col-sm-12">
-				<a href="#Blog"><div class="menu">Blog</div></a>
-				<a href="#Premis"><div class="menu">Premis</div></a>
-				<a href="#Events"><div class="menu">Events</div></a>
-				<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
-			</div>				
+							
 			</div>
+			<div class="col-sm-12">
+					<a href="#Blog"><div class="menu">Blog</div></a>
+					<a href="#Premis"><div class="menu">Premis</div></a>
+					<a href="#Events"><div class="menu">Events</div></a>
+					<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
+			</div>	
 			
 		</div>
 	</div>
 </div>
 </div>
+	<div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>	
+
+
 </br>
