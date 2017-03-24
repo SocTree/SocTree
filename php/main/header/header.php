@@ -4,7 +4,13 @@
 	<div class="row">
 	<br/>
 		<div class="col-sm-5">
-			<img src="img/web/logo/gif.gif" width="200">
+			<?php 
+			if (file_exists('img/web/logo/gif.gif')) {
+					echo "<img src='img/web/logo/gif.gif' width='200'>";
+				}else{
+					echo "<img src='../../../img/web/logo/gif.gif' width='200'>";
+				}
+			?>
 		</div>
 		<div class="col-sm-7 ">
 			<div class="col-sm-offset-4 col-sm-8">
