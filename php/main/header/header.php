@@ -47,7 +47,13 @@
 				<?php 
 				}else{ ?>
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Inicia sessió</button>
-		        <div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>
+		        <div class="modal fade" id="modal-1" role="dialog"><?php 
+		        if (file_exists('../../main/body/login2.php')) {
+					include '../../main/body/login2.php';
+				}else{
+					include 'php/main/body/login2.php';
+				}
+		         ?></div>
 		           
 					
 					<?php }
