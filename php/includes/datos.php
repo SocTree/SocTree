@@ -1,7 +1,7 @@
 <?php
 
  	include("../conexio/conexio.php");
-
+ 	
  	function getCoordinates($address){
     $address = urlencode($address);
     $url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=".$address;
@@ -17,9 +17,18 @@
  
     return array($lat, $lng);
 }
+$valor = $_GET['valor'];
+	switch ($valor) {
+		case 0:
+			$consulta = "SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom  FROM `tbl_marcador`, tbl_tipus_marcador, tbl_usuari WHERE tbl_tipus_marcador.tip_marc_id = tbl_marcador.tip_marc_id AND tbl_usuari.usu_id = tbl_marcador.usu_id" ;
+			break;
+		default:
+			$consulta = " SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom FROM `tbl_marcador`, tbl_tipus_marcador, tbl_usuari WHERE tbl_tipus_marcador.tip_marc_id = tbl_marcador.tip_marc_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.tip_marc_id = ".$valor;
+			break;
+	}
+	
 
-
-	$consulta = "SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom  FROM `tbl_marcador`, tbl_tipus_marcador, tbl_usuari WHERE tbl_tipus_marcador.tip_marc_id = tbl_marcador.tip_marc_id AND tbl_usuari.usu_id = tbl_marcador.usu_id" ; 
+ 
 	//echo $consulta;
 
 

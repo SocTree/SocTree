@@ -2,12 +2,22 @@
 <html>
   <head>
     <style type="text/css">
-      html, body { height: 100%; margin: 0; padding: 0; }
+      html, body { height: 90%; margin: 0; padding: 0; }
       #map { height: 100%; }
     </style>
   </head>
   <body>
     <div id="map"></div>
+    
+    <label>Vols filtrar els punts d'interés?</label><select  id="filtro" name="tipo_marcador"  onchange="initMap()">
+    <option value='0'>Res</option>
+      <?php include("select_dinamico_bd.php"); ?>
+
+        </select>
+        <button onclick="initMap()" >Filtrar</button>
+  
+ 
+
     <script type="text/javascript">
         var map;
         function initMap() {
@@ -41,7 +51,40 @@
           peticion_http = inicializa_xhr();
           if(peticion_http) {
             peticion_http.onreadystatechange = muestraContenido;
-            peticion_http.open("GET", "datos.php", true);
+            //para el filtro según la opción que este seleccionada del desplegable se hará la peticion ajax correspondiente
+            
+            var valor = document.getElementById("filtro").value
+            
+            //alert(valor);
+           switch(valor) {
+                                case '0':
+                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                case '1':
+                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                case '2':
+                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                case '3':
+                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                case '4':
+                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                case '5':
+                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                case '6':
+                                     peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+                                    break;
+                                default:
+                                    peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);
+                                    break;
+                                
+            }
+
+            //peticion_http.open("GET", "datos.php", true);
             peticion_http.send(null);
           }
         }
