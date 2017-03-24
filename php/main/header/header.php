@@ -16,7 +16,7 @@
 	<style>.flex-container{position: relative;margin: 0 auto; top: 0%; padding: 50px;} </style> 
 </head>
 <body>
-<div style="position: fixed;width: 100%;top: 0;background-color: white;z-index: 1000">
+<!--<div style="position: fixed;width: 100%;top: 0;background-color: white;z-index: 1000">-->
 <div class="container">	
 	<div class="row">
 	<br/>
