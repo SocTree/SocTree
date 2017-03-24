@@ -6,7 +6,7 @@
 </head>
 <body>
 <!-- Modal Login #modal1 -->
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">

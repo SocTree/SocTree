@@ -34,7 +34,7 @@
     <div class="col-md-3">
 
  
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Afegir punt d'interes</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Afegir punt d'Interès</button>
      <label>Vols filtrar els punts d'interés?</label><select  id="filtro" name="tipo_marcador"  onchange="initMap()">
     <option class="dropdown-menu" value='0'> Res</option>
       <?php include("select_dinamico_bd.php"); ?>
@@ -141,5 +141,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhXaF13fF5Exi4nzqVZ_PD1q9bO_O8Y_M&callback=initMap">
     </script>
 
-      <div class="modal fade" id="modal-1" role="dialog"><?php include_once("view_eric_agregarPuntoInteres.php"); ?></div> 
+      <div class="modal fade" id="modal-1" role="dialog"><?php include_once("agregarPuntoInteres.php"); ?></div> 
 <?php include("../footer/footer.php") ?>

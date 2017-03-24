@@ -47,7 +47,7 @@
 					<a href="#Blog"><div class="menu">Blog</div></a>
 					<a href="#Premis"><div class="menu">Premis</div></a>
 					<a href="#Events"><div class="menu">Events</div></a>
-					<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
+					<a href="../body/visualizarPuntosInteres.php"><div class="menu">Llocs d'Interès</div></a>		
 			</div>	
 			
 		</div>
