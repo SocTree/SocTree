@@ -10,13 +10,14 @@
 <body>
 <div>
 <?php 
-	$sql = "SELECT * FROM `tbl_events` WHERE eve_estat = actiu";
-	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'esport' AND eve_estat = actiu";
-	$sqlGastronomic = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'gastronomic' AND eve_estat = actiu";
-	$sql3R = "SELECT * FROM `tbl_events` WHERE eve_tipus = '3R' AND eve_estat = actiu";
-	$sqlDiy = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'diy' AND eve_estat = actiu";
-	$sqlSolidari = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'solidari' AND eve_estat = actiu";
+	$sql = "SELECT * FROM `tbl_events` WHERE eve_estat = 'actiu'";
+	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'esport' AND eve_estat = 'actiu'";
+	$sqlGastronomic = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'gastronomic' AND eve_estat = 'actiu'";
+	$sql3R = "SELECT * FROM `tbl_events` WHERE eve_tipus = '3R' AND eve_estat = 'actiu'";
+	$sqlDiy = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'diy' AND eve_estat = 'actiu'";
+	$sqlSolidari = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'solidari' AND eve_estat = 'actiu'";
 
+	if (isset($_GET['eve_tipus'])) {
 	//decidiendo sql a usar:
 	switch ($_GET['eve_tipus']) {
 		case 'esport':
@@ -37,6 +38,7 @@
 		
 		default:
 			break;
+	}
 	}
 	$eventos=mysqli_query($conexion, $sql);
     if (mysqli_num_rows($eventos) != 0){

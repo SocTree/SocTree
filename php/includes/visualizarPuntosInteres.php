@@ -14,8 +14,8 @@
           map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 41.3495464, lng: 2.1076887},
             //mapTypeId: google.maps.MapTypeId.SATELLITE,
-            mapTypeId:google.maps.MapTypeId.ROADMAP,
-            zoom: 19
+            mapTypeId:google.maps.MapTypeId.SATELLITE,
+            zoom: 15
           });
           cargaContenido();
         }
@@ -49,8 +49,10 @@
         function muestraContenido() {
           if(peticion_http.readyState == READY_STATE_COMPLETE) {
             if(peticion_http.status == 200) {
+              //alert(peticion_http.responseText);
               ///creamos los markers
-              datosCargados=eval('('+peticion_http.responseText+')');
+              var datosCargados=JSON.parse(peticion_http.responseText);
+
               for(var i=0;i<datosCargados.marcadores.length;i++){
                 var myLatLng = {lat: datosCargados.marcadores[i].posicion.lat, lng: datosCargados.marcadores[i].posicion.lng};
                 var marker = new google.maps.Marker({
@@ -66,7 +68,7 @@
                 google.maps.event.addListener(marker,'click', (function(marker,i) {
                   return function() {
                     contentString = '<div id="content">'+
-                        '<img src="cliente/imagenes/'+datosCargados.marcadores[i].foto+'" alt="'+datosCargados.marcadores[i].nombre+'" height="42" width="42"><p>'+datosCargados.marcadores[i].nombre+'</p>'+
+                        '<p>Tipo de punto de interes: '+datosCargados.marcadores[i].tipo+'"<br> "Nombre del punto: '+datosCargados.marcadores[i].nombre+'"</p><br><p> Usuario que lo ha creado: '+datosCargados.marcadores[i].usuario+'</p><br><p> Descripcion: '+datosCargados.marcadores[i].descripcion+'"</p>';
                         '</div>';
                     infowindow.setContent(contentString);
                     infowindow.open(map, marker);

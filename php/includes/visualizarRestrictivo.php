@@ -6,6 +6,6 @@
 if (isset($_SESSION['usu_id'])) {
 	$usu = $_SESSION['usu_id'];
 }else{
-	header('location:../../index.php?err=1');
+	header('location:../../../index.php?err=1');
 }
  ?>
