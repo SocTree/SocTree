@@ -19,7 +19,14 @@
       </div>
       <div class="modal-body">
         
-			<form name="login" action="php/proc/login.proc.php">
+			<form name="login" action=<?php 
+          if (file_exists('../../proc/login.proc.php')) {
+            echo "'../../proc/login.proc.php";
+            }else{
+              echo  "'php/proc/login.proc.php'";}?>>
+
+
+
         <input type="text" placeholder="Email" class="form-control" name="email"><bR>   
             <input type="password" placeholder="Password" class="form-control" name="password"><bR>
       </div>
@@ -45,7 +52,11 @@
       <div class="modal-body">
     
 
-        	<form action="../../proc/registrate.proc.php">
+        	<form action=<?php 
+          if (file_exists('../../proc/registrate.proc.php')) {
+            echo "'../../proc/registrate.proc.php";
+            }else{
+              echo  "'php/proc/registrate.proc.php'";}?>>
 
 	<input type="text" name="usu_nom" placeholder="Nom" class="form-control"><br>
 

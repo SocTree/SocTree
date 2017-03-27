@@ -22,6 +22,8 @@
 		</div>
 	</div>
 
+
+<!--- Empieza el blog.... -->
 	<div class="contenedor">
 			<?php foreach($posts as $post): ?>
 				<div class="post">
