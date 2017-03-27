@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2017 at 03:33 PM
+-- Generation Time: Mar 27, 2017 at 04:03 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -73,6 +73,7 @@ CREATE TABLE `tbl_events` (
   `eve_descripcio` text NOT NULL,
   `eve_tipus` enum('Esports','Gastronomic','3R','DIY','Solidari') NOT NULL,
   `eve_data` date NOT NULL,
+  `eve_hora` time NOT NULL,
   `eve_localitzacio` varchar(50) NOT NULL,
   `usu_id` int(11) DEFAULT NULL,
   `eve_estat` enum('actiu','inactiu','finalitzat','') NOT NULL,
@@ -84,8 +85,9 @@ CREATE TABLE `tbl_events` (
 -- Dumping data for table `tbl_events`
 --
 
-INSERT INTO `tbl_events` (`eve_id`, `eve_nom`, `eve_descripcio`, `eve_tipus`, `eve_data`, `eve_localitzacio`, `usu_id`, `eve_estat`, `eve_min_part`, `eve_max_part`) VALUES
-(1, '', '', '', '2017-03-28', '', NULL, '', 0, 0);
+INSERT INTO `tbl_events` (`eve_id`, `eve_nom`, `eve_descripcio`, `eve_tipus`, `eve_data`, `eve_hora`, `eve_localitzacio`, `usu_id`, `eve_estat`, `eve_min_part`, `eve_max_part`) VALUES
+(1, 'wdasdcas', 'sdadadas', 'Esports', '2017-03-28', '00:00:00', 'dafmafa', 1, 'actiu', 0, 0),
+(2, 'hdolaa', 'mu bonico todo', '3R', '2017-03-21', '00:00:00', 'localitzacio', 2, 'actiu', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -230,6 +232,18 @@ CREATE TABLE `tbl_participants` (
   `usu_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_participants`
+--
+
+INSERT INTO `tbl_participants` (`part_id`, `eve_id`, `usu_id`) VALUES
+(1, 2, 2),
+(2, 2, 1),
+(3, 1, 1),
+(4, 1, 2),
+(5, 1, 2),
+(6, 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -306,7 +320,8 @@ CREATE TABLE `tbl_usuari` (
 --
 
 INSERT INTO `tbl_usuari` (`usu_id`, `usu_nom`, `usu_cognom`, `usu_email`, `usu_password`, `usu_foto`, `usu_tipus`, `usu_data_registre`) VALUES
-(1, 'marc', 'mpetit', 'mpetit@gmail.com', '12345', '', 'normal', '2017-03-15');
+(1, 'marc', 'mpetit', 'mpetit@gmail.com', '12345', '', 'normal', '2017-03-15'),
+(2, 'mike', 'gomez', 'miquelgomezv@gmail.com', '1234', '', 'normal', '2017-03-24');
 
 -- --------------------------------------------------------
 
@@ -490,7 +505,7 @@ ALTER TABLE `tbl_ecochange`
 -- AUTO_INCREMENT for table `tbl_events`
 --
 ALTER TABLE `tbl_events`
-  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_foto`
 --
@@ -530,7 +545,7 @@ ALTER TABLE `tbl_moneder`
 -- AUTO_INCREMENT for table `tbl_participants`
 --
 ALTER TABLE `tbl_participants`
-  MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_patrocinador`
 --
@@ -550,7 +565,7 @@ ALTER TABLE `tbl_tipus_marcador`
 -- AUTO_INCREMENT for table `tbl_usuari`
 --
 ALTER TABLE `tbl_usuari`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_valoracio`
 --
