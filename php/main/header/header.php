@@ -53,9 +53,14 @@
 					if (file_exists('php/main/body/ecopremis.php')) {
 						echo "'php/main/body/ecopremis.php'";
 						}else{
-							echo  "'ecopremis.php'";}
+							echo  "ecopremis.php";}
 					  ?>><div class="menu">Premis</div></a>
-					<a href="#Events"><div class="menu">Events</div></a>
+					<a href=<?php 
+					if (file_exists('php/main/body/eventos.php')) {
+						echo "'php/main/body/eventos.php'";
+						}else{
+							echo  "eventos.php";}
+					  ?>><div class="menu">Events</div></a>
 					<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
 			</div>				
 		</div>
