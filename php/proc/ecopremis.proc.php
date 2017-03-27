@@ -20,7 +20,11 @@ $usuaris = mysqli_query($conexion, $sql_usu);
 
 while ($usuari = mysqli_fetch_object($usuaris)) {
 //Resta de los tokens del premio - los tokens que tiene el usaurio
+	if ($usuari->mon_quantitat<$tokens){
+		header('location:../main/body/ecopremis.php');
+	} else {
 	$tot = $usuari->mon_quantitat - $tokens ;
+	}
 }
 
 //Establecemos los tokens que tendra el usuario despues de la compra
