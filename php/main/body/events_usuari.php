@@ -1,7 +1,7 @@
 <?php 
 	include '../../conexio/conexio.php';
 	include '../../includes/visualizarPermisivo.php';
-$usu=1;
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,13 @@ $usu=1;
 		
 	function mostrarDatos(eve){
 		var button = "b"+eve;
-		document.getElementById(button).innerHTML = "Ocultar participants";
-		button.setAttribue('name', "2");
+		if (document.getElementById(eve).style.display == "block"){
+			document.getElementById(button).innerHTML = "Mostrar participants";
+		document.getElementById(eve).style.display = "none";
+		}else  {
+			document.getElementById(button).innerHTML = "Ocultar participants";
+		document.getElementById(eve).style.display = "block";
+		}
 	}
 
 	</script>
@@ -62,6 +67,11 @@ div.hijo {
     display: none;
     background-color: white;
 }
+
+td.invi {
+	display: none;
+	column-span: all;
+}
 </style>
 
 </head>
@@ -104,12 +114,14 @@ div.hijo {
 							echo "<td><button id = 'b$creat->eve_id' name='1' onclick='mostrarDatos($creat->eve_id);'>Mostrar participants</button></td>";
 						echo "</tr>";
 						echo "<tr>";
-							echo "<td colspan='7'>";
-				 				echo "<div id='$creat->eve_id'>";
+							echo "<td colspan='6' class='invi' id='$creat->eve_id'>";
+							if(mysqli_num_rows($participants)){
 				 					while ($participant = mysqli_fetch_object($participants)) {
 				 						echo "$participant->usu_nom $participant->usu_cognom<br/>"; 	
-				 					}					
-				 				echo "</div>";
+				 					}
+				 			} else {
+				 				echo "No hi ha participants";
+				 			}					
 							echo "</td>";
 						echo "</tr>";
 
@@ -218,13 +230,15 @@ div.hijo {
 								echo "<td><button id = 'b$creat->eve_id' name='1' onclick='mostrarDatos($creat->eve_id);'>Mostrar participants</button></td>";
 							echo "</tr>";
 							echo "<tr>";
-								echo "<td colspan='7'>";
-					 				echo "<div id='$creat->eve_id'>";
-					 					while ($participant = mysqli_fetch_object($participants)) {
-					 						echo "$participant->usu_nom $participant->usu_cognom<br/>"; 	
-					 					}					
-					 				echo "</div>";
-								echo "</td>";
+								echo "<td colspan='7' class='invi' id='$creat->eve_id'>";
+							if(mysqli_num_rows($participants)){
+				 					while ($participant = mysqli_fetch_object($participants)) {
+				 						echo "$participant->usu_nom $participant->usu_cognom<br/>"; 	
+				 					}
+				 			} else {
+				 				echo "No hi ha participants";
+				 			}					
+							echo "</td>";
 							echo "</tr>";
 
 						}
@@ -332,13 +346,15 @@ div.hijo {
 								echo "<td><button id = 'b$creat->eve_id' name='1' onclick='mostrarDatos($creat->eve_id);'>Mostrar participants</button></td>";
 							echo "</tr>";
 							echo "<tr>";
-								echo "<td colspan='7'>";
-					 				echo "<div id='$creat->eve_id'>";
-					 					while ($participant = mysqli_fetch_object($participants)) {
-					 						echo "$participant->usu_nom $participant->usu_cognom<br/>"; 	
-					 					}					
-					 				echo "</div>";
-								echo "</td>";
+								echo "<td colspan='7' class='invi' id='$creat->eve_id'>";
+							if(mysqli_num_rows($participants)){
+				 					while ($participant = mysqli_fetch_object($participants)) {
+				 						echo "$participant->usu_nom $participant->usu_cognom<br/>"; 	
+				 					}
+				 			} else {
+				 				echo "No hi ha participants";
+				 			}					
+							echo "</td>";
 							echo "</tr>";
 
 						}
