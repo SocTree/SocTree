@@ -46,17 +46,17 @@
     
 
         	<form action="../../proc/registrate.proc.php">
-	nom:
-	<input type="text" name="usu_nom"><br>
-	cognoms:
-	<input type="text" name="usu_cognom"><br>
-	correu:
-	<input type="email" name="usu_email"><br>
-	Contrasenya:
-	<input type="password" name="usu_password"><br>
-	Repetiu la contrasenya:
-	<input type="password" name="usu_password2"><br>
-	<input type="submit" name="enviar">
+
+	<input type="text" name="usu_nom" placeholder="Nom" class="form-control"><br>
+
+	<input type="text" name="usu_cognom" placeholder="Cognoms" class="form-control"><br>
+	
+	<input type="email" name="usu_email" placeholder="Correu" class="form-control"><br>
+
+	<input type="password" name="usu_password" placeholder="Contrasenya" class="form-control"><br>
+
+	<input type="password" name="usu_password2" placeholder="Repetiu la contrasenya" class="form-control"><br>
+	
 
         
   
