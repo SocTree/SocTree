@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 include '../../conexio/conexio.php';
 include '../../includes/visualizarPermisivo.php';
 
@@ -10,13 +10,13 @@ extract($_REQUEST);
 
 
 	$sql = "SELECT * FROM `tbl_events` WHERE eve_estat = 'actiu'";
-	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'esport' AND eve_estat = 'actiu'";
+	$sqlEsport = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'Esports' AND eve_estat = 'actiu'";
 	$sqlGastronomic = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'gastronomic' AND eve_estat = 'actiu'";
 	$sql3R = "SELECT * FROM `tbl_events` WHERE eve_tipus = '3R' AND eve_estat = 'actiu'";
 	$sqlDiy = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'diy' AND eve_estat = 'actiu'";
 	$sqlSolidari = "SELECT * FROM `tbl_events` WHERE eve_tipus = 'solidari' AND eve_estat = 'actiu'";
 
-	if (isset($val)) {
+	if (isset($val)) {	
 	//decidiendo sql a usar:
 	switch ($val) {
 		case '0':
@@ -59,7 +59,7 @@ extract($_REQUEST);
 			$descripcio=substr(strip_tags($descripcio), 0, 250);
 			$descripcio .= "...";
 		}
-		echo "<div>
+		echo "<div class='eventos_class col-md-4'>
 			<a href='verEvento.php?eve_id=$eve_id'>$titol</a><br>
 			$descripcio 
 			</div>

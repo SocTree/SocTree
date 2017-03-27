@@ -16,6 +16,7 @@ session_start();
           	<h4 class="modal-title">Afegir Event</h4>
 		</div>
 		<div class="modal-body">
+			
 			<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
 				Nom del projecte:
 				<input type="textArea" name="eve_name"><br><br>

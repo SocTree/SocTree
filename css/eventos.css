@@ -33,3 +33,22 @@
 	/*background-color: white;*/
 	z-index: 1000
 }
+
+label > input{ /* Oculto el botón de radio */
+		  visibility: hidden; /* hace que el input no sea clicable*/
+		  position: absolute; 
+}
+
+label > input + img{ /* estilo para la imagen */
+		  cursor:pointer;
+		  border:2px solid transparent;
+}
+
+.iconos_eventos {
+	padding: 10px;	
+}
+
+.eventos_class { 
+	padding: 10px;
+	float: left;
+}
