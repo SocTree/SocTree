@@ -18,7 +18,8 @@
 				<img src="../../../img/web/icon/png/event-nom.png">
 			</div>
 			<div class="col-md-6">
-				<p>aldsfasd</p>
+				<button class="menu_boton btn btn-succes" data-toggle="modal" data-target="#myModal">Crea un Event</button>
+				<div class="modal fade" id="myModal" role="dialog"><?php include_once("agregarEvento.php"); ?></div>
 			</div>
 		</div>
 	</div>
@@ -33,9 +34,10 @@
 <!-- verEventos
 <?php //include("verEventos.php");?>
 fin verEventos -->
-</div>
+
 <!-- Footer -->
 <?php include("../footer/footer.php");?>
 <!-- fin footer -->
+</div>
 </body>
 </html>
