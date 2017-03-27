@@ -56,7 +56,7 @@
    
     <div class="jumbotron" style="margin-bottom: 0px">   
 
-       <div id="map"></div>
+       <div id="map"> </div>
     
    
 <script type="text/javascript">
@@ -155,5 +155,5 @@
     </script>
  
 
-      <div class="modal fade" id="modal-lloc" role="dialog"><?php include_once("agregarPuntoInteres.php"); ?></div> 
+      <div class="modal fade" id="modal-lloc" role="dialog"> <?php include_once("agregarPuntoInteres.php"); ?> </div> 
 <?php include("../footer/footer.php") ?>

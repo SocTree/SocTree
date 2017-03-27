@@ -29,7 +29,7 @@ if ($valor == 0){
 
 			$consulta = "SELECT DISTINCT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_usuari.usu_nom, tbl_usuari.usu_cognom , tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador, tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id GROUP BY tbl_marcador.marc_nom_lloc;"  ;
 }else{
-			$consulta = "SELECT DISTINCT  tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom, tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador,  tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.ico_id = ".$valor ." GROUP BY tbl_marcador.marc_nom_lloc";
+			$consulta = "SELECT DISTINCT  tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom, tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador,  tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.ico_id = ".$valor." GROUP BY tbl_marcador.marc_nom_lloc";
 }
  
 	

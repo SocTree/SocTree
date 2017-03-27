@@ -12,14 +12,15 @@
         <button type="button" class="close" data-dismiss="modal">
         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title">Agregar punt d'interes</h4>
+        <form name="crear_punt_interes" action="../../proc/agregar_punto_interes.proc.php">
       </div>
       <div class="modal-body">
         
     
-            <input type="password" placeholder="Password" class="form-control" name="password"><bR>
+            <!--  <input type="password" placeholder="Password" class="form-control" name="password"><bR>
         <input type="text" placeholder="Email" class="form-control" name="email"><bR>
 
-
+-->
 
 <?php
 
@@ -27,13 +28,13 @@
 //$usu_id = 1;
   
         if (file_exists('../../includes/visualizarPermisivo.php')) {
-          include '../../includes/visualizarPermisivo.php';
+          include_once '../../includes/visualizarPermisivo.php';
         }else{
-          include 'php/includes/visualizarPermisivo.php';
+          include_once 'php/includes/visualizarPermisivo.php';
         }
 
 ?>
-<form name="crear_punt_interes" action="../proc/agregar_punto_interes.proc.php">
+
 
   <input type="text" name="marc_nom_lloc" placeholder="nom del punt d'interés">
   <select name="ico_id"  >
@@ -89,8 +90,8 @@ function showPosition(position) {
   <div class="col-md-2">
      <button class="btn btn-success" onclick="getLocation()">Geolocalizame</button></div> 
        <div class="col-md-2">
-  <blockquote> *rebeu la vostra localització</blockquote> </div> 
-  
+ *rebeu la vostra localització </div> 
+        </div>
       </div>
       </div>
     </div><!-- /.modal-content -->
