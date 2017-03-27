@@ -1,0 +1,10 @@
+a#logo {
+	display: block;
+	visibility: visible;
+	width: 500px;
+	height: 500px;
+	background:url(img/patrocinadors/logo-ecosia-negro.png) no-repeat;
+}
+a#logo:hover {
+	background:url(img/patrocinadors/logo-ecosia.png) no-repeat;
+}

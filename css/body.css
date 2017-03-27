@@ -21,4 +21,21 @@
 	height: 20%;
 	background-color: #caf1ca;
 	text-align: center;
+	padding: 3%;
+}
+.foto {
+	background-color: green;
+	height: 500px;
+}
+.tabla {
+	width: 100%;
+}
+td.us-foto {
+	padding: 0.5%;
+	width: 10%;
+/*	height: 150px;*/
+}
+td.us-info {
+	padding: 2%;
+	width: 250px;
 }
