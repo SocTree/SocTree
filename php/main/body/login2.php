@@ -12,11 +12,12 @@
       </div>
       <div class="modal-body">
         
-			<form name="login" action=<?php 
+			<form name="login" action=
+      <?php 
           if (file_exists('../../proc/login.proc.php')) {
-            echo "'../../proc/login.proc.php";
+            echo "'../../proc/login.proc.php'";
             }else{
-              echo  "'php/proc/login.proc.php'";}?>>
+              echo  "'php/proc/login.proc.php'";}?> >
 
 
 
