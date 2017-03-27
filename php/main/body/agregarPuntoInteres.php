@@ -24,7 +24,14 @@
 <?php
 
 //cuando esten las sesiones  funcionando se cambiara este valor por el de la sesion
-$usu_id = 1;
+//$usu_id = 1;
+  
+        if (file_exists('../../includes/visualizarPermisivo.php')) {
+          include '../../includes/visualizarPermisivo.php';
+        }else{
+          include 'php/includes/visualizarPermisivo.php';
+        }
+
 ?>
 <form name="crear_punt_interes" action="../proc/agregar_punto_interes.proc.php">
 
@@ -38,13 +45,13 @@ $usu_id = 1;
   <input type="text" id="marc_adreca"  name="marc_adreca" placeholder="adreça del punt d'interes"> <br> <input type="text" id="latitud"  name="latitud" > 
 <input type="text" id="longitud"  name="longitud"  >
 <?php 
-echo"<input type='hidden' name='usu_id' value=".$usu_id.">";
+echo"<input type='hidden' name='usu_id' value=".$usu.">";
 ?>
  <textarea name="marc_descripcio" rows="5" cols="60" placeholder="descripcio del punt d'interes"></textarea> 
 <br>
 
 
-o si estas al lloc <button onclick="getLocation()">Geolocalizame</button>
+
  
 
 <script>
@@ -70,18 +77,21 @@ function showPosition(position) {
 }
 </script>
 
-
-
-
-
       </div>
       <div class="modal-footer">
-    
-        <input type="submit" class="btn btn-success" name="enviar"><bR> 
+  <div class="col-md-2" style="float: right;">
 
 
+      <input type="submit" class="btn btn-success" name="enviar"> </div>
 </form>        
 
+
+  <div class="col-md-2">
+     <button class="btn btn-success" onclick="getLocation()">Geolocalizame</button></div> 
+       <div class="col-md-2">
+  <blockquote> *rebeu la vostra localització</blockquote> </div> 
+  
+      </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

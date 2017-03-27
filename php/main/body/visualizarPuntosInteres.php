@@ -32,18 +32,21 @@
     <!-- Este es el divisor verde superior -->
     <div class="row">
       <div class="col-md-12 ">
-        <div class="col-md-6">
+        <div class="col-md-3">
           <div class=""></div>
           <img src="../../../img/web/icon/png/geo-nom.png">
         </div>
-        <div class="col-md-6">
 
-        <label>Vols filtrar els punts d'interés?</label><select  id="filtro" name="tipo_marcador"  onchange="initMap()">
+               <div class="col-md-3"> <label>Vols filtrar els punts d'interés?</label> </div>
+
+
+       <div class="form-group col-md-3">  <select class="form-control" style="color:black" id="filtro" name="tipo_marcador"  onchange="initMap()">
     <option value='0'>Res</option>
       <?php include("select_dinamico_bd.php"); ?>
 
         </select>
-       
+           </div>
+         <div class="col-md-3"> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-lloc">Afegir punt d'Interès</button>  </div>
         </div>
       </div>
     </div>
@@ -51,14 +54,7 @@
    </div> 
 
    
-    <div class="jumbotron" style="margin-bottom: 0px">
-
-    <!-- <div class="col-md-3">
-
- 
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Afegir punt d'Interès</button> -->
- 
-    
+    <div class="jumbotron" style="margin-bottom: 0px">   
 
        <div id="map"></div>
     
@@ -133,7 +129,7 @@
                   opacity:1,
                   animation:google.maps.Animation.DROP,  //DROP, BOUNCE
                   title: datosCargados.marcadores[i].nombre,
-                  icon: "../../img/marcadors/"+datosCargados.marcadores[i].tipo+".png"
+                  icon: "../../../img/marcadors/"+datosCargados.marcadores[i].tipo+".png"
                 });
                 var contentString;
                 var infowindow = new google.maps.InfoWindow();
@@ -159,5 +155,5 @@
     </script>
  
 
-      <div class="modal fade" id="modal-1" role="dialog"><?php include_once("agregarPuntoInteres.php"); ?></div> 
+      <div class="modal fade" id="modal-lloc" role="dialog"><?php include_once("agregarPuntoInteres.php"); ?></div> 
 <?php include("../footer/footer.php") ?>
