@@ -19,22 +19,20 @@
     return array($lat, $lng);
 }
 $valor = $_GET['valor'];
-
-//echo $valor;
-	switch ($valor) {
-		case 0:
-			$consulta = "SELECT DISTINCT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom , tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador, tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id GROUP BY tbl_marcador.marc_nom_lloc"  ;
-			break;
-		default:
-			$consulta = " SELECT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom FROM `tbl_marcador`, tbl_icona_marcador,  tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.ico_id = ".$valor;
-			break;
-	}
-	
-
  
-	//echo $consulta;
+
+ //$valor = 44;
+ //echo $valor;
 
 
+if ($valor == 0){
+
+			$consulta = "SELECT DISTINCT tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_usuari.usu_nom, tbl_usuari.usu_cognom , tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador, tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id GROUP BY tbl_marcador.marc_nom_lloc;"  ;
+}else{
+			$consulta = "SELECT DISTINCT  tbl_marcador.marc_nom_lloc, tbl_marcador.marc_descripcio, tbl_marcador.marc_adreca, tbl_marcador.marc_coordenadas, tbl_marcador.usu_id, tbl_tipus_marcador.tip_marc_tipus, tbl_usuari.usu_nom, tbl_usuari.usu_cognom, tbl_icona_marcador.ico_nom FROM `tbl_marcador`, tbl_icona_marcador,  tbl_tipus_marcador, tbl_usuari WHERE tbl_marcador.ico_id = tbl_icona_marcador.ico_id AND tbl_usuari.usu_id = tbl_marcador.usu_id AND tbl_marcador.ico_id = ".$valor ." GROUP BY tbl_marcador.marc_nom_lloc";
+}
+ 
+	
 	$resultado = mysqli_query($conexion, $consulta) or die (mysqli_error());
 	$ajax = '{"marcadores": [  ';
 	echo $ajax;
@@ -58,9 +56,10 @@ $valor = $_GET['valor'];
 				$lng = substr($lng,  0, -1 );
 				//$lng = substr ($lng, 0, strlen($lng) - 1);
 
-				$tipo = strstr ($fila['ico_nom'], '.',true); 
+				$tipo = strstr ($fila['ico_nom'], '.', true); 
 				//echo $lng."<br>";
 				//echo "/////<br>";
+
 				if($cont == 0){
 					echo '{"posicion": {';
 				}else{

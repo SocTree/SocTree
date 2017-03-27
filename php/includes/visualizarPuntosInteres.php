@@ -15,13 +15,7 @@
       <?php include("select_dinamico_bd.php"); ?>
 
         </select>
-       
-  
- 
-
-    <script type="text/javascript">
-
-
+<script type="text/javascript">
         var map;
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
@@ -57,18 +51,15 @@
             //para el filtro según la opción que este seleccionada del desplegable se hará la peticion ajax correspondiente
             
             var valor = document.getElementById("filtro").value
-            
+          
           //alert(valor);
+          //si valor es = 0 significa que han seleccionado el filtro nada, es a decir, no filtra, muestra todo
 
-
-          ///hacer if
-
-          if(!valor == 0){
-             peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+          if(valor == 0){
+             peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);          
           }else{
-
-           
-            peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);
+            //si filtro es otra cosa, filtrara según el valor
+            peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
           }
            
 
@@ -82,20 +73,12 @@
             if(peticion_http.status == 200) {
               //alert(peticion_http.responseText);
               ///creamos los markers
+              //document.getElementById('info').value = peticion_http.responseText;
+
               var datosCargados=JSON.parse(peticion_http.responseText);
 
               for(var i=0;i<datosCargados.marcadores.length;i++){
                 var myLatLng = {lat: datosCargados.marcadores[i].posicion.lat, lng: datosCargados.marcadores[i].posicion.lng};
-                
-                //var icono = new GIcon(G_DEFAULT_ICON);
-            
-                //icono.image = "../../img/marcadors/"+datosCargados.marcadores[i].tipo+".png";
-
-                //var tamanoIcono = new GSize(17,17);
-                //icono.iconSize = tamanoIcono;
-                //icono.iconAnchor = new GPoint(11, 16);
-
-
                 var marker = new google.maps.Marker({
                   map: map,
                   position: myLatLng,
