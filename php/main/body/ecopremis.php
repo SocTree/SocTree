@@ -42,22 +42,17 @@
 	</script>
 </head>
 <body>
-<div style="height: 100%">
-	<div style="height: 18%; background-color: green">
+<!-- <div style="height: 100%"> -->
+	<div style="height: 18%;">
 		<!-- Header -->
 		<?php include("../header/header.php");?>
 		<!-- fin header -->
 	</div>
 	<div style="height: 71%;">
 	<div class="event_main">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-sm-1">
-						<img src="../../../img/web/icon/png/premis-nom.png">
-						
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-md-12">
+				<img src="../../../img/web/icon/png/premis-nom.png">						
 			</div>
 		</div>
 	</div>
@@ -75,6 +70,6 @@
 		<?php include("../footer/footer.php");?>
 		<!-- fin footer -->
 	</div>
-</div>
+<!-- </div> -->
 </body>
 </html>

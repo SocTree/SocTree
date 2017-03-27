@@ -157,7 +157,7 @@
 </section>
 <br><br><br>
 <section class="patrocinadores">
-	<h1>Segueix-nos <br><b style="color: #33cc33">#SocTree</b></h1>
+	<h1>Segueix-nos<br><b style="color: #33cc33">#SocTree</b></h1>
 	<br>
 	<div class="container">
 	<table class="tabla">

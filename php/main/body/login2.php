@@ -2,13 +2,6 @@
 //session_start(); 
 //poner el inlude visualizarRestrictivo.php
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
-<body>
 <!-- Modal Login #modal1 -->
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -80,9 +73,3 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->  
-  
-  
-  
-  
-</body>
-</html>

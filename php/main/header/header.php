@@ -1,8 +1,7 @@
-
 <div class="menufijo">
  	<div class="container">	
 	<div class="row">
-	<br/>
+	<br/>	
 		<div class="col-sm-5">
 			<?php 
 			if (file_exists('img/web/logo/gif.gif')) {
@@ -24,7 +23,7 @@
 				if (isset($usu))  {
 					echo "<a href=''>";
 					echo $nom;
-					echo  ', '. $cognom .'</a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
+					echo  ' '. $cognom .'</a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
 					?>
 					<a href=<?php 
 					if (file_exists('php/main/body/ecopremis.php')) {
@@ -58,13 +57,13 @@
 					  ?>><div class="menu">Premis</div></a>
 					<a href="#Events"><div class="menu">Events</div></a>
 					<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
-			</div>	
-			
+			</div>				
 		</div>
 	</div>
 </div>
 </div>
-	<div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>	
-
-
-</br>
+<div class="modal fade" id="modal-1" role="dialog"><?php 	if (file_exists("login2.php")) {
+			include_once("login2.php");
+		}else{
+			include_once("php/main/body/login2.php");
+		}?></div>
