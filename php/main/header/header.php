@@ -62,8 +62,7 @@
 	</div>
 </div>
 </div>
-<div class="modal fade" id="modal-1" role="dialog"><?php 	if (file_exists("login2.php")) {
-			include_once("login2.php");
-		}else{
-			include_once("php/main/body/login2.php");
-		}?></div>
+	<div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>	
+
+
+</br>
