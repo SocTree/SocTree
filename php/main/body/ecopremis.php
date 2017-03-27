@@ -1,3 +1,6 @@
+<?php 
+include "../../conexio/conexio.php";
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,14 +59,16 @@
 			</div>
 		</div>
 	</div>
-		
-		
+	<div class="container">
 		EcoPremis
 		Filtro: <select name="filtro" onchange="enviarDatos(this.value);">
 				<option value="1">-+</option>
 				<option value="2">+-</option>
 		</select>
 		<div id="tabla"></div>
+	</div>	
+		
+		
 	</div>
 	<div style="height: 11%; background-color: #218221;">
 		<!-- Footer -->

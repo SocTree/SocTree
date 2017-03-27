@@ -30,7 +30,16 @@
 						echo "'php/main/body/ecopremis.php'";
 						}else{
 							echo  "'ecopremis.php'";}
-					  ?>><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>&nbsp;&nbsp;
+					  ?>>
+					  <?php 
+					  		$sql = "SELECT mon_quantitat FROM tbl_moneder WHERE usu_id = $usu";
+					  		$monedas = mysqli_query($conexion, $sql);
+					  		while ($moneda = mysqli_fetch_object($monedas)) {
+					  			echo $moneda->mon_quantitat." ";
+					  		}
+					  ?><i class="fa fa-trophy" aria-hidden="true"></i>
+					  
+					  </a>&nbsp;&nbsp;
 					<a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
 					<a href= <?php 
 					if (file_exists('../../proc/destroysesion.proc.php')) {
@@ -62,7 +71,5 @@
 	</div>
 </div>
 </div>
-	<div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php"); ?></div>	
-
-
+	<div class="modal fade" id="modal-1" role="dialog"><?php include_once("php/main/body/login2.php");?></div>	
 </br>

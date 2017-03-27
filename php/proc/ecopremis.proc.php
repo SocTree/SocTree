@@ -19,9 +19,9 @@ $sql_usu = "SELECT * FROM tbl_moneder WHERE usu_id='$usu'";
 $usuaris = mysqli_query($conexion, $sql_usu);
 
 while ($usuari = mysqli_fetch_object($usuaris)) {
-//Resta de los tokens del premio - los tokens que tiene el usaurio
+//Resta de los tokens del premio - los tokens que tiene el usauri
 	if ($usuari->mon_quantitat<$tokens){
-		header('location:../main/body/ecopremis.php');
+		header('location:../main/body/ecopremis.php');die;
 	} else {
 	$tot = $usuari->mon_quantitat - $tokens ;
 	}

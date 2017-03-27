@@ -1,3 +1,4 @@
+<?php include "php/conexio/conexio.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,39 +115,39 @@
 <section>
 	<div class="container">
 		<div class="foto">
-			foto
+			
 		</div>
 		<br><br>
 		<table class="tabla">
 			<tr>
-				<td class="us-foto"><img src="img/web/nosotros/base.png"></td>
+				<td class="us-foto"><img src="img/web/nosotros/marc.png"></td>
 				<td class="us-info">
 					<h4>Marc Petit</h4>
 					<p style="font-size: 13px">Desenvolupament i Programació.</p>
 				</td>
-				<td class="us-foto"><img src="img/web/nosotros/base.png"></td>
+				<td class="us-foto"><img src="img/web/nosotros/roger.png"></td>
 				<td class="us-info">
 					<h4>Roger Fuster</h4>
 					<p style="font-size: 13px">Desenvolupament i Programació.</p>
 				</td>
-				<td class="us-foto"><img src="img/web/nosotros/base.png"></td>
+				<td class="us-foto"><img src="img/web/nosotros/miki.png"></td>
 				<td class="us-info">
 					<h4>Miquel Gómez</h4>
 					<p style="font-size: 13px">Desenvolupament, Programació i Enllaç amb els altres departaments.</p>
 				</td>
 			</tr>
 			<tr>
-				<td class="us-foto"><img src="img/web/nosotros/base.png"></td>
+				<td class="us-foto"><img src="img/web/nosotros/eric.png"></td>
 				<td class="us-info">
 					<h4>Eric Petit</h4>
 					<p style="font-size: 13px">Diseny i Desenvolupament.</p>
 				</td>
-				<td class="us-foto"><img src="img/web/nosotros/base.png"></td>
+				<td class="us-foto"><img src="img/web/nosotros/esther.png"></td>
 				<td class="us-info">
 					<h4>Esther Rovira</h4>
 					<p style="font-size: 13px">Maquetació, Diseny i Responsable de Comunicacions.</p>
 				</td>
-				<td class="us-foto"><img src="img/web/nosotros/base.png"></td>
+				<td class="us-foto"><img src="img/web/nosotros/edhu.png"></td>
 				<td class="us-info">
 					<h4>Edhu Chacaliaza</h4>
 					<p style="font-size: 13px">Maquetació i Diseny.</p>
@@ -282,5 +283,8 @@ a#logo-aquabona:hover {
 	width: 150px;
 	height: 150px;
 	background:url(img/patrocinadors/logo-aquabona.png) no-repeat;
+}
+.foto {
+	background: url(img/web/nosotros/IMG_0390.JPG) no-repeat;
 }
 </style>

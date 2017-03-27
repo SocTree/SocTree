@@ -28,22 +28,12 @@ extract($_REQUEST);
 	if (mysqli_num_rows($premios)>0){
 		//Si existen premios hacemos la tabla
 		while ($premio = mysqli_fetch_object($premios)) {
-			echo "<table border>";
-				echo "<tr>";
-					echo "<th>Producte</th>";
-					echo "<th>Preu</th>";
-					echo "<th>Descripció</th>";
-					echo "<th>Foto</th>";
-					echo "<th>Patrocinador</th>";
-					echo "<th></th>";
-				echo "</tr>";
-				echo "<tr>";
-					echo "<td>$premio->eco_nom_premi</td>";
-					echo "<td>$premio->eco_preu_tokens</td>";
-					echo "<td>$premio->eco_descripcio</td>";
-					echo "<td><img src='../../../img/premi/$premio->eco_foto' /></td>";
-					echo "<td><img src='../../../img/patrocinadors/$premio->patr_logo'/></td>";
-					echo "<td>";
+			echo "<div class='col-sm-4' style=' padding:1%; border: 1px #218221 dashed;  min-height: 350px; text-align:center'>";
+			echo "<div class='col-sm-12'><p style='font-size:25px'>$premio->eco_nom_premi</p></div>";
+			echo "<div class='col-sm-12'><img src='../../../img/patrocinadors/$premio->patr_logo' width='150'/></div>";
+			echo "<div class='col-sm-12'>$premio->eco_preu_tokens <i class='fa fa-trophy'></i><br><br></div>";
+			echo "<div class='col-sm-12' style='word-wrap:break-word; min-height: 100px'>$premio->eco_descripcio</div>";
+			echo "<div class='col-sm-12'>";
 				if (isset($usu)){
 						echo "<form action='../../proc/ecopremis.proc.php'>";
 						//Enviamos al proc un campo oculto del id del premio
@@ -51,17 +41,17 @@ extract($_REQUEST);
 						$boton = "<button ";
 					//Si el usuario no tiene suficientes tokens el boton para adquirir se deshabilita
 						if ($monedes < $premio->eco_preu_tokens){
-							 	$boton .= "disabled";
+							 	$boton .= "disabled style='bottom: 1px;background-color: #F78181; border:2px red solid; border-radius: 5px'";
+							 } else {
+							 	$boton .= "style='bottom: 1px; background-color: #33cc33; border:2px green solid; border-radius: 5px'";
 							 }
 						echo $boton.">Adquirir</button>";
-						echo "</form>";
+						//echo "</form>";
 					} else {
-						echo "<button disabled>Adquirir</button>";
+						echo "<button style='bottom: 1px; background-color: #F78181; border:2px red solid; border-radius: 5px'>Adquirir</button>";
 					}
-					echo "</td>";
-				echo "</tr>";
-
-			echo "</table>";
+				echo "</div>";
+			echo "</div>";
 		}
 	} else {
 		echo "Ara mateix no hi ha premis, torna més tard";
