@@ -9,7 +9,7 @@ extract($_REQUEST);
 //la direccion
 //y en oculto, el id del usuario que crea este punto de interes
 
-
+echo $usu_id;
 
 //si $marc_adreça = "" significa que han usado la geolocalización por lo tanto en la consulta tendremos que indicar las coordenadas en lugar de la direccion
 
@@ -35,8 +35,9 @@ if ($marc_adreca == ""){
 
 
 
+
 	$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	header('location: ../includes/visualizarPuntosInteres.php ');
+	//header('location: ../main/body/visualizarPuntosInteres.php ');
 ?>

@@ -8,8 +8,10 @@
 <html>
 <head>
 	<title></title>
+	
 </head>
 <body>
+<input type="hidden" id="eve_id" value="<?php echo $eve_id; ?>">
 <div>
 <?php 
 	$sql = "SELECT * FROM `tbl_events` WHERE eve_id = $eve_id";
@@ -29,6 +31,7 @@
 			<tr><th>$descripcio</th></tr>
 			";
 		?>
+			<div id='likes'></div>
 </tr>
 </table>
 
@@ -64,6 +67,62 @@
 
 	
 	
+<script type="text/javascript">
+		function objetoAjax(){
+					var xmlhttp=false;
+					try {
+						xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch (e) {
+				 
+						try {
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						} catch (E) {
+							xmlhttp = false;
+						}
+					}
+				 
+					if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+					  xmlhttp = new XMLHttpRequest();
+					}
+					return xmlhttp;
+				}
 
+				function enviarDatos(){
+				// var eve_id = document.getElementById('eve_id').value;
+				  // alert(document.getElementById("eve_id").value);
+				  var ajax=objetoAjax(eve_id);
+				 
+				  ajax.open("POST", 'eventos_likes.php'+'?'+'eve_id='+eve_id.value, true);
+				  ajax.onreadystatechange=function() {
+				  	if (ajax.readyState==4) {
+						document.getElementById('likes').innerHTML = ajax.responseText;
+						// alert(ajax.responseText);
+					}
+				  }
+  				ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  				ajax.send(eve_id);
+				}
+
+				function votar(num){
+				// var eve_id = document.getElementById('eve_id').value;
+				  // alert(document.getElementById("eve_id").value);
+				  var ajax=objetoAjax(eve_id);
+				 
+				  ajax.open("POST", 'votar.php'+'?'+'eve_id='+eve_id.value+'&num='+num, true);
+				  enviarDatos();
+				  ajax.onreadystatechange=function() {
+				  	if (ajax.readyState==4) {
+						document.getElementById('likes').innerHTML = ajax.responseText;
+						// ajax.send('num='+num);
+						// alert(ajax.responseText);
+						enviarDatos();
+					}
+				  }
+  				ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  				ajax.send(eve_id);
+				}
+
+		 window.onload = enviarDatos();	
+	</script>
 </body>
 </html>

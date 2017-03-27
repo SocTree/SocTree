@@ -4,8 +4,9 @@
 
 
       <style type="text/css">
+
      
-      #map { height: 359px;  }
+      #map { height: 340px;  }
     </style>
   <?php 
   if (file_exists('../head.php')) {
@@ -15,7 +16,8 @@
         }
 
 
-  //include("../main/head.php");?>
+  ?>
+  <link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
   </head>
   <body>
   <?php
@@ -24,39 +26,47 @@
           include '../header/header.php';
         }else{
           include 'php/main/header/header.php';
-        }
-  
-   //include("../main/header/header.php");?>
+        }?>
+<div class="cointaner">
+     <div class="contenido_index event_main" >
+    <!-- Este es el divisor verde superior -->
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="col-md-3">
+          <div class=""></div>
+          <img src="../../../img/web/icon/png/geo-nom.png">
+        </div>
 
-   <div style ="margin-top: 137px">
-    <div class="jumbotron">
+               <div class="col-md-3"> <label>Vols filtrar els punts d'interés?</label> </div>
 
-    <div class="col-md-3">
 
- 
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Afegir punt d'Interès</button>
-     <label>Vols filtrar els punts d'interés?</label><select  id="filtro" name="tipo_marcador"  onchange="initMap()">
-    <option class="dropdown-menu" value='0'> Res</option>
+       <div class="form-group col-md-3">  <select class="form-control" style="color:black" id="filtro" name="tipo_marcador"  onchange="initMap()">
+    <option value='0'>Res</option>
       <?php include("select_dinamico_bd.php"); ?>
 
         </select>
+           </div>
+         <div class="col-md-3"> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-lloc">Afegir punt d'Interès</button>  </div>
+        </div>
+      </div>
     </div>
+    </div>
+   </div> 
 
-    <div id="map"></div>
+   
+    <div class="jumbotron" style="margin-bottom: 0px">   
+
+       <div id="map"> </div>
     
    
-    </div>
-  
- 
-
-    <script type="text/javascript">
+<script type="text/javascript">
         var map;
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 41.3495464, lng: 2.1076887},
             //mapTypeId: google.maps.MapTypeId.SATELLITE,
             mapTypeId:google.maps.MapTypeId.SATELLITE,
-            zoom: 10
+            zoom: 14
           });
           cargaContenido();
         }
@@ -85,17 +95,17 @@
             //para el filtro según la opción que este seleccionada del desplegable se hará la peticion ajax correspondiente
             
             var valor = document.getElementById("filtro").value
-            
+          
           //alert(valor);
-           switch(valor) {
-                                case valor:
-                                    peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
-                                    break;                                
-                              default:
-                                    peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);
-                                    break;
-                                
-            }
+          //si valor es = 0 significa que han seleccionado el filtro nada, es a decir, no filtra, muestra todo
+
+          if(valor == 0){
+             peticion_http.open("GET", "datos.php"+"?"+0+"=valor", true);          
+          }else{
+            //si filtro es otra cosa, filtrara según el valor
+            peticion_http.open("GET", "datos.php"+"?valor="+valor, true);
+          }
+           
 
             //peticion_http.open("GET", "datos.php", true);
             peticion_http.send(null);
@@ -107,6 +117,8 @@
             if(peticion_http.status == 200) {
               //alert(peticion_http.responseText);
               ///creamos los markers
+              //document.getElementById('info').value = peticion_http.responseText;
+
               var datosCargados=JSON.parse(peticion_http.responseText);
 
               for(var i=0;i<datosCargados.marcadores.length;i++){
@@ -116,7 +128,8 @@
                   position: myLatLng,
                   opacity:1,
                   animation:google.maps.Animation.DROP,  //DROP, BOUNCE
-                  title: datosCargados.marcadores[i].nombre
+                  title: datosCargados.marcadores[i].nombre,
+                  icon: "../../../img/marcadors/"+datosCargados.marcadores[i].tipo+".png"
                 });
                 var contentString;
                 var infowindow = new google.maps.InfoWindow();
@@ -140,6 +153,7 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhXaF13fF5Exi4nzqVZ_PD1q9bO_O8Y_M&callback=initMap">
     </script>
+ 
 
-      <div class="modal fade" id="modal-1" role="dialog"><?php include_once("agregarPuntoInteres.php"); ?></div> 
+      <div class="modal fade" id="modal-lloc" role="dialog"> <?php include_once("agregarPuntoInteres.php"); ?> </div> 
 <?php include("../footer/footer.php") ?>

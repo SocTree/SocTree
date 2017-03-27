@@ -46,13 +46,13 @@ include "../../conexio/conexio.php";
 </head>
 <body>
 <!-- <div style="height: 100%"> -->
-	<div style="height: 18%;">
+	<!-- <div style="height: 15%;"> -->
 		<!-- Header -->
 		<?php include("../header/header.php");?>
 		<!-- fin header -->
-	</div>
-	<div style="height: 71%;">
-	<div class="event_main">
+	<!-- </div> -->
+	<!-- <div style="height: 71%;"> -->
+	<div class="contenido_index event_main" style="overflow-x: hidden">
 		<div class="row">
 			<div class="col-md-12">
 				<img src="../../../img/web/icon/png/premis-nom.png">						
@@ -69,12 +69,12 @@ include "../../conexio/conexio.php";
 	</div>	
 		
 		
-	</div>
-	<div style="height: 11%; background-color: #218221;">
+	<!-- </div> -->
+	<!-- <div style="height: 11%; background-color: #218221;"> -->
 		<!-- Footer -->
 		<?php include("../footer/footer.php");?>
 		<!-- fin footer -->
-	</div>
+	<!-- </div> -->
 <!-- </div> -->
 </body>
 </html>

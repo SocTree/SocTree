@@ -114,8 +114,7 @@
 <br><br><br>
 <section>
 	<div class="container">
-		<div class="foto">
-			
+		<div class="foto" style="width: 100%;">			
 		</div>
 		<br><br>
 		<table class="tabla">
