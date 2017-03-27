@@ -103,9 +103,11 @@
 						
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12" id="total">
-			
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="total">
+				
+			</div>
 		</div>
 	</div>
 <!-- verEventos

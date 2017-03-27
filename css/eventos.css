@@ -49,6 +49,6 @@ label > input + img{ /* estilo para la imagen */
 }
 
 .eventos_class { 
-	padding: 10px;
+	padding: 20px;
 	float: left;
 }
