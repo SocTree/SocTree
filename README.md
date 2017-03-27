@@ -1,6 +1,7 @@
 # SocTree
-Cambios en la base de datos:
+Cambios en la base de datos:<br>
    -tbl_usuari -> usu_foto -> de not null a null (R)<br> 
+   -tbl_events -> eve_tipus -> +solidari (R) <br>
 Notas de programadores:<br>
   (hecho)-agregar Eventos falta que recoja el id del usuario actual. (R)<br>
   -en participar.proc.php redirigir a "mis eventos" cuando esté hecha. (R)<br>
