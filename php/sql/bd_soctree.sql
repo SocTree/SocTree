@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2017 a las 17:05:58
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: Mar 27, 2017 at 03:33 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bd_soctree`
+-- Database: `bd_soctree`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_categoria_tip`
+-- Table structure for table `tbl_categoria_tip`
 --
 
 CREATE TABLE `tbl_categoria_tip` (
@@ -34,7 +34,7 @@ CREATE TABLE `tbl_categoria_tip` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_comentaris`
+-- Table structure for table `tbl_comentaris`
 --
 
 CREATE TABLE `tbl_comentaris` (
@@ -49,7 +49,7 @@ CREATE TABLE `tbl_comentaris` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_ecochange`
+-- Table structure for table `tbl_ecochange`
 --
 
 CREATE TABLE `tbl_ecochange` (
@@ -64,7 +64,7 @@ CREATE TABLE `tbl_ecochange` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_events`
+-- Table structure for table `tbl_events`
 --
 
 CREATE TABLE `tbl_events` (
@@ -80,10 +80,17 @@ CREATE TABLE `tbl_events` (
   `eve_max_part` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_events`
+--
+
+INSERT INTO `tbl_events` (`eve_id`, `eve_nom`, `eve_descripcio`, `eve_tipus`, `eve_data`, `eve_localitzacio`, `usu_id`, `eve_estat`, `eve_min_part`, `eve_max_part`) VALUES
+(1, '', '', '', '2017-03-28', '', NULL, '', 0, 0);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_foto`
+-- Table structure for table `tbl_foto`
 --
 
 CREATE TABLE `tbl_foto` (
@@ -94,7 +101,7 @@ CREATE TABLE `tbl_foto` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_icona_marcador`
+-- Table structure for table `tbl_icona_marcador`
 --
 
 CREATE TABLE `tbl_icona_marcador` (
@@ -103,10 +110,39 @@ CREATE TABLE `tbl_icona_marcador` (
   `tip_marc_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_icona_marcador`
+--
+
+INSERT INTO `tbl_icona_marcador` (`ico_id`, `ico_nom`, `tip_marc_id`) VALUES
+(2, 'basquet.png', 1),
+(3, 'bitlles.png', 1),
+(4, 'esports.png', 1),
+(5, 'tenis.png', 1),
+(6, 'futbol.png', 1),
+(7, 'pingpong.png', 1),
+(8, 'running.png', 1),
+(9, 'rocodrom.png', 1),
+(10, 'voley.png', 1),
+(20, 'senderisme.png', 1),
+(31, 'fuentes.png', 2),
+(32, 'comerçJust.png', 3),
+(33, 'ecobotiga.png', 3),
+(34, 'mascotes.png', 4),
+(35, 'parcGossos.png', 4),
+(37, 'puntVerd.png', 5),
+(38, 'plantes.png', 5),
+(39, 'exercici.png', 6),
+(40, 'peses.png', 6),
+(41, 'parcnens.png', 6),
+(42, 'parc.png', 6),
+(43, 'skate.png', 6),
+(44, 'bicicleta.png', 1);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_inter_blog`
+-- Table structure for table `tbl_inter_blog`
 --
 
 CREATE TABLE `tbl_inter_blog` (
@@ -119,7 +155,7 @@ CREATE TABLE `tbl_inter_blog` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_inter_event`
+-- Table structure for table `tbl_inter_event`
 --
 
 CREATE TABLE `tbl_inter_event` (
@@ -132,7 +168,7 @@ CREATE TABLE `tbl_inter_event` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_inter_tip`
+-- Table structure for table `tbl_inter_tip`
 --
 
 CREATE TABLE `tbl_inter_tip` (
@@ -145,23 +181,35 @@ CREATE TABLE `tbl_inter_tip` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_marcador`
+-- Table structure for table `tbl_marcador`
 --
 
 CREATE TABLE `tbl_marcador` (
   `marc_id` int(11) NOT NULL,
-  `tip_marc_id` int(11) NOT NULL,
+  `tip_marc_id` int(11) DEFAULT NULL,
   `marc_nom_lloc` varchar(40) NOT NULL,
   `marc_descripcio` text NOT NULL,
-  `marc_foto` varchar(20) NOT NULL,
-  `marc_adreca` varchar(100) NOT NULL,
+  `marc_foto` varchar(20) DEFAULT NULL,
+  `marc_adreca` varchar(100) DEFAULT NULL,
+  `marc_coordenadas` varchar(50) DEFAULT NULL,
+  `ico_id` int(11) NOT NULL,
   `usu_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_marcador`
+--
+
+INSERT INTO `tbl_marcador` (`marc_id`, `tip_marc_id`, `marc_nom_lloc`, `marc_descripcio`, `marc_foto`, `marc_adreca`, `marc_coordenadas`, `ico_id`, `usu_id`) VALUES
+(21, NULL, 'ruta de senderisme a collserola', 'per aquesta zona es pot fer un bon senderisme', NULL, 'Ctra. de l''Església, 92, 08017 Barcelona, Spain ', NULL, 20, 1),
+(22, NULL, 'parc de la ermita de bellvitge', 'es un bon parc per pasejar i anar amb bici', NULL, 'Av. Mare de Déu de Bellvitge, 1, 08907 L''Hospitalet de Llobregat, Barcelona ', NULL, 42, 1),
+(23, NULL, 'zona riu llobregat bici', 'es una bona zona del riu llobregat per anar amb bici ', NULL, 'Parc agrari del Baix Llobregat, 08830 Sant Boi de Llobregat, Barcelona ', NULL, 44, 1),
+(24, NULL, 'j23', 'cole ', NULL, NULL, '{"lat": 41.3517501, "lng": 2.1155787}', 8, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_moneder`
+-- Table structure for table `tbl_moneder`
 --
 
 CREATE TABLE `tbl_moneder` (
@@ -173,7 +221,7 @@ CREATE TABLE `tbl_moneder` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_participants`
+-- Table structure for table `tbl_participants`
 --
 
 CREATE TABLE `tbl_participants` (
@@ -185,7 +233,7 @@ CREATE TABLE `tbl_participants` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_patrocinador`
+-- Table structure for table `tbl_patrocinador`
 --
 
 CREATE TABLE `tbl_patrocinador` (
@@ -198,7 +246,7 @@ CREATE TABLE `tbl_patrocinador` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_tip`
+-- Table structure for table `tbl_tip`
 --
 
 CREATE TABLE `tbl_tip` (
@@ -216,7 +264,7 @@ CREATE TABLE `tbl_tip` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_tipus_marcador`
+-- Table structure for table `tbl_tipus_marcador`
 --
 
 CREATE TABLE `tbl_tipus_marcador` (
@@ -225,7 +273,7 @@ CREATE TABLE `tbl_tipus_marcador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tbl_tipus_marcador`
+-- Dumping data for table `tbl_tipus_marcador`
 --
 
 INSERT INTO `tbl_tipus_marcador` (`tip_marc_id`, `tip_marc_tipus`) VALUES
@@ -233,12 +281,13 @@ INSERT INTO `tbl_tipus_marcador` (`tip_marc_id`, `tip_marc_tipus`) VALUES
 (2, 'Fonts'),
 (3, 'Ecochange'),
 (4, 'mascotes'),
-(5, 'Punts verds');
+(5, 'Punts verds'),
+(6, 'Parcs');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_usuari`
+-- Table structure for table `tbl_usuari`
 --
 
 CREATE TABLE `tbl_usuari` (
@@ -252,10 +301,17 @@ CREATE TABLE `tbl_usuari` (
   `usu_data_registre` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_usuari`
+--
+
+INSERT INTO `tbl_usuari` (`usu_id`, `usu_nom`, `usu_cognom`, `usu_email`, `usu_password`, `usu_foto`, `usu_tipus`, `usu_data_registre`) VALUES
+(1, 'marc', 'mpetit', 'mpetit@gmail.com', '12345', '', 'normal', '2017-03-15');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_valoracio`
+-- Table structure for table `tbl_valoracio`
 --
 
 CREATE TABLE `tbl_valoracio` (
@@ -269,7 +325,7 @@ CREATE TABLE `tbl_valoracio` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_video`
+-- Table structure for table `tbl_video`
 --
 
 CREATE TABLE `tbl_video` (
@@ -278,17 +334,17 @@ CREATE TABLE `tbl_video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `tbl_categoria_tip`
+-- Indexes for table `tbl_categoria_tip`
 --
 ALTER TABLE `tbl_categoria_tip`
   ADD PRIMARY KEY (`cat_tip_id`);
 
 --
--- Indices de la tabla `tbl_comentaris`
+-- Indexes for table `tbl_comentaris`
 --
 ALTER TABLE `tbl_comentaris`
   ADD PRIMARY KEY (`com_id`),
@@ -297,34 +353,34 @@ ALTER TABLE `tbl_comentaris`
   ADD KEY `FK_resposta_comentaris` (`com_id_resposta`);
 
 --
--- Indices de la tabla `tbl_ecochange`
+-- Indexes for table `tbl_ecochange`
 --
 ALTER TABLE `tbl_ecochange`
   ADD PRIMARY KEY (`eco_id`),
   ADD KEY `FK_ecochange_patr` (`patr_id`);
 
 --
--- Indices de la tabla `tbl_events`
+-- Indexes for table `tbl_events`
 --
 ALTER TABLE `tbl_events`
   ADD PRIMARY KEY (`eve_id`),
   ADD KEY `FK_event_usuari` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_foto`
+-- Indexes for table `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
   ADD PRIMARY KEY (`foto_id`);
 
 --
--- Indices de la tabla `tbl_icona_marcador`
+-- Indexes for table `tbl_icona_marcador`
 --
 ALTER TABLE `tbl_icona_marcador`
   ADD PRIMARY KEY (`ico_id`),
   ADD KEY `FK_icono_marcador` (`tip_marc_id`);
 
 --
--- Indices de la tabla `tbl_inter_blog`
+-- Indexes for table `tbl_inter_blog`
 --
 ALTER TABLE `tbl_inter_blog`
   ADD PRIMARY KEY (`inter_blog_id`),
@@ -332,7 +388,7 @@ ALTER TABLE `tbl_inter_blog`
   ADD KEY `FK_interblog_usu` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_inter_event`
+-- Indexes for table `tbl_inter_event`
 --
 ALTER TABLE `tbl_inter_event`
   ADD PRIMARY KEY (`inter_eve_id`),
@@ -340,7 +396,7 @@ ALTER TABLE `tbl_inter_event`
   ADD KEY `FK_intereve_usu` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_inter_tip`
+-- Indexes for table `tbl_inter_tip`
 --
 ALTER TABLE `tbl_inter_tip`
   ADD PRIMARY KEY (`inter_tip_id`),
@@ -348,7 +404,7 @@ ALTER TABLE `tbl_inter_tip`
   ADD KEY `FK_intertip_usu` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_marcador`
+-- Indexes for table `tbl_marcador`
 --
 ALTER TABLE `tbl_marcador`
   ADD PRIMARY KEY (`marc_id`),
@@ -356,14 +412,14 @@ ALTER TABLE `tbl_marcador`
   ADD KEY `FK_tipus_marcador` (`tip_marc_id`);
 
 --
--- Indices de la tabla `tbl_moneder`
+-- Indexes for table `tbl_moneder`
 --
 ALTER TABLE `tbl_moneder`
   ADD PRIMARY KEY (`mon_id`),
   ADD KEY `FK_moneder_usuari` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_participants`
+-- Indexes for table `tbl_participants`
 --
 ALTER TABLE `tbl_participants`
   ADD PRIMARY KEY (`part_id`),
@@ -371,13 +427,13 @@ ALTER TABLE `tbl_participants`
   ADD KEY `FK_usuari_part` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_patrocinador`
+-- Indexes for table `tbl_patrocinador`
 --
 ALTER TABLE `tbl_patrocinador`
   ADD PRIMARY KEY (`patr_id`);
 
 --
--- Indices de la tabla `tbl_tip`
+-- Indexes for table `tbl_tip`
 --
 ALTER TABLE `tbl_tip`
   ADD PRIMARY KEY (`tip_id`),
@@ -387,130 +443,130 @@ ALTER TABLE `tbl_tip`
   ADD KEY `FK_usuario_tip` (`usu_id`);
 
 --
--- Indices de la tabla `tbl_tipus_marcador`
+-- Indexes for table `tbl_tipus_marcador`
 --
 ALTER TABLE `tbl_tipus_marcador`
   ADD PRIMARY KEY (`tip_marc_id`);
 
 --
--- Indices de la tabla `tbl_usuari`
+-- Indexes for table `tbl_usuari`
 --
 ALTER TABLE `tbl_usuari`
   ADD PRIMARY KEY (`usu_id`);
 
 --
--- Indices de la tabla `tbl_valoracio`
+-- Indexes for table `tbl_valoracio`
 --
 ALTER TABLE `tbl_valoracio`
   ADD PRIMARY KEY (`val_id`),
   ADD KEY `FK_part_val` (`part_id`);
 
 --
--- Indices de la tabla `tbl_video`
+-- Indexes for table `tbl_video`
 --
 ALTER TABLE `tbl_video`
   ADD PRIMARY KEY (`video_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `tbl_categoria_tip`
+-- AUTO_INCREMENT for table `tbl_categoria_tip`
 --
 ALTER TABLE `tbl_categoria_tip`
   MODIFY `cat_tip_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_comentaris`
+-- AUTO_INCREMENT for table `tbl_comentaris`
 --
 ALTER TABLE `tbl_comentaris`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_ecochange`
+-- AUTO_INCREMENT for table `tbl_ecochange`
 --
 ALTER TABLE `tbl_ecochange`
   MODIFY `eco_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_events`
+-- AUTO_INCREMENT for table `tbl_events`
 --
 ALTER TABLE `tbl_events`
-  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `tbl_foto`
+-- AUTO_INCREMENT for table `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
   MODIFY `foto_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_icona_marcador`
+-- AUTO_INCREMENT for table `tbl_icona_marcador`
 --
 ALTER TABLE `tbl_icona_marcador`
-  MODIFY `ico_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ico_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
--- AUTO_INCREMENT de la tabla `tbl_inter_blog`
+-- AUTO_INCREMENT for table `tbl_inter_blog`
 --
 ALTER TABLE `tbl_inter_blog`
   MODIFY `inter_blog_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_inter_event`
+-- AUTO_INCREMENT for table `tbl_inter_event`
 --
 ALTER TABLE `tbl_inter_event`
   MODIFY `inter_eve_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_inter_tip`
+-- AUTO_INCREMENT for table `tbl_inter_tip`
 --
 ALTER TABLE `tbl_inter_tip`
   MODIFY `inter_tip_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_marcador`
+-- AUTO_INCREMENT for table `tbl_marcador`
 --
 ALTER TABLE `tbl_marcador`
-  MODIFY `marc_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `marc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
--- AUTO_INCREMENT de la tabla `tbl_moneder`
+-- AUTO_INCREMENT for table `tbl_moneder`
 --
 ALTER TABLE `tbl_moneder`
   MODIFY `mon_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_participants`
+-- AUTO_INCREMENT for table `tbl_participants`
 --
 ALTER TABLE `tbl_participants`
   MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_patrocinador`
+-- AUTO_INCREMENT for table `tbl_patrocinador`
 --
 ALTER TABLE `tbl_patrocinador`
   MODIFY `patr_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_tip`
+-- AUTO_INCREMENT for table `tbl_tip`
 --
 ALTER TABLE `tbl_tip`
   MODIFY `tip_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_tipus_marcador`
+-- AUTO_INCREMENT for table `tbl_tipus_marcador`
 --
 ALTER TABLE `tbl_tipus_marcador`
-  MODIFY `tip_marc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `tip_marc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT de la tabla `tbl_usuari`
+-- AUTO_INCREMENT for table `tbl_usuari`
 --
 ALTER TABLE `tbl_usuari`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `tbl_valoracio`
+-- AUTO_INCREMENT for table `tbl_valoracio`
 --
 ALTER TABLE `tbl_valoracio`
   MODIFY `val_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tbl_video`
+-- AUTO_INCREMENT for table `tbl_video`
 --
 ALTER TABLE `tbl_video`
   MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `tbl_comentaris`
+-- Constraints for table `tbl_comentaris`
 --
 ALTER TABLE `tbl_comentaris`
   ADD CONSTRAINT `FK_resposta_comentaris` FOREIGN KEY (`com_id_resposta`) REFERENCES `tbl_comentaris` (`com_id`),
@@ -518,66 +574,66 @@ ALTER TABLE `tbl_comentaris`
   ADD CONSTRAINT `FK_usu_comentaris` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_ecochange`
+-- Constraints for table `tbl_ecochange`
 --
 ALTER TABLE `tbl_ecochange`
   ADD CONSTRAINT `FK_ecochange_patr` FOREIGN KEY (`patr_id`) REFERENCES `tbl_patrocinador` (`patr_id`);
 
 --
--- Filtros para la tabla `tbl_events`
+-- Constraints for table `tbl_events`
 --
 ALTER TABLE `tbl_events`
   ADD CONSTRAINT `FK_event_usuari` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_icona_marcador`
+-- Constraints for table `tbl_icona_marcador`
 --
 ALTER TABLE `tbl_icona_marcador`
   ADD CONSTRAINT `FK_icono_marcador` FOREIGN KEY (`tip_marc_id`) REFERENCES `tbl_tipus_marcador` (`tip_marc_id`);
 
 --
--- Filtros para la tabla `tbl_inter_blog`
+-- Constraints for table `tbl_inter_blog`
 --
 ALTER TABLE `tbl_inter_blog`
   ADD CONSTRAINT `FK_interblog_com` FOREIGN KEY (`com_id`) REFERENCES `tbl_comentaris` (`com_id`),
   ADD CONSTRAINT `FK_interblog_usu` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_inter_event`
+-- Constraints for table `tbl_inter_event`
 --
 ALTER TABLE `tbl_inter_event`
   ADD CONSTRAINT `FK_intereve_eve` FOREIGN KEY (`eve_id`) REFERENCES `tbl_events` (`eve_id`),
   ADD CONSTRAINT `FK_intereve_usu` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_inter_tip`
+-- Constraints for table `tbl_inter_tip`
 --
 ALTER TABLE `tbl_inter_tip`
   ADD CONSTRAINT `FK_intertip_tip` FOREIGN KEY (`tip_id`) REFERENCES `tbl_tip` (`tip_id`),
   ADD CONSTRAINT `FK_intertip_usu` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_marcador`
+-- Constraints for table `tbl_marcador`
 --
 ALTER TABLE `tbl_marcador`
   ADD CONSTRAINT `FK_marcador_usuari` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`),
   ADD CONSTRAINT `FK_tipus_marcador` FOREIGN KEY (`tip_marc_id`) REFERENCES `tbl_tipus_marcador` (`tip_marc_id`);
 
 --
--- Filtros para la tabla `tbl_moneder`
+-- Constraints for table `tbl_moneder`
 --
 ALTER TABLE `tbl_moneder`
   ADD CONSTRAINT `FK_moneder_usuari` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_participants`
+-- Constraints for table `tbl_participants`
 --
 ALTER TABLE `tbl_participants`
   ADD CONSTRAINT `FK_event_part` FOREIGN KEY (`eve_id`) REFERENCES `tbl_events` (`eve_id`),
   ADD CONSTRAINT `FK_usuari_part` FOREIGN KEY (`usu_id`) REFERENCES `tbl_usuari` (`usu_id`);
 
 --
--- Filtros para la tabla `tbl_tip`
+-- Constraints for table `tbl_tip`
 --
 ALTER TABLE `tbl_tip`
   ADD CONSTRAINT `FK_cat_tip` FOREIGN KEY (`cat_tip_id`) REFERENCES `tbl_categoria_tip` (`cat_tip_id`),
@@ -586,7 +642,7 @@ ALTER TABLE `tbl_tip`
   ADD CONSTRAINT `FK_video_tip` FOREIGN KEY (`video_id`) REFERENCES `tbl_video` (`video_id`);
 
 --
--- Filtros para la tabla `tbl_valoracio`
+-- Constraints for table `tbl_valoracio`
 --
 ALTER TABLE `tbl_valoracio`
   ADD CONSTRAINT `FK_part_val` FOREIGN KEY (`part_id`) REFERENCES `tbl_participants` (`part_id`);
