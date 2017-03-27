@@ -50,14 +50,20 @@ label > input + img{ /* estilo para la imagen */
 
 .iconos_eventos:hover, .iconos_eventos:active{
 	text-decoration: underline;
-	color:white;
+	/*color:white;*/
 }
 
-
 .eventos_class { 
-	height: 300px;
+
+	height: 180px;
 	text-align: justify;	
 	background-color: #caf1ca;
-	padding: 20px;
+	padding: 1%;
 	float: left;
+	border: 2px solid white;
+	/*margin: 0.25%;*/
+}
+
+.eventos {
+	margin: 2px;
 }

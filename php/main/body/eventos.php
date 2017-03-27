@@ -90,7 +90,7 @@
 			</label class="col-md-2">
 			<label>
 				<img src="../../../img/events/recycle.png">
-				3R<input type="radio" name="tipo" value="3" onchange="enviarDatos(this.value)">
+				4R<input type="radio" name="tipo" value="3" onchange="enviarDatos(this.value)">
 			</label>
 			<label class="col-md-2">
 				<img src="../../../img/events/drawing.png">
@@ -104,7 +104,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
+		<div class="row eventos">
 			<div class="col-md-12" id="total">
 				
 			</div>
