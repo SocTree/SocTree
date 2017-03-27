@@ -2,6 +2,9 @@
 include '../../conexio/conexio.php';
 include '../../includes/visualizarPermisivo.php';
 
+
+
+
 extract($_REQUEST);
 
 
@@ -51,6 +54,11 @@ extract($_REQUEST);
 		$titol = $evento['eve_nom'];
 		$descripcio = $evento['eve_descripcio'];
 		$eve_id = $evento['eve_id'];
+		$longDescr = strlen($descripcio);
+		if ($longDescr > 250) {
+			$descripcio=substr(strip_tags($descripcio), 0, 250);
+			$descripcio .= "...";
+		}
 		echo "<div>
 			<a href='verEvento.php?eve_id=$eve_id'>$titol</a><br>
 			$descripcio 

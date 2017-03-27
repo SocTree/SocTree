@@ -20,13 +20,14 @@ session_start();
 				Nom del projecte:
 				<input type="textArea" name="eve_name"><br><br>
 				Descripció:<br>
-				<textarea name="eve_descripcio" maxlength="500"></textarea><br><br>
+				<textarea name="eve_descripcio" maxlength="5000"></textarea><br><br>
 				Tipus:
 				<select name="eve_tipus">
 				  <option value="esport">Esport</option>
 				  <option value="gastronòmic">Gastronòmic</option>
 				  <option value="3R">3R</option>
 				  <option value="diy">DIY</option>
+				  <option value="solidari" selected>Solidari</option>
 				</select><br><br>
 				Dia de l'event:
 				<input type="date" name="eve_data"><br><br>
