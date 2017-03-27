@@ -48,7 +48,7 @@
 
         	<form action=<?php 
           if (file_exists('../../proc/registrate.proc.php')) {
-            echo "'../../proc/registrate.proc.php";
+            echo "'../../proc/registrate.proc.php'";
             }else{
               echo  "'php/proc/registrate.proc.php'";}?>>
 
