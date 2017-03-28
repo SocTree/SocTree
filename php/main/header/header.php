@@ -1,7 +1,3 @@
-<?php
-	include '../../conexio/conexio.php';
- ?>
-
 <div class="menufijo">
  	<div class="container">	
 	<div class="row">
@@ -79,13 +75,7 @@
 						}else{
 							echo  "'eventos.php'";}
 					  ?>><div class="menu">Events</div></a>
-
-					<a href=<?php 
-					if (file_exists('php/main/body/visualizarPuntosInteres.php')) {
-						echo "'php/main/body/visualizarPuntosInteres.php'";
-						}else{
-							echo  "'visualizarPuntosInteres.php'";}
-					  ?>><div class="menu">Llocs d'Interès</div></a>		
+					<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
 			</div>				
 		</div>
 	</div>
