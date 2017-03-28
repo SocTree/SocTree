@@ -87,7 +87,6 @@ td.invi {
 
 </head>
 <body>
-<<<<<<< HEAD
 <!-- Header -->
 	<?php include("../header/header.php");?>
 <!-- fin header -->
@@ -107,13 +106,6 @@ td.invi {
 			<a href="#" class='padre'>Events creats</a>
 			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 			<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
-=======
-	<button class='abuelo'>Events d'avui</button>
-	<div id='padre'>
-			<button class='padre'>Events creats</button>
-			<div class="hijo">
-			<table border="">
->>>>>>> parent of 22cc31b... ecopremis-header
 				<tr>
 					<th>Nom</th>
 					<th>Tipus</th>
@@ -175,17 +167,11 @@ td.invi {
 			 ?>
 			</table>
 			</div>
-<<<<<<< HEAD
 		</div>
 		<div class="col-sm-12" style="margin-top:2.5%;">
 			<a href="#" class="padre">Events a participar</a>
 			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 					<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
-=======
-			<button class="padre">Events a participar</button>
-			<div class="hijo">
-					<table border="">
->>>>>>> parent of 22cc31b... ecopremis-header
 				<tr>
 					<th>Nom</th>
 					<th>Tipus</th>
@@ -233,7 +219,6 @@ td.invi {
 			</table>
 		</div>
 	</div>
-<<<<<<< HEAD
 	<div class="col-sm-12" style="margin-bottom:5%; background-color: #caf1ca;padding: 2%">
 			<a href="#" class='abuelo'>Pròxims events</a>
 	<div id='padre'>
@@ -241,13 +226,6 @@ td.invi {
 		<a href="#" class='padre'>Events creats</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
-=======
-	<button class='abuelo'>Pròxims events</button>
-	<div id='padre'>
-				<button class='padre'>Events creats</button>
-				<div class="hijo">
-				<table border="">
->>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -309,18 +287,12 @@ td.invi {
 				 ?>
 				</table>
 				</div>
-<<<<<<< HEAD
 	</div>
 				
 	<div class="col-sm-12" style="margin-top:2.5%;">
 		<a href="#" class='padre'>Events a participar</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
-=======
-				<button class='padre'>Events a participar</button>
-				<div class="hijo">
-						<table border="">
->>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -368,7 +340,6 @@ td.invi {
 				</table>
 				</div>
 	</div>
-<<<<<<< HEAD
 				
 	</div>
 	</div>
@@ -379,13 +350,6 @@ td.invi {
 		<a href="#" class="padre">Events creats</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
-=======
-	<button class="abuelo">Events acabats</button>
-	<div id="padre">
-				<button class="padre">Events creats</button>
-				<div class="hijo">
-				<table border="">
->>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -447,17 +411,11 @@ td.invi {
 				 ?>
 				</table>
 				</div>
-<<<<<<< HEAD
 	</div>
 	<div class="col-sm-12" style="margin-top:2.5%;">
 		<a href="#" class="padre">He participat</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%;background-color: #caf1ca">
 						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
-=======
-				<button class="padre">Events a participar</button>
-				<div class="hijo">
-						<table border="">
->>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -502,7 +460,6 @@ td.invi {
 				</table>
 				</div>
 	</div>
-<<<<<<< HEAD
 				
 	</div>
 	</div>
@@ -514,8 +471,6 @@ td.invi {
 </div>
 	<?php include("../footer/footer.php");?>
 <!-- fin footer -->
-=======
->>>>>>> parent of 22cc31b... ecopremis-header
 </body>
 <script>
 var acc = document.getElementsByClassName("abuelo");
