@@ -18,9 +18,6 @@
 <html>
 <head>
 	<title></title>
-	<?php include "../head.php" ?>
-	<link rel="stylesheet" type="text/css" href="../../../css/events_usuari.css">
-	<link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
 	<script type="text/javascript">
 		
 	function mostrarDatos(eve){
@@ -35,8 +32,62 @@
 	}
 
 	</script>
+
+	<style>
+button.abuelo {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 24px;
+    transition: 0.4s;
+    background-color: blue;
+}
+
+button.abuelo.active, button.abuelo:hover {
+    background-color: #ddd; 
+}
+
+div#padre {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
+button.padre {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+    background-color: green;
+}
+
+
+button.padre.active, button.padre:hover {
+    background-color: #ddd; 
+}
+
+div.hijo {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
+td.invi {
+	display: none;
+	column-span: all;
+}
+</style>
+
 </head>
 <body>
+<<<<<<< HEAD
 <!-- Header -->
 	<?php include("../header/header.php");?>
 <!-- fin header -->
@@ -56,6 +107,13 @@
 			<a href="#" class='padre'>Events creats</a>
 			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 			<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
+=======
+	<button class='abuelo'>Events d'avui</button>
+	<div id='padre'>
+			<button class='padre'>Events creats</button>
+			<div class="hijo">
+			<table border="">
+>>>>>>> parent of 22cc31b... ecopremis-header
 				<tr>
 					<th>Nom</th>
 					<th>Tipus</th>
@@ -117,11 +175,17 @@
 			 ?>
 			</table>
 			</div>
+<<<<<<< HEAD
 		</div>
 		<div class="col-sm-12" style="margin-top:2.5%;">
 			<a href="#" class="padre">Events a participar</a>
 			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 					<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
+=======
+			<button class="padre">Events a participar</button>
+			<div class="hijo">
+					<table border="">
+>>>>>>> parent of 22cc31b... ecopremis-header
 				<tr>
 					<th>Nom</th>
 					<th>Tipus</th>
@@ -168,11 +232,8 @@
 			 ?>
 			</table>
 		</div>
-		</div>	
-			
-			
 	</div>
-	</div>
+<<<<<<< HEAD
 	<div class="col-sm-12" style="margin-bottom:5%; background-color: #caf1ca;padding: 2%">
 			<a href="#" class='abuelo'>Pròxims events</a>
 	<div id='padre'>
@@ -180,6 +241,13 @@
 		<a href="#" class='padre'>Events creats</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
+=======
+	<button class='abuelo'>Pròxims events</button>
+	<div id='padre'>
+				<button class='padre'>Events creats</button>
+				<div class="hijo">
+				<table border="">
+>>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -241,12 +309,18 @@
 				 ?>
 				</table>
 				</div>
+<<<<<<< HEAD
 	</div>
 				
 	<div class="col-sm-12" style="margin-top:2.5%;">
 		<a href="#" class='padre'>Events a participar</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
+=======
+				<button class='padre'>Events a participar</button>
+				<div class="hijo">
+						<table border="">
+>>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -294,6 +368,7 @@
 				</table>
 				</div>
 	</div>
+<<<<<<< HEAD
 				
 	</div>
 	</div>
@@ -304,6 +379,13 @@
 		<a href="#" class="padre">Events creats</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
+=======
+	<button class="abuelo">Events acabats</button>
+	<div id="padre">
+				<button class="padre">Events creats</button>
+				<div class="hijo">
+				<table border="">
+>>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -365,11 +447,17 @@
 				 ?>
 				</table>
 				</div>
+<<<<<<< HEAD
 	</div>
 	<div class="col-sm-12" style="margin-top:2.5%;">
 		<a href="#" class="padre">He participat</a>
 				<div class="col-sm-12 hijo" style="margin-top:3%;background-color: #caf1ca">
 						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
+=======
+				<button class="padre">Events a participar</button>
+				<div class="hijo">
+						<table border="">
+>>>>>>> parent of 22cc31b... ecopremis-header
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -414,6 +502,7 @@
 				</table>
 				</div>
 	</div>
+<<<<<<< HEAD
 				
 	</div>
 	</div>
@@ -425,6 +514,8 @@
 </div>
 	<?php include("../footer/footer.php");?>
 <!-- fin footer -->
+=======
+>>>>>>> parent of 22cc31b... ecopremis-header
 </body>
 <script>
 var acc = document.getElementsByClassName("abuelo");

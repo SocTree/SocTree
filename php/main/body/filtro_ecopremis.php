@@ -28,7 +28,7 @@ extract($_REQUEST);
 	if (mysqli_num_rows($premios)>0){
 		//Si existen premios hacemos la tabla
 		while ($premio = mysqli_fetch_object($premios)) {
-			echo "<div class='col-sm-4' style=' padding:2%; border: 1px #218221 dashed;  min-height: 350px; text-align:center'>";
+			echo "<div class='col-sm-4' style=' padding:1%; border: 1px #218221 dashed;  min-height: 350px; text-align:center'>";
 			echo "<div class='col-sm-12'><p style='font-size:25px'>$premio->eco_nom_premi</p></div>";
 			echo "<div class='col-sm-12'><img src='../../../img/patrocinadors/$premio->patr_logo' width='150'/></div>";
 			echo "<div class='col-sm-12'>$premio->eco_preu_tokens <i class='fa fa-trophy'></i><br><br></div>";
