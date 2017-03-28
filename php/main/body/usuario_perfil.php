@@ -2,6 +2,7 @@
 include '../../conexio/conexio.php';
 include '../../includes/visualizarRestrictivo.php';
 
+
 	$sql_usuari = "SELECT * FROM tbl_usuari WHERE usu_id='$usu'";
 	$usuaris=mysqli_query($conexion, $sql_usuari);
 		
