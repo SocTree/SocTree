@@ -17,7 +17,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Events del usuari</title>
+	<?php include "../head.php" ?>
+	<link rel="stylesheet" type="text/css" href="../../../css/events_usuari.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
 	<script type="text/javascript">
 		
 	function mostrarDatos(eve){
@@ -165,6 +168,8 @@
 			 ?>
 			</table>
 		</div>
+	</div>
+	</div>
 	</div>
 	<div class="col-sm-12" style="margin-bottom:5%; background-color: #caf1ca;padding: 2%">
 			<a href="#" class='abuelo'>Pròxims events</a>
@@ -412,10 +417,9 @@
 	</div>
 
 	</div>
+	</div>
+	</div>
 <!-- Footer -->
-<div style="position: fixed;">
-	
-</div>
 	<?php include("../footer/footer.php");?>
 <!-- fin footer -->
 </body>

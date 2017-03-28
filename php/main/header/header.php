@@ -1,3 +1,10 @@
+<?php 
+if (file_exists('php/conexio/conexio.php')) {
+					include 'php/conexio/conexio.php';
+				}else{
+					include '../../conexio/conexio.php';
+				}
+ ?>
 <div class="menufijo">
  	<div class="container">	
 	<div class="row">
@@ -21,10 +28,26 @@
 					include 'php/includes/visualizarPermisivo.php';
 				}
 				if (isset($usu))  {
-					echo "<a href=''>";
+					echo "<div class='dropdown' style='float:left;cursor:pointer'>";
+					echo "<a class='dropdown-toggle' type='button' data-toggle='dropdown'>";
 					echo $nom;
-					echo  ' '. $cognom .'</a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
+					echo  ' '. $cognom .' <span class="caret"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
 					?>
+    <ul class="dropdown-menu">
+      <li><a href=<?php 
+					if (file_exists('perfil.php')) {
+						echo "'perfil.php'";
+						}else{
+							echo  "'php/main/body/perfil.php'";}
+					  ?>>El meu perfil</a></li>
+      <li><a href=<?php 
+					if (file_exists('events_usuari.php')) {
+						echo "'events_usuari.php'";
+						}else{
+							echo  "'php/main/body/events_usuari.php'";}
+					  ?>>Els meus events</a></li>
+    </ul>
+  </div>
 					<a href=<?php 
 					if (file_exists('php/main/body/ecopremis.php')) {
 						echo "'php/main/body/ecopremis.php'";
@@ -39,8 +62,7 @@
 					  		}
 					  ?><i class="fa fa-trophy" aria-hidden="true"></i>
 					  
-					  </a>&nbsp;&nbsp;
-					<a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
+					  </a>&nbsp;&nbsp;	
 					<a href= <?php 
 					if (file_exists('../../proc/destroysesion.proc.php')) {
 						echo "'../../proc/destroysesion.proc.php'";
@@ -70,7 +92,12 @@
 						}else{
 							echo  "'eventos.php'";}
 					  ?>><div class="menu">Events</div></a>
-					<a href="#Llocsdinteres"><div class="menu">Llocs d'Interès</div></a>		
+					<a href=<?php 
+					if (file_exists('php/main/body/visualizarPuntosInteres.php')) {
+						echo "'php/main/body/visualizarPuntosInteres.php'";
+						}else{
+							echo  "'visualizarPuntosInteres.php'";}
+					  ?>><div class="menu">Llocs d'Interès</div></a>		
 			</div>				
 		</div>
 	</div>
