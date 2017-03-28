@@ -68,3 +68,7 @@ label > input + img{ /* estilo para la imagen */
 .eventos {
 	margin: 2px;
 }
+
+.color-modal{
+	color: black;
+}

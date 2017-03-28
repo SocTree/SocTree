@@ -6,11 +6,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
 	<title></title>
 </head>
 <body>
 <div class="modal-dialog modal-lg">
-	<div class="modal-content">
+	<div class="modal-content color-modal">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
           	<h4 class="modal-title">Afegir Event</h4>
@@ -18,7 +19,7 @@
 		<div class="modal-body">
 			
 			<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
-				Nom del projecte:
+				Nom de l'event:
 				<input type="textArea" name="eve_name"><br><br>
 				Descripció:<br>
 				<textarea name="eve_descripcio" maxlength="5000"></textarea><br><br>
