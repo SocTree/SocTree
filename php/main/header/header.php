@@ -1,3 +1,4 @@
+<?php include "../../conexio/conexio.php"; ?>
 <div class="menufijo">
  	<div class="container">	
 	<div class="row">
@@ -21,10 +22,26 @@
 					include 'php/includes/visualizarPermisivo.php';
 				}
 				if (isset($usu))  {
-					echo "<a href=''>";
+					echo "<div class='dropdown' style='float:left; cursor:pointer'>";
+					echo "<a class='dropdown-toggle' data-toggle='dropdown' type='button'>";
 					echo $nom;
-					echo  ' '. $cognom .'</a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
+					echo  ' '. $cognom .'<span class="caret"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;'; 
 					?>
+					<ul class="dropdown-menu">
+							      <li><a href= <?php if (file_exists('perfil.php')) {
+							      	echo "'perfil.php'";
+							      } else{
+							      	echo "'php/main/body/perfil.php'";
+							      } 
+							      ?> >El meu perfil</a></li>
+							      <li><a href= <?php if (file_exists('events_usuari.php')) {
+							      	echo "'events_usuari.php'";
+							      } else{
+							      	echo "'php/main/body/events_usuari.php'";
+							      } 
+							      ?> >Els meus events</a></li>
+							    </ul>
+							    </div>
 					<a href=<?php 
 					if (file_exists('php/main/body/ecopremis.php')) {
 						echo "'php/main/body/ecopremis.php'";
@@ -37,15 +54,26 @@
 					  		while ($moneda = mysqli_fetch_object($monedas)) {
 					  			echo $moneda->mon_quantitat." ";
 					  		}
-					  ?><i class="fa fa-trophy fa-lg" aria-hidden="true"></i>
-					  
-					  </a>&nbsp;&nbsp;
-					<a href=<?php 
-					if (file_exists('php/main/body/events_usuari.php')) {
-						echo "'php/main/body/events_usuari.php'";
-						}else{
-							echo  "events_usuari.php";}
-					  ?>><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
+					  ?><i class="fa fa-trophy fa-lg" aria-hidden="true"></i></a>
+			
+
+			<!-- href=<?php 
+					// if (file_exists('php/main/body/events_usuari2.php')) {
+					// 	echo "'php/main/body/events_usuari2.php'";
+					// 	}else{
+					// 		echo  "events_usuari2.php";}
+					  ?> -->		  
+					 <!--  &nbsp;&nbsp; --><!-- <div class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" type="button"><i class="fa fa-user fa-lg" aria-hidden="true"></i><span class="caret"></span></a>
+							    <ul class="dropdown-menu">
+							      <li><a href="#">El meu perfil</a></li>
+							      <li><a href="#">Els meus events</a></li>
+							    </ul>
+						</div> -->
+
+
+
+					  &nbsp;&nbsp;
 					<a href= <?php 
 					if (file_exists('../../proc/destroysesion.proc.php')) {
 						echo "'../../proc/destroysesion.proc.php'";

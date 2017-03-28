@@ -126,7 +126,7 @@
 				</td>
 				<td class="us-foto"><img src="img/web/nosotros/roger.png"></td>
 				<td class="us-info">
-					<h4>Roger Fuster</h4>
+					<h4>Roger Fusté</h4>
 					<p style="font-size: 13px">Desenvolupament i Programació.</p>
 				</td>
 				<td class="us-foto"><img src="img/web/nosotros/miki.png"></td>

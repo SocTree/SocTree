@@ -9,17 +9,18 @@ a.abuelo {
     outline: none;
     font-size: 24px;
     transition: 0.4s;
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 a.abuelo.active, a.abuelo:hover {
-    background-color: #ddd; 
+    /*background-color: #ddd; */
+    text-decoration: none;
 }
 
 div#padre {
     padding: 0 18px;
     display: none;
-    background-color: white;
+    /*background-color: white;*/
 }
 
 a.padre {
@@ -31,18 +32,19 @@ a.padre {
     outline: none;
     font-size: 18px;
     transition: 0.4s;
-    background-color: green;
+    /*background-color: green;*/
 }
 
 
 a.padre.active, a.padre:hover {
-    background-color: #ddd; 
+    /*background-color: #ddd; */
+    text-decoration: none;
 }
 
 div.hijo {
     padding: 0 18px;
     display: none;
-    background-color: white;
+    /*background-color: white;*/
 }
 
 td.invi {
