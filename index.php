@@ -55,7 +55,7 @@
 		<div class="jobs-content">
 			<img src="img/web/icon/png/geo.png">
 			<h3>Llocs d'interès</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor turpis, condimentum id consectetur a, tristique in lorem. Ut posuere.</p>
+			<p>Utilitza el nostre buscador per poder localitzar llocs d'interes. Participa! Aporta nous punts per fer esport, parcs o d'altres punts d'interès.</p>
 		</div>	
 	</div>
 	
@@ -63,7 +63,7 @@
 		<div class="jobs-content">
 			<img src="img/web/icon/png/event.png">
 			<h3>Events</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor turpis, condimentum id consectetur a, tristique in lorem. Ut posuere.</p>
+			<p>Crea i participa en nous events. Coneix gent! Comparteix i aconsegueix trofeus.</p>
 		</div>	
 	</div>
 	
@@ -71,7 +71,7 @@
 		<div class="jobs-content">
 			<img src="img/web/icon/png/tips.png">
 			<h3>Tips al Blog</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor turpis, condimentum id consectetur a, tristique in lorem. Ut posuere.</p>
+			<p>El blog et permetrà obtenir tips relacionats amb la vida saludable. Tens algún truc? Comparteix!.</p>
 		</div>	
 	</div>
 	
@@ -79,7 +79,7 @@
 		<div class="jobs-content">
 			<img src="img/web/icon/png/premis.png">
 			<h3>Premis pel medi</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor turpis, condimentum id consectetur a, tristique in lorem. Ut posuere.</p>
+			<p>Pots vescanviar els teus trofeus per diferents premis o millor encara, permet que plantem un arbre.</p>
 		</div>	
 	</div>
 </section>
