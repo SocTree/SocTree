@@ -2,9 +2,12 @@
 include '../conexio/conexio.php';
 include '../includes/visualizarRestrictivo.proc.php';
 
+
+
 extract($_REQUEST);
 
 $sql_correo = "SELECT * FROM tbl_usuari WHERE usu_email='$usu_email' AND usu_id != '$usu' ";
+
 $email = mysqli_query($conexion, $sql_correo);
 
 if (mysqli_num_rows($email)>0){
