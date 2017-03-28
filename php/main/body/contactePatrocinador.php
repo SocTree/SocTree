@@ -7,9 +7,16 @@ include '../../includes/visualizarRestrictivo.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Enhorabona</title>
+	<?php include("../head.php");?>
 </head>
-<body>
+<body style="background-color: #caf1ca">
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-offset-3 col-sm-6" style="background-color: white; border:3px #218221 solid; padding: 2%;margin-top: 25%">
+			<table>
+				<tr>
 <?php
 extract($_REQUEST);
 //Consulta per saber els premis y els seus patrocinadors
@@ -18,10 +25,21 @@ extract($_REQUEST);
 
 	while ($prem = mysqli_fetch_object($premis)) {
 //Div per posarse en contacte amb el patrocinador
-		echo "<h1>Enhorabona, has obtingut <b>$prem->eco_nom_premi</b></h1>";
-		echo "Imprimeix el següent <a href='pdf.php?premi=$premi'>PDF</a> per obtenir el teu premi<br/><br/>";
+		echo "<td style='padding: 2%; width: 35%'><img src='../../../img/patrocinadors/$prem->patr_logo'></td>";
+		echo "<td style='padding: 2%; width: 65%'>";
+		echo "<h3>Enhorabona, has obtingut <b>$prem->eco_nom_premi</b>!!</h3><br>";
+		echo "Imprimeix el següent <a href='pdf.php?premi=$premi'><b>PDF</b></a> per obtenir el teu premi<br/><br/>";
+		echo "</td>";
 	}
-	echo "<a href='ecopremis.php'>Tornar a ecochange</a>"
-?>
+?>				
+								
+				</tr>
+			</table>
+			<div class="col-sm-12">
+				<a href='ecopremis.php' style="float: right;">Tornar a Premis</a>
+			</div>				
+		</div>
+	</div>
+</div>
 </body>
 </html>

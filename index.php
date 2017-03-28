@@ -285,5 +285,7 @@ a#logo-aquabona:hover {
 }
 .foto {
 	background: url(img/web/nosotros/IMG_0390.JPG) no-repeat;
+	/*border: 15px #33cc33 solid;*/
+	border-radius: 20px;
 }
 </style>

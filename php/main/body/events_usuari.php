@@ -7,6 +7,9 @@
 <html>
 <head>
 	<title></title>
+	<?php include "../head.php" ?>
+	<link rel="stylesheet" type="text/css" href="../../../css/events_usuari.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
 	<script type="text/javascript">
 		
 	function mostrarDatos(eve){
@@ -21,65 +24,24 @@
 	}
 
 	</script>
-
-	<style>
-button.abuelo {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 24px;
-    transition: 0.4s;
-    background-color: blue;
-}
-
-button.abuelo.active, button.abuelo:hover {
-    background-color: #ddd; 
-}
-
-div#padre {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-}
-
-button.padre {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    transition: 0.4s;
-    background-color: green;
-}
-
-
-button.padre.active, button.padre:hover {
-    background-color: #ddd; 
-}
-
-div.hijo {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-}
-
-td.invi {
-	display: none;
-	column-span: all;
-}
-</style>
-
 </head>
 <body>
-	<button class='abuelo'>Events d'avui</button>
-	<div id='padre'>
-			<button class='padre'>Events creats</button>
-			<div class="hijo">
+<!-- Header -->
+	<?php include("../header/header.php");?>
+<!-- fin header -->
+<div class="contenido_index event_main" style="overflow-x: hidden;">
+	<!-- <div class="row">
+		Hola
+	</div> -->
+</div>
+<div class="container" style="margin-top: 2%;">
+	<div class="col-sm-12" style="margin-bottom: 2.5%; background-color: yellow">
+		<a href="#" class="abuelo">Events d'avui</a>
+		
+		<div id='padre'>
+		<div class="col-sm-6" style="margin-top:2.5%;">
+			<a href="#" class='padre'>Events creats</a>
+			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: yellow">
 			<table border="">
 				<tr>
 					<th>Nom</th>
@@ -142,8 +104,10 @@ td.invi {
 			 ?>
 			</table>
 			</div>
-			<button class="padre">Events a participar</button>
-			<div class="hijo">
+		</div>
+		<div class="col-sm-6" style="margin-top:2.5%;">
+			<a href="#" class="padre">Events a participar</a>
+			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: yellow">
 					<table border="">
 				<tr>
 					<th>Nom</th>
@@ -191,10 +155,15 @@ td.invi {
 			 ?>
 			</table>
 		</div>
+		</div>	
+			
+			
 	</div>
-	<button class='abuelo'>Pròxims events</button>
+	</div>
+	<div class="col-sm-6" style="background-color: yellow">
+			<a href="#" class='abuelo'>Pròxims events</a>
 	<div id='padre'>
-				<button class='padre'>Events creats</button>
+				<a href="#" class='padre'>Events creats</a>
 				<div class="hijo">
 				<table border="">
 					<tr>
@@ -258,7 +227,8 @@ td.invi {
 				 ?>
 				</table>
 				</div>
-				<button class='padre'>Events a participar</button>
+				<br>
+				<a href="#" class='padre'>Events a participar</a>
 				<div class="hijo">
 						<table border="">
 					<tr>
@@ -308,9 +278,11 @@ td.invi {
 				</table>
 				</div>
 	</div>
-	<button class="abuelo">Events acabats</button>
+	</div>
+	<div class="col-sm-6">
+			<a href="#" class="abuelo">Events acabats</a>
 	<div id="padre">
-				<button class="padre">Events creats</button>
+				<a href="#" class="padre">Events creats</a>
 				<div class="hijo">
 				<table border="">
 					<tr>
@@ -374,7 +346,8 @@ td.invi {
 				 ?>
 				</table>
 				</div>
-				<button class="padre">Events a participar</button>
+				<br>
+				<a href="#" class="padre">Events a participar</a>
 				<div class="hijo">
 						<table border="">
 					<tr>
@@ -421,6 +394,12 @@ td.invi {
 				</table>
 				</div>
 	</div>
+	</div>
+
+	</div>
+<!-- Footer -->
+	<?php include("../footer/footer.php");?>
+<!-- fin footer -->
 </body>
 <script>
 var acc = document.getElementsByClassName("abuelo");
