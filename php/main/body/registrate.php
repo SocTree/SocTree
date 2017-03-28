@@ -44,6 +44,7 @@ if (isset($_SESSION['usu_id'])) {
 	Repetiu la contrasenya:
 	<input type="password" name="usu_password2"><br>
 	<input type="submit" name="enviar">
+	</form>
 
 	<?php /*
 			<form name="login" action="php/proc/login.proc.php">
@@ -60,7 +61,7 @@ if (isset($_SESSION['usu_id'])) {
 		</div>
 		<div class="modal-footer">
 		 No tens compte, <a href="#" data-toggle="modal" data-target="#ModalRegistro"> registra't.<div class="modal fade" id="ModalLogin" role="dialog"><?php include_once("php/main/body/registrate.php"); ?></div> </a> &nbsp; <input type="submit" class="btn btn-success" name="enviar"><bR>
-			</form>
+			
 		</div>
 	</div>
 </div>

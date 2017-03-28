@@ -70,6 +70,7 @@
       <div class="modal-footer">
      Ya tens compte,<a href="#modal-1" data-toggle="modal" data-dismiss="modal">Inicia sessió.</a> &nbsp;
         <input type="submit" class="btn btn-success" name="enviar"><bR>
+        </form>∫
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
