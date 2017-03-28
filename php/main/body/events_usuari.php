@@ -12,7 +12,7 @@
 		$sql_update = "UPDATE tbl_events SET eve_estat='finalitzat' WHERE eve_data<'$hoy' AND eve_estat='actiu'";
 		mysqli_query($conexion, $sql_update);
 	}
-	
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -41,19 +41,21 @@
 	<?php include("../header/header.php");?>
 <!-- fin header -->
 <div class="contenido_index event_main" style="overflow-x: hidden;">
-	<!-- <div class="row">
-		Hola
-	</div> -->
+	<div class="row">
+		<div class="col-md-12">
+				&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../img/web/icon/png/event-nom.png">	
+		</div>
+	</div>
 </div>
-<div class="container" style="margin-top: 2%;">
-	<div class="col-sm-12" style="margin-bottom: 2.5%; background-color: yellow">
+<div class="container" style="margin-top: 5.3%;">
+	<div class="col-sm-12" style="margin-bottom: 5%; background-color: #caf1ca; padding: 2% ">
 		<a href="#" class="abuelo">Events d'avui</a>
 		
 		<div id='padre'>
-		<div class="col-sm-6" style="margin-top:2.5%;">
+		<div class="col-sm-12" style="margin-top:2.5%;">
 			<a href="#" class='padre'>Events creats</a>
-			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: yellow">
-			<table border="">
+			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
+			<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 				<tr>
 					<th>Nom</th>
 					<th>Tipus</th>
@@ -116,10 +118,10 @@
 			</table>
 			</div>
 		</div>
-		<div class="col-sm-6" style="margin-top:2.5%;">
+		<div class="col-sm-12" style="margin-top:2.5%;">
 			<a href="#" class="padre">Events a participar</a>
-			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: yellow">
-					<table border="">
+			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
+					<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 				<tr>
 					<th>Nom</th>
 					<th>Tipus</th>
@@ -130,7 +132,7 @@
 				</tr>
 			<?php 
 			if (isset($usu)){
-				$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
+				$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
 
 				$creats = mysqli_query($conexion, $sql_creat);
 
@@ -171,12 +173,13 @@
 			
 	</div>
 	</div>
-	<div class="col-sm-6" style="background-color: yellow">
+	<div class="col-sm-12" style="margin-bottom:5%; background-color: #caf1ca;padding: 2%">
 			<a href="#" class='abuelo'>Pròxims events</a>
 	<div id='padre'>
-				<a href="#" class='padre'>Events creats</a>
-				<div class="hijo">
-				<table border="">
+	<div class="col-sm-12" style="margin-top:2.5%;">
+		<a href="#" class='padre'>Events creats</a>
+				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
+				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -187,7 +190,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy'ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
@@ -238,10 +241,12 @@
 				 ?>
 				</table>
 				</div>
-				<br>
-				<a href="#" class='padre'>Events a participar</a>
-				<div class="hijo">
-						<table border="">
+	</div>
+				
+	<div class="col-sm-12" style="margin-top:2.5%;">
+		<a href="#" class='padre'>Events a participar</a>
+				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
+						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -252,7 +257,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
@@ -289,13 +294,16 @@
 				</table>
 				</div>
 	</div>
+				
 	</div>
-	<div class="col-sm-6">
+	</div>
+	<div class="col-sm-12" style="margin-bottom: 5%; background-color: #caf1ca;padding: 2%">
 			<a href="#" class="abuelo">Events acabats</a>
 	<div id="padre">
-				<a href="#" class="padre">Events creats</a>
-				<div class="hijo">
-				<table border="">
+	<div class="col-sm-12" style="margin-top:2.5%;">
+		<a href="#" class="padre">Events creats</a>
+				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
+				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -357,10 +365,11 @@
 				 ?>
 				</table>
 				</div>
-				<br>
-				<a href="#" class="padre">Events a participar</a>
-				<div class="hijo">
-						<table border="">
+	</div>
+	<div class="col-sm-12" style="margin-top:2.5%;">
+		<a href="#" class="padre">He participat</a>
+				<div class="col-sm-12 hijo" style="margin-top:3%;background-color: #caf1ca">
+						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
 						<th>Nom</th>
 						<th>Tipus</th>
@@ -371,7 +380,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
@@ -405,10 +414,15 @@
 				</table>
 				</div>
 	</div>
+				
+	</div>
 	</div>
 
 	</div>
 <!-- Footer -->
+<div style="position: fixed;">
+	
+</div>
 	<?php include("../footer/footer.php");?>
 <!-- fin footer -->
 </body>

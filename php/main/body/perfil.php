@@ -129,7 +129,6 @@ extract($_REQUEST);
 	</script>
 </head>
 <body>
-hola
 	<div id="respuesta-consulta"> 
 		<?php 
 			if(isset($err)){
