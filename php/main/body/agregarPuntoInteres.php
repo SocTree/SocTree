@@ -12,9 +12,11 @@
         <button type="button" class="close" data-dismiss="modal">
         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title">Agregar punt d'interes</h4>
-        <form name="crear_punt_interes" action="../../proc/agregar_punto_interes.proc.php">
+        
       </div>
       <div class="modal-body">
+      <form name="crear_punt_interes" action="../../proc/agregar_punto_interes.proc.php">
+
         
     
             <!--  <input type="password" placeholder="Password" class="form-control" name="password"><bR>
@@ -34,27 +36,58 @@
         }
 
 ?>
+<div class="col-md-12">
 
+    <form name="crear_punt_interes" action="../../proc/agregar_punto_interes.proc.php">
+    <div class="col-md-3">
+      <input type="text" name="marc_nom_lloc" class="form-control" placeholder="nom del punt d'interés"><br>
+    </div>
+    <div class="col-md-4"> <select class="form-control"  name="ico_id"  >
+       <option value=''>Selecciona tipus marcador</option>           
+      <?php include("select_dinamico_bd.php"); ?>
 
-  <input type="text" name="marc_nom_lloc" placeholder="nom del punt d'interés">
-  <select name="ico_id"  >
-   <option value=''>Selecciona tipus marcador</option>           
-  <?php include("select_dinamico_bd.php"); ?>
-
-  </select>
-
-  <input type="text" id="marc_adreca"  name="marc_adreca" placeholder="adreça del punt d'interes"> <br> <input type="text" id="latitud"  name="latitud" > 
-<input type="text" id="longitud"  name="longitud"  >
+      </select><br>   
+        </div>
+    <div class="col-md-3">
+      <input class="form-control"  type="text" id="marc_adreca"  name="marc_adreca" placeholder="adreça del punt d'interes"> 
+    </div> 
+</div>
 <?php 
 echo"<input type='hidden' name='usu_id' value=".$usu.">";
 ?>
- <textarea name="marc_descripcio" rows="5" cols="60" placeholder="descripcio del punt d'interes"></textarea> 
-<br>
+<div class="col-md-12"> 
+  <div class="col-md-2"> 
+     <input class="form-control"  type="text" id="latitud"  name="latitud" >
+  </div> 
+  <div class="col-md-2"> 
+     <input class="form-control"  type="text" id="longitud"  name="longitud" > <br>
+  </div>
+
+</div>
+
+ <textarea class="form-control" name="marc_descripcio" rows="5" cols="60" placeholder="descripcio del punt d'interes" wrap="off" ></textarea> 
+  <br>
 
 
 
- 
+      <div class="modal-footer">
+  <div class="col-md-2" style="float: right;">
 
+
+      <input type="submit" class="btn btn-success" name="enviar"> </div>
+</form>        
+
+
+  <div class="col-md-2">
+     <button class="btn btn-success" onclick="getLocation()">Geolocalizame</button></div> 
+       <div class="col-md-3">
+ *rebeu la vostra localització </div> 
+        </div>
+      </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
 <script>
 var x = document.getElementById("latitud");
 var y = document.getElementById("longitud");
@@ -77,23 +110,3 @@ function showPosition(position) {
     document.getElementById("marc_adreca").disabled = 'true' ;
 }
 </script>
-
-      </div>
-      <div class="modal-footer">
-  <div class="col-md-2" style="float: right;">
-
-
-      <input type="submit" class="btn btn-success" name="enviar"> </div>
-</form>        
-
-
-  <div class="col-md-2">
-     <button class="btn btn-success" onclick="getLocation()">Geolocalizame</button></div> 
-       <div class="col-md-2">
- *rebeu la vostra localització </div> 
-        </div>
-      </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->  
