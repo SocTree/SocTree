@@ -1,3 +1,3 @@
 <?php
-mail("pepito@desarrolloweb.com","asuntillo","Este es el cuerpo del mensaje") 
+mail("rfuste18@gmail.com","evento","Este es el cuerpo del mensaje")
 ?>
