@@ -23,7 +23,7 @@
 <!-- Header -->
 <?php include("php/main/header/header.php");?>
 <!-- fin header -->
-<div style="margin-top: 50px;">
+<div style="margin-top: 132px;">
 <div class="container">
 <!-- Inicio slider -->
 <div class="jumbotron">

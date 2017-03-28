@@ -5,12 +5,10 @@ include '../includes/visualizarRestrictivo.proc.php';
 extract($_REQUEST);
 
 $sql_correo = "SELECT * FROM tbl_usuari WHERE usu_email='$usu_email' AND usu_id != '$usu' ";
-echo "$sql_correo";die;
-
 $email = mysqli_query($conexion, $sql_correo);
 
 if (mysqli_num_rows($email)>0){
-	//header('location:../main/body/perfil.php?err=1');
+	header('location:../main/body/perfil.php?err=1');
 } else {
 
 $sql_update = "UPDATE tbl_usuari SET usu_nom = '$usu_nom', usu_cognom='$usu_cognom', usu_email='$usu_email'";
@@ -33,7 +31,7 @@ $sql_update = "UPDATE tbl_usuari SET usu_nom = '$usu_nom', usu_cognom='$usu_cogn
 
 	mysqli_query($conexion, $sql_update);
 
-	//header('location:../main/body/perfil.php');
+	header('location:../main/body/perfil.php');
 	
 }
 ?>
