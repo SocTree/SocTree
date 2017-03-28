@@ -2,6 +2,17 @@
 	include '../../conexio/conexio.php';
 	include '../../includes/visualizarPermisivo.php';
 
+	$hoy = date("Y-m-d");
+
+
+	$sql = "SELECT * FROM tbl_events WHERE eve_data<'$hoy' AND eve_estat='actiu'";
+	$eventos = mysqli_query($conexion, $sql);
+
+	if (mysqli_num_rows($eventos)){
+		$sql_update = "UPDATE tbl_events SET eve_estat='finalitzat' WHERE eve_data<'$hoy' AND eve_estat='actiu'";
+		mysqli_query($conexion, $sql_update);
+	}
+	
  ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +64,7 @@
 				</tr>
 			<?php 
 			if (isset($usu)){
-				$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' ORDER BY eve_data";
+				$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
 
 				$creats = mysqli_query($conexion, $sql_creat);
 
@@ -119,7 +130,7 @@
 				</tr>
 			<?php 
 			if (isset($usu)){
-				$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='actiu' ORDER BY eve_data";
+				$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
 
 				$creats = mysqli_query($conexion, $sql_creat);
 
@@ -176,7 +187,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='inactiu' ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy'ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
@@ -241,7 +252,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='inactiu' ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
@@ -295,7 +306,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='finalitzat' ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
@@ -360,7 +371,7 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='finalitzat' ORDER BY eve_data";
+					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE part_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
 
 					$creats = mysqli_query($conexion, $sql_creat);
 
