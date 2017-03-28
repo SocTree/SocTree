@@ -5,6 +5,9 @@ if (file_exists('php/conexio/conexio.php')) {
 					include '../../conexio/conexio.php';
 				}
  ?>
+ <style type="text/css">
+ 	a:hover {text-decoration: none}
+ </style>
 <div class="menufijo">
  	<div class="container">	
 	<div class="row">
@@ -60,9 +63,8 @@ if (file_exists('php/conexio/conexio.php')) {
 					  		while ($moneda = mysqli_fetch_object($monedas)) {
 					  			echo $moneda->mon_quantitat." ";
 					  		}
-					  ?><i class="fa fa-trophy" aria-hidden="true"></i>
-					  
-					  </a>&nbsp;&nbsp;	
+					  ?><i class="fa fa-trophy fa-lg" aria-hidden="true"></i>
+					  	</a>&nbsp;&nbsp;
 					<a href= <?php 
 					if (file_exists('../../proc/destroysesion.proc.php')) {
 						echo "'../../proc/destroysesion.proc.php'";
