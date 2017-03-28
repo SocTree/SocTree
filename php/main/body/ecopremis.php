@@ -26,7 +26,6 @@ include "../../conexio/conexio.php";
 					}
 					return xmlhttp;
 				}
-
 				function enviarDatos(val){
 			
 				  var ajax=objetoAjax();
@@ -40,7 +39,6 @@ include "../../conexio/conexio.php";
   				ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   				ajax.send("val="+val);
 				}
-
 		window.onload = enviarDatos(1);	
 	</script>
 </head>
@@ -54,18 +52,25 @@ include "../../conexio/conexio.php";
 	<!-- <div style="height: 71%;"> -->
 	<div class="contenido_index event_main" style="overflow-x: hidden">
 		<div class="row">
-			<div class="col-md-12">
-				<img src="../../../img/web/icon/png/premis-nom.png">						
+			<div class="col-md-6">
+				&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../img/web/icon/png/premis-nom.png">	
+			</div>
+			<div class="col-sm-4">
+				<div style="float: right;">
+					<b style="font-size: 20px">Ordenar:</b>
+				</div>
+			</div>
+			<div class="col-sm-2">		 
+				<select id="filtro" name="filtro" onchange="enviarDatos(this.value);" class="form-control" style="width:200px;">
+					<option value="1">De menys a més ▲</option>
+					<option value="2">De més a menys ▼</option>
+				</select>			
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		EcoPremis
-		Filtro: <select name="filtro" onchange="enviarDatos(this.value);">
-				<option value="1">-+</option>
-				<option value="2">+-</option>
-		</select>
-		<div id="tabla"></div>
+	<div class="container" style="margin-bottom: 2%; margin-top: 2%">
+		
+		<div id="tabla" ></div>
 	</div>	
 		
 		

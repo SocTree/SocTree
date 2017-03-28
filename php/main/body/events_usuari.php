@@ -32,59 +32,6 @@
 	}
 
 	</script>
-
-	<style>
-button.abuelo {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 24px;
-    transition: 0.4s;
-    background-color: blue;
-}
-
-button.abuelo.active, button.abuelo:hover {
-    background-color: #ddd; 
-}
-
-div#padre {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-}
-
-button.padre {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    transition: 0.4s;
-    background-color: green;
-}
-
-
-button.padre.active, button.padre:hover {
-    background-color: #ddd; 
-}
-
-div.hijo {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-}
-
-td.invi {
-	display: none;
-	column-span: all;
-}
-</style>
-
 </head>
 <body>
 <!-- Header -->
