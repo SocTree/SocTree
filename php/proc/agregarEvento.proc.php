@@ -24,7 +24,7 @@ $sql = "INSERT INTO `tbl_events` (`eve_id`, `eve_nom`, `eve_descripcio`, `eve_ti
 mysqli_query($conexion, $sql);
 
 //De momento redirige al índice, pendiente de cambio.
-header('Location:../../index.php');
+header('Location:../main/body/eventos.php');
 
 
 
