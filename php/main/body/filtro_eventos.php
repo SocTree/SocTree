@@ -59,8 +59,11 @@ extract($_REQUEST);
 			$descripcio=substr(strip_tags($descripcio), 0, 250);
 			$descripcio .= "...";
 		}
+
+		
+
 		echo "<div class='eventos_class col-md-4'>
-			<a href='verEvento.php?eve_id=$eve_id'>$titol</a><br>
+			<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#myModal'>$titol</a><br>
 			$descripcio 
 			</div>
 		";
