@@ -46,7 +46,7 @@
 <!-- fin slider -->
 
 <section class="info">
-	<img src="img/web/logo/1.png" width="250"><p><i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac odio odio. Pellentesque bibendum libero ac cursus fermentum. Praesent non mi accumsan, fermentum tellus vitae, faucibus arcu. Suspendisse at vehicula ligula. Donec tempor velit dui, non molestie odio cursus ac."</i></p>	
+	<img src="img/web/logo/1.png" width="250"><p><i>"SocTree. Sóc Ecologia, sóc Educació, sóc Esports, sóc Events. Som SocTree un grup d'estudiants de grau superior a l'escola Joan XXIII que han volgut treballar junts en un projecte que a la fi ha sigut enrequidor, divertit i molt molt natural. "</i></p>	
 </section>
 <br>
 
