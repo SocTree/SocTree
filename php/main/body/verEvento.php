@@ -4,12 +4,12 @@
 	//recogemos el id del evento
 	$eve_id = $_GET['eve_id'];
  ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	
-</head>
+</head> -->
 <body>
 <input type="hidden" id="eve_id" value="<?php echo $eve_id; ?>">
 <div>
@@ -21,19 +21,34 @@
 		$titol = $evento['eve_nom'];
 		$descripcio = $evento['eve_descripcio'];
 		$eve_id = $evento['eve_id'];
+		$eve_data= $evento['eve_data'];
 		$max_part = $evento['eve_max_part'];
+		$eve_localitzacio = $evento['eve_localitzacio'];
+		$eve_min_part = $evento['eve_min_part'];
+		$eve_max_part = $evento['eve_max_part'];
 		?>
-<table style="border: 1px;">
-	<tr>
-		<?php 
-			echo "
-			<th>$titol</th></tr>
-			<tr><th>$descripcio</th></tr>
-			";
-		?>
+
+		<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+       			 <h4 class="modal-title"><?php echo "<h2>$titol<small> $eve_data</small></h2>"; ?></h4>
+      		</div>
+
+      		<div class="modal-body">
+      		  <?php 			
+
+				echo "
+				<h5>Mínim $eve_min_part participants i màxim $eve_max_part</h5>
+				<p>$descripcio</p>
+				<p>El lloc de trobada $eve_localitzacio</p>
+
+
+				";
+			?>
+			
+
+
 			<div id='likes'></div>
-</tr>
-</table>
 
 		<?php
 		
@@ -51,7 +66,7 @@
 
 		if (isset($usu) && $contador<$max_part) {
 			//si hay usuario y plazas.
-			echo "<a href='../php/proc/participar.proc.php?eve_id=$eve_id'>participar!</a>";
+			echo "<a href='../php/proc/participar.proc.php?eve_id=$eve_id'><h3>Participar!</h3></a>";
 		}elseif (isset($usu) && $contador == $max_part) {
 			//esto debería ir en rojo
 			echo "<h1>No quedan plazas!</h1>";
@@ -62,7 +77,11 @@
       }
     }
  ?>
-	
+	</div>
+      		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      		</div>
+    	</div>
 
 
 	

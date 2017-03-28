@@ -61,11 +61,13 @@ extract($_REQUEST);
 		}
 
 		
+		
 
 		echo "<div class='eventos_class col-md-4'>
-			<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#myModal'>$titol</a><br>
-			$descripcio 
-			</div>
+			
+					<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#myModal'>$titol</a><br>
+					$descripcio 
+			  </div>
 		";
       }
     }else{
