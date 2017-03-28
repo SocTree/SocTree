@@ -18,6 +18,12 @@ if ($usu_password != $usu_password2) {
 	$sql = "INSERT INTO `tbl_usuari` (`usu_nom`, `usu_cognom`, `usu_email`, `usu_password`, `usu_tipus`, `usu_foto`, `usu_data_registre`) VALUES ('$usu_nom', '$usu_cognom', '$usu_email', '$usu_password', '$usu_tipus', '', '$usu_data_registre');";
 	// echo $sql;
 	$resultado=mysqli_query($conexion, $sql);
+
+	$id = mysqli_insert_id($conexion);
+
+	$moneder = "INSERT INTO tbl_moneder (usu_id, mon_quantitat) VALUES ('$id', '0')";
+	mysqli_query($conexion, $moneder);
+
 	header('Location:../../index.php');
 
 
