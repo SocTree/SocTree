@@ -1,5 +1,5 @@
 <?php //NO OLVIDARSE DE PONER SESIONES!!!
-session_start(); 
+//session_start(); 
 //poner el inlude visualizarRestrictivo.php
 ?>
 <!DOCTYPE html>

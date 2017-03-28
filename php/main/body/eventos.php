@@ -58,14 +58,9 @@
 				<img src="../../../img/web/icon/png/event-nom.png">
 			</div>
 			<div class="col-md-6">
-				<button class="menu_boton btn btn-succes" data-toggle="modal" data-target="#myModal">Crea un Event</button>
+				<a href="#" class="menu_boton btn btn-succes" data-toggle="modal" data-target="#myModal">Crea un Event</a>
 				<div class="modal fade" id="myModal" role="dialog">
-				<?php 
-					if (isset($_SESSION['usu_id'])) {
-						echo '<script language="javascript">alert("Inicia Sessió");</script>'; 
-					} else{
-							include_once("agregarEvento.php");
-						}  ?>
+					<?php include("agregarEvento.php"); ?>
 					
 				</div>
 			</div>
