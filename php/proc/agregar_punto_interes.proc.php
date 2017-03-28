@@ -39,5 +39,5 @@ if ($marc_adreca == ""){
 	$anadir = mysqli_query($conexion,$consulta);
 
 	mysqli_close($conexion);
-	//header('location: ../main/body/visualizarPuntosInteres.php ');
+	header('location: ../main/body/visualizarPuntosInteres.php ');
 ?>

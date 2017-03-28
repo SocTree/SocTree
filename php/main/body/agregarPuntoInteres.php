@@ -15,7 +15,7 @@
         
       </div>
       <div class="modal-body">
-      <form name="crear_punt_interes" action="../../proc/agregar_punto_interes.proc.php">
+      
 
         
     

@@ -31,22 +31,24 @@
      <div class="contenido_index event_main" >
     <!-- Este es el divisor verde superior -->
     <div class="row">
-      <div class="col-md-12 ">
+      <div class="col-md-12 " style="float : right">
         <div class="col-md-3">
-          <div class=""></div>
+
           <img src="../../../img/web/icon/png/geo-nom.png">
         </div>
 
-               <div class="col-md-3"> <label>Vols filtrar els punts d'interés?</label> </div>
+ 
+               <div class="col-md-3">  <b style="font-size: 20px">Vols filtrar els punts d'interés?</b> </div>
 
 
-       <div class="form-group col-md-3">  <select class="form-control" style="color:black" id="filtro" name="tipo_marcador"  onchange="initMap()">
+       <div class="form-group col-md-3"> <select class="form-control" style="color:black" id="filtro" name="tipo_marcador"  onchange="initMap()">
     <option value='0'>Res</option>
       <?php include("select_dinamico_bd.php"); ?>
 
         </select>
            </div>
-         <div class="col-md-3"> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-lloc">Afegir punt d'Interès</button>  </div>
+        <div class="col-md-3" > <button type="button" class="menu_boton btn btn-succes" data-toggle="modal" data-target="#modal-lloc">Afegir punt d'Interès</button>  </div>
+        
         </div>
       </div>
     </div>
