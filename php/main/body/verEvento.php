@@ -69,7 +69,7 @@
 			echo "<a href='../../proc/participar.proc.php?eve_id=$eve_id'><h3>Participar!</h3></a>";
 		}elseif (isset($usu) && $contador == $max_part) {
 			//esto debería ir en rojo
-			echo "<h1>No quedan plazas!</h1>";
+			echo "<h1>No queden places!</h1>";
 		}elseif (!isset($usu)) {
 			echo "<a href='provandoLogin.html'><h3>Inicia sessió per participar!</h3></a>";
 		}
