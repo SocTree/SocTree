@@ -23,6 +23,6 @@
 	header( "refresh:10; location:../main/body/events_usuari.php"); 
   	
 
-  	echo 'Te has apuntado correctamente. If not, click <a href="../main/body/events_usuari.php">here</a>.';
+  	echo "T'has apuntat correctamente. <a href='../main/body/eventos.php'>Tornar a la pàgina d'events</a>.";
 ?>
 
