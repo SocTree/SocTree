@@ -46,10 +46,10 @@ extract($_REQUEST);
 							 	$boton .= "style='bottom: 1px; background-color: #33cc33; border:2px green solid; border-radius: 5px'";
 							 }
 						echo $boton.">Adquirir</button>";
-						//echo "</form>";
 					} else {
 						echo "<button style='bottom: 1px; background-color: #F78181; border:2px red solid; border-radius: 5px'>Adquirir</button>";
 					}
+					echo "</form>";
 				echo "</div>";
 			echo "</div>";
 		}
