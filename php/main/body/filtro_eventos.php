@@ -65,7 +65,7 @@ extract($_REQUEST);
 
 		echo "<div class='eventos_class col-md-4'>
 			
-					<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#myModal'>$titol</a><br>
+					<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#myModal'><i style='font-size:20px;'>$titol</i></a><br>
 					$descripcio 
 			  </div>
 		";

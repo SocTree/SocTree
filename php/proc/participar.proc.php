@@ -20,7 +20,7 @@
 
 	//		header('location:../main/body/events_usuari.php');
 
-	header( "refresh:10; location:../main/body/events_usuari.php"); 
+	//header( "refresh:10; location:../main/body/events_usuari.php"); 
   	
 
   	echo "T'has apuntat correctament. <a href='../main/body/eventos.php'>Tornar a la pàgina d'events</a>.";
