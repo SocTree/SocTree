@@ -1,4 +1,6 @@
 <?php 
+	//este lo he agregado porque sino me daba error
+	include '../conexio/conexio.php';
 
 	include '../includes/visualizarPermisivo.php'; //esto nos dejará el id del usuario en la variable $usu
 	//recogemos el id del evento
@@ -9,14 +11,18 @@
 	$sqlComprobar = "SELECT * FROM `tbl_participants` INNER JOIN `tbl_events` ON `tbl_participants`.`eve_id` = `tbl_events`.`eve_id` WHERE `tbl_participants`.`usu_id` = $usu AND `tbl_events`.`eve_estat` = 'actiu' AND `tbl_events`.`data`";
 
 
+	// Porfa podemos revisar que no se haya ya inscrito en la misma actividad? no funciona el ¢sqlComprobar
 
-
-	$sql = "INSERT INTO `tbl_participants` (`part_id`, `eve_id`, `usu_id`) VALUES (NULL, '1', '1');";
+	$sql = "INSERT INTO `tbl_participants` (`eve_id`, `usu_id`) VALUES ($eve_id, $usu);";
 	$participar = mysqli_query($conexion, $sql);
 
 	//esto podría llevar a mis eventos.
-	header('location:../main/body/events_usuari.php');
 
+	//		header('location:../main/body/events_usuari.php');
 
+	header( "refresh:10; location:../main/body/events_usuari.php"); 
+  	
 
+  	echo 'Te has apuntado correctamente. If not, click <a href="../main/body/events_usuari.php">here</a>.';
 ?>
+
