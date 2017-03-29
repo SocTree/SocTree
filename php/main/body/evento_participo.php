@@ -24,7 +24,7 @@ include '../../includes/visualizarRestrictivo.php';
 				</tr>
 			</table>
 			<div class="col-sm-12">
-				<a href='../main/body/eventos.php' style="float: right;">Tornar a Events</a>
+				<a href='eventos.php' style="float: right;">Tornar a Events</a>
 			</div>				
 		</div>
 	</div>
