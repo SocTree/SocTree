@@ -18,7 +18,7 @@
 		</div>
 		<div class="modal-body">
 			
-			<form name="anadirEvento" method="get" action="../../proc/agregarEvento.proc.php">
+			<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
 				Nom de l'event:
 				<input type="textArea" name="eve_name"><br><br>
 				Descripció:<br>

@@ -12,10 +12,10 @@
 
 
 	$sql = "INSERT INTO `tbl_participants` (`part_id`, `eve_id`, `usu_id`) VALUES (NULL, '1', '1');";
-	$participar=mysqli_query($conexion, $sql);
+	$participar = mysqli_query($conexion, $sql);
 
 	//esto podría llevar a mis eventos.
-	header('location:../../index.php');
+	header('location:../main/body/events_usuari.php');
 
 
 

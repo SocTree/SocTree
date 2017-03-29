@@ -66,7 +66,7 @@
 
 		if (isset($usu) && $contador<$max_part) {
 			//si hay usuario y plazas.
-			echo "<a href='../php/proc/participar.proc.php?eve_id=$eve_id'><h3>Participar!</h3></a>";
+			echo "<a href='../../proc/participar.proc.php?eve_id=$eve_id'><h3>Participar!</h3></a>";
 		}elseif (isset($usu) && $contador == $max_part) {
 			//esto debería ir en rojo
 			echo "<h1>No quedan plazas!</h1>";
