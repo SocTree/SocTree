@@ -8,7 +8,7 @@
 
 	//comprobar que no tenga ningun otro evento
 	// SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;
-	$sqlComprobar = "SELECT * FROM `tbl_participants` INNER JOIN `tbl_events` ON `tbl_participants`.`eve_id` = `tbl_events`.`eve_id` WHERE `tbl_participants`.`usu_id` = $usu AND `tbl_events`.`eve_estat` = 'actiu' AND `tbl_events`.`data`";
+	$sqlComprobar = "SELECT * FROM `tbl_participants` RIGHT JOIN `tbl_events` ON `tbl_participants`.`eve_id` = `tbl_events`.`eve_id` WHERE `tbl_participants`.`usu_id` = $usu OR `tbl_events`.`eve_estat` = 'actiu'";
 
 
 	// Porfa podemos revisar que no se haya ya inscrito en la misma actividad? no funciona el ¢sqlComprobar
@@ -18,11 +18,11 @@
 
 	//esto podría llevar a mis eventos.
 
-	//		header('location:../main/body/events_usuari.php');
+	header('location:../main/body/evento_participo.php');
 
-	header( "refresh:10; location:../main/body/events_usuari.php"); 
+
   	
 
-  	echo "T'has apuntat correctament. <a href='../main/body/eventos.php'>Tornar a la pàgina d'events</a>.";
+  	//echo "T'has apuntat correctament. <a href='../main/body/eventos.php'>Tornar a la pàgina d'events</a>.";
 ?>
 
