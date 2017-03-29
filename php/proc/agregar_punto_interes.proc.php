@@ -25,6 +25,8 @@ if ($marc_adreca == ""){
 }else{
 
 	$marc_adreca = addslashes ($marc_adreca);	
+$marc_descripcio = addslashes($marc_descripcio);
+$marc_nom_lloc = addslashes($marc_nom_lloc);
 
 	$consulta = "INSERT INTO `tbl_marcador` ( `marc_nom_lloc`, `marc_descripcio`, `marc_adreca`, `ico_id`, `usu_id`) VALUES ( '$marc_nom_lloc', '$marc_descripcio', '$marc_adreca ', '$ico_id' , $usu_id)" ; 
 	
