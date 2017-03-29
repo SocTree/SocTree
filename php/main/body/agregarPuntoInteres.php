@@ -15,25 +15,19 @@
         
       </div>
       <div class="modal-body">
-      
+       
+          
+          <?php
 
-        
-    
-            <!--  <input type="password" placeholder="Password" class="form-control" name="password"><bR>
-        <input type="text" placeholder="Email" class="form-control" name="email"><bR>
-
--->
-
-<?php
-
-//cuando esten las sesiones  funcionando se cambiara este valor por el de la sesion
-//$usu_id = 1;
+            //cuando esten las sesiones  funcionando se cambiara este valor por el de la sesion
   
         if (file_exists('../../includes/visualizarPermisivo.php')) {
           include_once '../../includes/visualizarPermisivo.php';
         }else{
           include_once 'php/includes/visualizarPermisivo.php';
         }
+
+        if (isset($usu)) { 
 
 ?>
 <div class="col-md-12">
@@ -82,6 +76,15 @@ echo"<input type='hidden' name='usu_id' value=".$usu.">";
      <button class="btn btn-success" onclick="getLocation()">Geolocalizame</button></div> 
        <div class="col-md-3">
  *rebeu la vostra localització </div> 
+ <?php 
+}
+ else{?>
+
+ <a href='login2.php'><h3>Inicia sessió per afegir una localització!</h3></a>
+
+
+
+     <?php } ?>
         </div>
       </div>
       </div>
