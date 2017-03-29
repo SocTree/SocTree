@@ -14,8 +14,8 @@ if (file_exists('php/conexio/conexio.php')) {
 	<br/>	
 		<div class="col-sm-5">
 			<?php 
-			if (file_exists('img/web/logo/gif.gif')) {
-					echo "<a href='index.php'><img src='img/web/logo/gif.gif' width='200'></a>";
+			if (file_exists('./img/web/logo/gif.gif')) {
+					echo "<a href='index.php'><img src='./img/web/logo/gif.gif' width='200'></a>";
 				}else{
 					echo "<a href='../../../index.php'><img src='../../../img/web/logo/gif.gif' width='200'></a>";
 				}
