@@ -9,6 +9,6 @@ if (isset($_SESSION['usu_id'])) {
 	$cognom = $_SESSION['usu_cognom'];
 
 }else{
-	$msgNoUsuarios = "Per participar <a href='login.php'>fes login </a> o <a href='registrate.php'>registra't.</a>";
+	$msgNoUsuarios = "Per participar <strong>fes login</strong> o <strong>registra't.</strong>";
 }
  ?>
