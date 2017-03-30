@@ -1,0 +1,14 @@
+body {
+	background-color: #caf1ca;
+}
+
+a{
+	float: right;
+}
+
+.recuadro{
+	background-color: white; 
+	border:3px #218221 solid; 
+	padding: 2%;
+	margin-top: 10%
+}

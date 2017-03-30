@@ -8,12 +8,13 @@ include '../../includes/visualizarRestrictivo.php';
 <head>
 	<title>Agregar event</title>
 	<?php include("../head.php");?>
+	<link rel="stylesheet" type="text/css" href="../../../css/agregarParticiparEventos.css">
 </head>
-<body style="background-color: #caf1ca">
+<body>
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-offset-3 col-sm-6" style="background-color: white; border:3px #218221 solid; padding: 2%;margin-top: 10%">
+		<div class="col-sm-offset-3 col-sm-6 recuadro">
 			<div class="modal-body">
 			
 			<form name="anadirEvento" action="../../proc/agregarEvento.proc.php">
@@ -46,7 +47,7 @@ include '../../includes/visualizarRestrictivo.php';
 			</form>
 		</div>
 			<div class="col-sm-12">
-				<a href='eventos.php' style="float: right;">Tornar a Events</a>
+				<a href='eventos.php' style="">Tornar a Events</a>
 			</div>				
 		</div>
 	</div>
