@@ -52,34 +52,39 @@
 
 		<?php
 		
-		//Consulta para ver si quedan plazas.
-		$sql1 = "SELECT * FROM `tbl_participants` WHERE eve_id = $eve_id";
-		$verCapacidad = mysqli_query($conexion, $sql1);
-		if (mysqli_num_rows($verCapacidad)) {
-			$contador = 0;
-			while ($capacidad = mysqli_fetch_array($verCapacidad)) {
-			$contador++;	
+		//Mira si está participando
+		$sqlParticipa = "SELECT * FROM `tbl_participants` INNER JOIN `tbl_events` ON `tbl_participants`.`eve_id` = `tbl_events`.`eve_id` WHERE `tbl_events`.`eve_id` = $eve_id AND `tbl_participants`.`usu_id` = $usu";
+		$participa=mysqli_query($conexion, $sqlParticipa);
+		if (mysqli_num_rows($participa) != 0){
+    		echo "<h1>Ya participas en este evento!</h1>";
+    	}else{
+    		//Consulta para ver si quedan plazas.
+    		
+			$sql1 = "SELECT * FROM `tbl_participants` WHERE eve_id = $eve_id";
+			$verCapacidad = mysqli_query($conexion, $sql1);
+			if (mysqli_num_rows($verCapacidad)) {
+				$contador = 0;
+				while ($capacidad = mysqli_fetch_array($verCapacidad)) {
+				$contador++;	
+				}
+			}else {
+				$contador = 0;
 			}
-		}else {
-			$contador = 0;
-		}
 
-		if (isset($usu) && $contador<$max_part) {
-			//si hay usuario y plazas.
-			echo "<a href='../../proc/participar.proc.php?eve_id=$eve_id'><h3>Participar!</h3></a>";
-		}elseif (isset($usu) && $contador == $max_part) {
-			//esto debería ir en rojo
-			echo "<h1>No queden places!</h1>";
-		}elseif (!isset($usu)) {
-			echo "<h3><strong>Inicia sessió per participar!</strong></h3>";
-		}
-	// 	";
-      }
-    }
+			if (isset($usu) && $contador<$max_part) {
+				//si hay usuario y plazas.
+				echo "<a href='../../proc/participar.proc.php?eve_id=$eve_id'><h3>Participar!</h3></a>";
+			}elseif (isset($usu) && $contador == $max_part) {
+				//esto debería ir en rojo
+				echo "<h1>No quedan plazas!</h1>";
+			}elseif (!isset($usu)) {
+				echo "<a href='provandoLogin.html'><h3>Inicia sessió per participar!</h3></a>";
+			}
+    	}
  ?>
 	</div>
       		<div class="modal-footer">
-        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Tancar</button>
       		</div>
     	</div>
 
@@ -143,5 +148,10 @@
 
 		 window.onload = enviarDatos();	
 	</script>
+	<?php 
+}
+}
+	 ?>
 </body>
 </html>
+
