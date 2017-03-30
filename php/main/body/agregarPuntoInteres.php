@@ -82,6 +82,8 @@ echo"<input type='hidden' name='usu_id' value=".$usu.">";
 
  <strong><h3>Inicia sessió per afegir una localització!</h3></strong>
 
+ <i><a href="../../../index.php">Fes clic per tornar a l'inici per iniciar sessió</a></i>
+
 
 
      <?php } ?>
