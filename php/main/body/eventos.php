@@ -44,7 +44,7 @@
 		 window.onload = enviarDatos(0);	
 	</script>
 </head>
-<body>
+<body style="overflow-x: hidden;">
 
 <!-- Header -->
 <?php include("../header/header.php");?>

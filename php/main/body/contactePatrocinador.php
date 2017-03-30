@@ -26,7 +26,7 @@ extract($_REQUEST);
 		echo "<td style='padding: 2%; width: 35%'><img src='../../../img/patrocinadors/$prem->patr_logo'></td>";
 		echo "<td style='padding: 2%; width: 65%'>";
 		echo "<h3>Enhorabona, has obtingut <b>$prem->eco_nom_premi</b>!!</h3><br>";
-		echo "Imprimeix el següent <a href='pdf.php?premi=$premi'><b>PDF</b></a> per obtenir el teu premi<br/><br/>";
+		echo "Imprimeix el següent <a href='pdf.php?premi=$premi' target='_blank'><b>PDF</b></a> per obtenir el teu premi<br/><br/>";
 		echo "</td>";
 	}
 ?>				
