@@ -2,9 +2,8 @@
 //Generador de PDF
 require('../../FPDF/fpdf.php');
 include '../../conexio/conexio.php';
-//include '../../includes/visualizarRestrictivo.php';
+include '../../includes/visualizarRestrictivo.php';
 extract($_REQUEST);
-$usu=1;
 
 //Sql de el premio y el patrociador
 $sql_premi = "SELECT * FROM tbl_ecochange INNER JOIN tbl_patrocinador ON tbl_patrocinador.patr_id = tbl_ecochange.patr_id WHERE eco_id='$premi'";

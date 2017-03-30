@@ -6,7 +6,7 @@ include('../conexio/conexio.php');
 //Encriptamos la password con hash sha512
 $password = hash('sha512',$password);
 
-$sql = "SELECT * FROM tbl_usuari WHERE usu_email = '$email' AND usu_password = '$password';";
+$sql = "SELECT * FROM tbl_usuari WHERE usu_email = '$email' AND usu_password = '$password'";
 
 $resultado=mysqli_query($conexion, $sql);
 				// echo "foisndfuignfdiuog";
@@ -22,8 +22,12 @@ $resultado=mysqli_query($conexion, $sql);
 					echo $_SESSION['usu_nom'];
 						echo $_SESSION['usu_cognom'];
 				header('location: ../../index.php');
-			}else{echo "error";}
+			}else{
+				echo "error";
+			}
 		}
+	} else {
+		header('location:../../index.php?err=1');
 	}
 	
                        
