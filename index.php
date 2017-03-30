@@ -115,7 +115,7 @@
 <br><br><br>
 <section>
 	<div class="container">
-		<div class="foto" style="width: 100%;">			
+		<div class="foto" style="width: 100%; border-radius: 20px">			
 		</div>
 		<br><br>
 		<table class="tabla">
