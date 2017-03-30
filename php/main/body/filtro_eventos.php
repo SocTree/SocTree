@@ -66,29 +66,16 @@ extract($_REQUEST);
 
 		echo "<div class='eventos_class col-md-4'>
 			
-					<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#myModal'><i style='font-size:20px;'>$titol</i></a><br>
+					<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#".$eve_id."'><i style='font-size:20px;'>$titol</i></a><br>
 					$descripcio 
 			  </div>
 
-			  	<div class='modal fade' id='myModal' role='dialog'>
-    				<div class='modal-dialog'>
-    
-				      <!-- Modal content-->
-				      <div class='modal-content'>
-				        <div class='modal-header'>
-				          <button type='button' class='close' data-dismiss='modal'>&times;</button>
-				          <h4 class='modal-title'>Modal Header</h4>
-				        </div>
-				        <div class='modal-body'>
-				          <p>Some text in the modal.</p>
-				        </div>
-				        <div class='modal-footer'>
-				          <button type='button' class='btn btn-default' data-dismiss='modal'></button>
-				        </div>
+			  	<div class='modal fade' id='".$eve_id."' role='dialog'>
+    				<div class='modal-dialog'>				     
+				      <div class='modal-content'>  
 				      </div>
-				      
 				    </div>
-				  </div>
+				</div>
 		";
       }
     }else{
