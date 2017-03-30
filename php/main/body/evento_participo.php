@@ -1,5 +1,5 @@
 <?php 
-//Esta pagina muestra el contacto del patrocinador despues de haber realizado la 'compra' para que el usario se ponga en contacto
+//Esta pagina muestra que se ha realizado correctamente la inscripción como participante.
 include '../../conexio/conexio.php';
 include '../../includes/visualizarRestrictivo.php';
 ?>

@@ -58,11 +58,12 @@
 				<img src="../../../img/web/icon/png/event-nom.png">
 			</div>
 			<div class="col-md-6">
-				<a href="#" class="menu_boton btn btn-succes" data-toggle="modal" data-target="#myModal">Crea un Event</a>
+				<a href="agregarEvento1.php" class="menu_boton btn btn-succes" >Crea un Event</a>
+				<!-- <a href="#" class="menu_boton btn btn-succes" data-toggle="modal" data-target="#myModal">Crea un Event</a>
 				<div class="modal fade" id="myModal" role="dialog">
-					<?php include("agregarEvento.php"); ?>
+					<?php //include("agregarEvento.php"); ?>
 					
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
