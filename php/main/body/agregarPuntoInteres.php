@@ -80,7 +80,7 @@ echo"<input type='hidden' name='usu_id' value=".$usu.">";
 }
  else{?>
 
- <a href='login2.php'><h3>Inicia sessió per afegir una localització!</h3></a>
+ <strong><h3>Inicia sessió per afegir una localització!</h3></strong>
 
 
 
