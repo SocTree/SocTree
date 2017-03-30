@@ -6,4 +6,5 @@
 	<link rel="stylesheet" type="text/css" href="../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../css/body.css">
+	<link rel="shortcut icon" href="../../../img/favicon.png" />
 	

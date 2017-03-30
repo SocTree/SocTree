@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Events</title>
 	<?php include("../head.php");?>
 	<link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
 	<script type="text/javascript">

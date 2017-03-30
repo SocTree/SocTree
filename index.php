@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="css/slider.css" type="text/css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script src="js/jquery.flexslider-min.js"></script>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 	<style>.flex-container{position: relative;margin: 0 auto; top: 0%; padding: 50px;} </style> 
 </head>
 <body>
