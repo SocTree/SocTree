@@ -6,7 +6,7 @@
       <style type="text/css">
 
      
-      #map { height: 340px;  }
+      #map { height: 100%;  }
     </style>
   <?php 
   if (file_exists('../head.php')) {
@@ -56,7 +56,7 @@
    </div> 
 
    
-    <div class="jumbotron" style="margin-bottom: 0px">   
+    <div class="jumbotron" style="margin-bottom: 0px;height: 59.3%">   
 
        <div id="map"> </div>
     
