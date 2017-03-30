@@ -12,7 +12,9 @@ extract($_REQUEST);
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>El meu perfil</title>
+	<?php include("../head.php");?>
+	<link rel="stylesheet" type="text/css" href="../../../css/eventos.css">
 	<script type="text/javascript">
 
 		function objetoAjax(){
@@ -129,23 +131,44 @@ extract($_REQUEST);
 	</script>
 </head>
 <body>
-	<div id="respuesta-consulta"> 
-		<?php 
-			if(isset($err)){
-				if ($err == 1){
-					echo "Error: el correu introduït ja existeix";
-				} elseif ($err == 1){
-					echo "Error al canviar la contrasenya";
-				}
-			}
-
-			if (isset($corr)){
-				if($corr==1){
-					echo "contrasenya modificada correctament";
-				}
-			}
-		?>
+<div style="height: 17%;width: 100%">
+<!-- Header -->
+<?php include("../header/header.php");?>
+<!-- fin header -->	
+</div>
+<div style="height: 69.6%; background-color: #caf1ca; width: 100%">
+	<div class="contenido_index event_main" style="margin-top: 0px">
+		<div class="row">
+			<div class="col-md-12 ">
+				&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../img/web/icon/png/perfil-nom.png">
+			</div>
+		</div>
 	</div>
-	<div id="info-usu"></div>
+	<div class="col-sm-12" style="margin-top:2%; text-align: center;">
+		<div id="respuesta-consulta"> 
+			<?php 
+				if(isset($err)){
+					if ($err == 1){
+						echo "<p style='color:red'>Error: el correu introduït ja existeix</p>";
+					} elseif ($err == 1){
+						echo "<p style='color:red'>Error al canviar la contrasenya</p>";
+					}
+				}
+
+				if (isset($corr)){
+					if($corr==1){
+						echo "<p style='color:green'>Contrasenya modificada correctament</p>";
+					}
+				}
+			?>
+		</div>
+	</div>
+	<div class="col-sm-offset-3 col-sm-6" style="background-color: white; padding: 2%; 	border: 5px groove #33cc33;">
+		<div id="info-usu"></div>
+	</div>		
+</div>
+<!-- Footer -->
+<?php include("../footer/footer.php");?>
+<!-- fin footer -->		
 </body>
 </html>
