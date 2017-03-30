@@ -1,6 +1,6 @@
 <?php 
 	include '../../conexio/conexio.php';
-	include '../../includes/visualizarPermisivo.php';
+	// include_once '../../includes/visualizarPermisivo.php';
 
 	$hoy = date("Y-m-d");
 
