@@ -1,7 +1,7 @@
 <?php
 		
 	//Conecta con la base de datos
-		 $conexion = mysqli_connect('mysql.hostinger.es', '2330538_soctree', 'SocTree2017', '2330538_soctree');
+		 $conexion = mysqli_connect('fdb17.hostgratis.net', '2330538_soctree', 'SocTree2017', '2330538_soctree');
 
 	//Establece el set de caracteres UTF-8
 		$acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
