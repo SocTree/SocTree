@@ -72,7 +72,7 @@ CREATE TABLE `tbl_events` (
   `eve_nom` varchar(50) NOT NULL,
   `eve_descripcio` text NOT NULL,
   `eve_tipus` enum('Esports','Gastronomic','3R','DIY','Solidari') NOT NULL,
-  `eve_data` date NOT NULL,
+  `eve_data` DATETIME NOT NULL,
   `eve_localitzacio` varchar(50) NOT NULL,
   `usu_id` int(11) DEFAULT NULL,
   `eve_estat` enum('actiu','inactiu','finalitzat','') NOT NULL,

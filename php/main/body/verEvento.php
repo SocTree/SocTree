@@ -71,7 +71,7 @@
 			//esto debería ir en rojo
 			echo "<h1>No queden places!</h1>";
 		}elseif (!isset($usu)) {
-			echo "<a href='provandoLogin.html'><h3>Inicia sessió per participar!</h3></a>";
+			echo "<h3><strong>Inicia sessió per participar!</strong></h3>";
 		}
 	// 	";
       }
