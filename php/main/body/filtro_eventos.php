@@ -65,7 +65,6 @@ extract($_REQUEST);
 		//y pone close, pero si quitamos la modal no funciona
 
 		echo "<div class='eventos_class col-md-4'>
-			
 					<a href='verEvento.php?eve_id=$eve_id' data-toggle='modal' data-target='#".$eve_id."'><i style='font-size:20px;'>$titol</i></a><br>
 					$descripcio 
 			  </div>
