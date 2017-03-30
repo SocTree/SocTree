@@ -26,9 +26,9 @@ if (file_exists('php/conexio/conexio.php')) {
 				<div class="nombre">
 				<?php  
 				if (file_exists('../../includes/visualizarPermisivo.php')) {
-					include '../../includes/visualizarPermisivo.php';
+					include_once '../../includes/visualizarPermisivo.php';
 				}else{
-					include 'php/includes/visualizarPermisivo.php';
+					include_once 'php/includes/visualizarPermisivo.php';
 				}
 				if (isset($usu))  {
 					echo "<div class='dropdown' style='float:left;cursor:pointer'>";

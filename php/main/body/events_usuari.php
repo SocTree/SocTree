@@ -1,6 +1,6 @@
 <?php 
 	include '../../conexio/conexio.php';
-	include '../../includes/visualizarPermisivo.php';
+	include_once '../../includes/visualizarPermisivo.php';
 
 	$hoy = date("Y-m-d");
 
@@ -12,6 +12,44 @@
 		$sql_update = "UPDATE tbl_events SET eve_estat='finalitzat' WHERE eve_data<'$hoy' AND eve_estat='actiu'";
 		mysqli_query($conexion, $sql_update);
 	}
+
+
+	//Eventos
+	//Hoy
+	$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
+	$creats = mysqli_query($conexion, $sql_creat);
+
+	$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
+	$creats1 = mysqli_query($conexion, $sql_creat);
+
+	$a = mysqli_num_rows($creats);
+	$b = mysqli_num_rows($creats1);
+	$avui = $a+$b;
+
+	//Mañana
+	$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
+	$creats2 = mysqli_query($conexion, $sql_creat);
+
+	$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
+	$creats3 = mysqli_query($conexion, $sql_creat);
+
+	$c = mysqli_num_rows($creats2);
+	$d = mysqli_num_rows($creats3);
+	$dema = $c+$d;
+
+	//Ayer
+	$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
+	$creats4 = mysqli_query($conexion, $sql_creat);
+
+	$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
+	$creats5 = mysqli_query($conexion, $sql_creat);
+
+	$e = mysqli_num_rows($creats4);
+	$f = mysqli_num_rows($creats5);
+	$ahir = $e+$f;
+
+
+
 
  ?>
 <!DOCTYPE html>
@@ -49,11 +87,11 @@
 </div>
 <div class="container" style="margin-top: 5.3%;">
 	<div class="col-sm-12" style="margin-bottom: 5%; background-color: #caf1ca; padding: 2% ">
-		<a href="#" class="abuelo">Events d'avui</a>
+		<a href="#" class="abuelo">Events d'avui <?php echo " ($avui)"; ?></a>
 		
 		<div id='padre'>
 		<div class="col-sm-12" style="margin-top:2.5%;">
-			<a href="#" class='padre'>Events creats</a>
+			<a href="#" class='padre'>Events creats<?php echo " ($a)"; ?></a>
 			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 			<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 				<tr>
@@ -66,10 +104,7 @@
 				</tr>
 			<?php 
 			if (isset($usu)){
-				$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
-
-				$creats = mysqli_query($conexion, $sql_creat);
-
+				
 				if (mysqli_num_rows($creats)){
 					while ($creat = mysqli_fetch_object($creats)) {
 
@@ -119,7 +154,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12" style="margin-top:2.5%;">
-			<a href="#" class="padre">Events a participar</a>
+			<a href="#" class="padre">Events a participar<?php echo " ($b)"; ?></a>
 			<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 					<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 				<tr>
@@ -132,12 +167,9 @@
 				</tr>
 			<?php 
 			if (isset($usu)){
-				$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='actiu' AND eve_data='$hoy' ORDER BY eve_data";
 
-				$creats = mysqli_query($conexion, $sql_creat);
-
-				if (mysqli_num_rows($creats)){
-					while ($creat = mysqli_fetch_object($creats)) {
+				if (mysqli_num_rows($creats1)){
+					while ($creat = mysqli_fetch_object($creats1)) {
 
 						$hora=strstr($creat->eve_data, ' ');
 						$data=strstr($creat->eve_data, ' ', true);
@@ -172,10 +204,10 @@
 	</div>
 	</div>
 	<div class="col-sm-12" style="margin-bottom:5%; background-color: #caf1ca;padding: 2%">
-			<a href="#" class='abuelo'>Pròxims events</a>
+			<a href="#" class='abuelo'>Pròxims events <?php echo " ($dema)"; ?></a>
 	<div id='padre'>
 	<div class="col-sm-12" style="margin-top:2.5%;">
-		<a href="#" class='padre'>Events creats</a>
+		<a href="#" class='padre'>Events creats<?php echo " ($c)"; ?></a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
@@ -188,12 +220,9 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
 
-					$creats = mysqli_query($conexion, $sql_creat);
-
-					if (mysqli_num_rows($creats)){
-						while ($creat = mysqli_fetch_object($creats)) {
+					if (mysqli_num_rows($creats2)){
+						while ($creat = mysqli_fetch_object($creats2)) {
 
 							$sql_participants = "SELECT * FROM tbl_participants INNER JOIN tbl_usuari ON tbl_usuari.usu_id = tbl_participants.usu_id  WHERE eve_id = '$creat->eve_id'";
 							$participants = mysqli_query($conexion, $sql_participants);
@@ -242,7 +271,7 @@
 	</div>
 				
 	<div class="col-sm-12" style="margin-top:2.5%;">
-		<a href="#" class='padre'>Events a participar</a>
+		<a href="#" class='padre'>Events a participar<?php echo " ($d)"; ?></a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
@@ -255,12 +284,9 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='actiu' AND eve_data>'$hoy' ORDER BY eve_data";
 
-					$creats = mysqli_query($conexion, $sql_creat);
-
-					if (mysqli_num_rows($creats)){
-						while ($creat = mysqli_fetch_object($creats)) {
+					if (mysqli_num_rows($creats3)){
+						while ($creat = mysqli_fetch_object($creats3)) {
 
 							$hora=strstr($creat->eve_data, ' ');
 						$data=strstr($creat->eve_data, ' ', true);
@@ -296,10 +322,10 @@
 	</div>
 	</div>
 	<div class="col-sm-12" style="margin-bottom: 5%; background-color: #caf1ca;padding: 2%">
-			<a href="#" class="abuelo">Events acabats</a>
+			<a href="#" class="abuelo">Events acabats <?php echo " ($ahir)"; ?></a>
 	<div id="padre">
 	<div class="col-sm-12" style="margin-top:2.5%;">
-		<a href="#" class="padre">Events creats</a>
+		<a href="#" class="padre">Events creats<?php echo " ($e)"; ?></a>
 				<div class="col-sm-12 hijo" style="margin-top:3%; background-color: #caf1ca">
 				<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
@@ -312,12 +338,8 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_events WHERE usu_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
-
-					$creats = mysqli_query($conexion, $sql_creat);
-
-					if (mysqli_num_rows($creats)){
-						while ($creat = mysqli_fetch_object($creats)) {
+					if (mysqli_num_rows($creats4)){
+						while ($creat = mysqli_fetch_object($creats4)) {
 
 							$sql_participants = "SELECT * FROM tbl_participants INNER JOIN tbl_usuari ON tbl_usuari.usu_id = tbl_participants.usu_id  WHERE eve_id = '$creat->eve_id'";
 							$participants = mysqli_query($conexion, $sql_participants);
@@ -365,7 +387,7 @@
 				</div>
 	</div>
 	<div class="col-sm-12" style="margin-top:2.5%;">
-		<a href="#" class="padre">He participat</a>
+		<a href="#" class="padre">He participat<?php echo " ($f)"; ?></a>
 				<div class="col-sm-12 hijo" style="margin-top:3%;background-color: #caf1ca">
 						<table class="table table-striped" style="margin:2%;background-color: white;width: 100%">
 					<tr>
@@ -378,12 +400,8 @@
 					</tr>
 				<?php 
 				if (isset($usu)){
-					$sql_creat = "SELECT * FROM tbl_usuari INNER JOIN tbl_participants ON tbl_participants.usu_id = tbl_usuari.usu_id INNER JOIN tbl_events ON tbl_events.eve_id = tbl_participants.eve_id WHERE tbl_participants.usu_id = '$usu' AND eve_estat='finalitzat' AND eve_data<'$hoy' ORDER BY eve_data";
-
-					$creats = mysqli_query($conexion, $sql_creat);
-
-					if (mysqli_num_rows($creats)){
-						while ($creat = mysqli_fetch_object($creats)) {
+					if (mysqli_num_rows($creats5)){
+						while ($creat = mysqli_fetch_object($creats5)) {
 
 							echo "<tr>";
 								echo "<td>$creat->eve_nom</td>";
