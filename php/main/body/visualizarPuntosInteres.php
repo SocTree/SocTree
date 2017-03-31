@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-<title>Llocs d'Interès</title>i
+    <link rel="shortcut icon" href="../../../img/favicon.png" />
+<title>Llocs d'Interès</title>
       <style type="text/css">
 
      
