@@ -1,4 +1,12 @@
 <?php
+ob_start();
+if (file_exists('../../includes/visualizarPermisivo.php')) {
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+?>
+<?php
 extract($_REQUEST);
 /*Esto recoje:
 usu_nom
@@ -28,7 +36,8 @@ if ($usu_password != $usu_password2) {
 
 
 }
-
  ?>
-
+<?php
+ob_end_flush();
+?>
  

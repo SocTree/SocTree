@@ -1,5 +1,11 @@
 <?php
-include "../includes/visualizarRestrictivo.php";
+ob_start();
+if (file_exists('../includes/visualizarPermisivo.php')) {
+					include_once '../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+?><?php
 include '../conexio/conexio.php';
 
 
@@ -32,4 +38,7 @@ $sql_update = "UPDATE tbl_moneder SET mon_quantitat = '$tot' WHERE usu_id='$usu'
 mysqli_query($conexion, $sql_update);
 echo "$sql_update";
 header('location:../main/body/contactePatrocinador.php?premi='.$premio);
+?>
+<?php
+ob_end_flush();
 ?>

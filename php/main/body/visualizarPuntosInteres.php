@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+ob_start();
+if (file_exists('../../includes/visualizarPermisivo.php')) {
+          include_once '../../includes/visualizarPermisivo.php';
+        }else{
+          include_once 'php/includes/visualizarPermisivo.php';
+        }
+?><!DOCTYPE html>
 <html>
   <head>
     <link rel="shortcut icon" href="../../../img/favicon.png" />

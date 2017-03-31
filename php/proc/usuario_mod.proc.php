@@ -1,6 +1,13 @@
+<?php
+ob_start();
+if (file_exists('../includes/visualizarPermisivo.php')) {
+					include_once '../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+?>
 <?php 
 include '../conexio/conexio.php';
-include '../includes/visualizarRestrictivo.proc.php';
 
 
 
@@ -37,4 +44,7 @@ $sql_update = "UPDATE tbl_usuari SET usu_nom = '$usu_nom', usu_cognom='$usu_cogn
 	header('location:../main/body/perfil.php');
 	
 }
+?>
+<?php
+ob_end_flush();
 ?>

@@ -1,3 +1,11 @@
+<?php
+ob_start();
+if (file_exists('../../includes/visualizarPermisivo.php')) {
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+?>
 <?php session_start();
 extract($_REQUEST); //Recibimos $email i $password
 
@@ -28,7 +36,7 @@ $resultado=mysqli_query($conexion, $sql);
 		}
 	} else {
 		header('location:../../index.php?err=1');
-	}
-	
-                       
+	}                      
+?><?php
+ob_end_flush();
 ?>

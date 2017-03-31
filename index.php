@@ -1,4 +1,10 @@
-<?php include "php/conexio/conexio.php"; ?>
+<?php
+if (file_exists('../../includes/visualizarPermisivo.php')) {
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+ include "php/conexio/conexio.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,11 +1,16 @@
-<?php 
+<?php
+if (file_exists('../../includes/visualizarPermisivo.php')) {//esto nos dejará el id del usuario en la variable $usu
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+	 ?>
+?><?php 
 //Pagina de visualitzacio i modificacio del usuari
 //Mediante ajax puedes accerder a modificar usuario o a cambiar conntraseña
 //Se validan ambos formulario y si todo esta correcto va cada pagina a su resectivo .proc.php
 //Si hay error lo muestra en el div respuesta-consulta o en el caso de cambio de contraseña muestra si la contraseña se ha modificado correctamente
-
 include '../../conexio/conexio.php';
-include '../../includes/visualizarRestrictivo.php';
 extract($_REQUEST);
 
 ?>

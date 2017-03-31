@@ -24,12 +24,7 @@ if (file_exists('php/conexio/conexio.php')) {
 		<div class="col-sm-7 ">
 			<div class="col-sm-offset-4 col-sm-8">
 				<div class="nombre">
-				<?php  
-				if (file_exists('../../includes/visualizarPermisivo.php')) {
-					include_once '../../includes/visualizarPermisivo.php';
-				}else{
-					include_once 'php/includes/visualizarPermisivo.php';
-				}
+				<?php
 				if (isset($usu))  {
 					echo "<div class='dropdown' style='float:left;cursor:pointer'>";
 					echo "<a class='dropdown-toggle' type='button' data-toggle='dropdown'>";
