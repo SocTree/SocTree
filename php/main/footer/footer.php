@@ -3,6 +3,7 @@
 		<div class="row">
 			<div class="col-sm-9">
 				&copy; 2017 SocTree, Inc. All rights reserved.
+				<br><p style="font-size: 10px">Pàgina web desenvolupada per a la Fira de webs 2017 del centre d'Estudis JoanXXIII.</p>
 			</div>
 			<div class="col-sm-1">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/soctree.joan23/" target="_blank">
