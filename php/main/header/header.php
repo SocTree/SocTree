@@ -81,7 +81,12 @@ if (file_exists('php/conexio/conexio.php')) {
 							
 			</div>
 			<div class="col-sm-12">
-					<a href="#Blog"><div class="menu">Blog</div></a>
+					<a href=<?php 
+					if (file_exists('php/main/body/working.php')) {
+						echo "'php/main/body/working.php'";
+						}else{
+							echo  "'working.php'";}
+					  ?>><div class="menu">Blog</div></a>
 					<a href=<?php 
 					if (file_exists('php/main/body/ecopremis.php')) {
 						echo "'php/main/body/ecopremis.php'";
