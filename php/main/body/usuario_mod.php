@@ -9,7 +9,7 @@ $sql_usuari = "SELECT * FROM tbl_usuari WHERE usu_id='$usu'";
 	echo "<div class='col-sm-5' id='foto'>";
 			echo "<img src='../../../img/usuari/$usuari->usu_foto' class='img-thumbnail' width='250'/>";
 			if ($usuari->usu_foto != "0.jpg"){
-				echo "<p><a href='#' onclick='cambiarFoto();'>X Eliminar foto</a></p>";
+				echo "<br><div class='cl-sm-12' style='float:right'><a href='#' onclick='cambiarFoto();' class='btn btn-danger'>X Eliminar foto</a></div>";
 			}
 	echo "</div>";
 	echo "<div class='col-sm-7'>";

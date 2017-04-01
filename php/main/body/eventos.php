@@ -66,8 +66,12 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 				<img src="../../../img/web/icon/png/event-nom.png">
 			</div>
 			<div class="col-md-6">
-			
-				<a href="agregarEvento1.php" class="menu_boton btn btn-succes" >Crea un Event</a>
+			<?php if (isset($usu)) {
+				 echo "<a href='agregarEvento1.php' class='menu_boton btn btn-succes' >Crea un Event</a>";
+			} else {
+				echo "<button button type='button' class='menu_boton btn btn-succes' data-toggle='modal' data-target='#modal-lloc'>Crea un Event</button>";
+				} ?>
+				
 				<!-- <a href="#" class="menu_boton btn btn-succes" data-toggle="modal" data-target="#myModal1">Crea un Event</a>
 				<div class="modal fade" id="myModal1" role="dialog">
 					<?php //include("agregarEvento.php"); ?>
@@ -91,7 +95,7 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 			</label>
 			<label class="col-md-2">
 				<img src="../../../img/events/stew-3.png">
-				Gastronomic<input type="radio" name="tipo" value="2" onchange="enviarDatos(this.value)">
+				Gastronòmic<input type="radio" name="tipo" value="2" onchange="enviarDatos(this.value)">
 			</label class="col-md-2">
 			<label>
 				<img src="../../../img/events/recycle.png">
@@ -99,7 +103,7 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 			</label>
 			<label class="col-md-2">
 				<img src="../../../img/events/drawing.png">
-				Diy<input type="radio" name="tipo" value="4" onchange="enviarDatos(this.value)">
+				DIY<input type="radio" name="tipo" value="4" onchange="enviarDatos(this.value)">
 			</label>
 			<label class="col-md-2">
 				<img src="../../../img/events/charity.png">
@@ -108,7 +112,7 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 						
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" style="min-height: 53%;">
 		<div class="row eventos">
 			<div class="col-md-12" id="total">
 				
@@ -124,3 +128,4 @@ fin verEventos -->
 <!-- fin footer -->
 </body>
 </html>
+ <div class="modal fade" id="modal-lloc" role="dialog"> <?php include_once("agregarEvento_nosesion.php"); ?> </div>

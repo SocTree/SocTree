@@ -45,7 +45,7 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
         </div>
 
  
-               <div class="col-md-3">  <b style="font-size: 20px">Vols filtrar els punts d'interés?</b> </div>
+               <div class="col-md-3">  <b style="font-size: 20px">Vols filtrar els punts d'interès?</b> </div>
 
 
        <div class="form-group col-md-3"> <select class="form-control" style="color:black" id="filtro" name="tipo_marcador"  onchange="initMap()">

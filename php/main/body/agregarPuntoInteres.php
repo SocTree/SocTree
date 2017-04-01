@@ -18,7 +18,7 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">
         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Agregar punt d'interes</h4>
+        <h4 class="modal-title">Afegir punt d'interès</h4>
         
       </div>
       <div class="modal-body">
@@ -30,7 +30,7 @@
 
     <form name="crear_punt_interes" action="../../proc/agregar_punto_interes.proc.php">
     <div class="col-md-3">
-      <input type="text" name="marc_nom_lloc" class="form-control" placeholder="nom del punt d'interés"><br>
+      <input type="text" name="marc_nom_lloc" class="form-control" placeholder="Nom del punt d'interés"><br>
     </div>
     <div class="col-md-4"> <select class="form-control"  name="ico_id"  >
        <option value=''>Selecciona tipus marcador</option>           
@@ -39,7 +39,7 @@
       </select><br>   
         </div>
     <div class="col-md-3">
-      <input class="form-control"  type="text" id="marc_adreca"  name="marc_adreca" placeholder="adreça del punt d'interes"> 
+      <input class="form-control"  type="text" id="marc_adreca"  name="marc_adreca" placeholder="Adreça del punt d'interès"> 
     </div> 
 </div>
 <?php 
@@ -47,15 +47,15 @@ echo"<input type='hidden' name='usu_id' value=".$usu.">";
 ?>
 <div class="col-md-12"> 
   <div class="col-md-2"> 
-     <input class="form-control"  type="text" id="latitud"  name="latitud" >
+     <input class="form-control"  type="text" id="latitud"  name="latitud" placeholder="Latitud">
   </div> 
   <div class="col-md-2"> 
-     <input class="form-control"  type="text" id="longitud"  name="longitud" > <br>
+     <input class="form-control"  type="text" id="longitud"  name="longitud" placeholder="Longitud">  <br>
   </div>
-
+<span style="color: grey">*Geolocalitzar per obtenir aquesta informació.</span>
 </div>
 
- <textarea class="form-control" name="marc_descripcio" rows="5" cols="60" placeholder="descripcio del punt d'interes" wrap="off" ></textarea> 
+ <textarea class="form-control" name="marc_descripcio" rows="5" cols="60" placeholder="Descripció del punt d'interès..." wrap="off" ></textarea> 
   <br>
 
 
@@ -69,16 +69,16 @@ echo"<input type='hidden' name='usu_id' value=".$usu.">";
 
 
   <div class="col-md-2">
-     <button class="btn btn-success" onclick="getLocation()">Geolocalizame</button></div> 
+     <button class="btn btn-success" onclick="getLocation()">Geolocalitzar</button></div> 
        <div class="col-md-3">
- *rebeu la vostra localització </div> 
+<span style="color: grey">*rebeu la localització actual</span> </div> 
  <?php 
 }
  else{?>
 
  <strong><h3>Inicia sessió per afegir una localització!</h3></strong>
 
- <i><a href="../../../index.php">Fes clic per tornar a l'inici per iniciar sessió</a></i>
+ <!-- <i><a href="../../../index.php">Fes clic per tornar a l'inici per iniciar sessió</a></i> -->
 
 
 

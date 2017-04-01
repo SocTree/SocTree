@@ -38,11 +38,11 @@ include '../../conexio/conexio.php';
 				<label>
 				Tipus:<br>
 				<select name="eve_tipus">
-				  <option value="esport">Esport</option>
-				  <option value="gastronòmic">Gastronòmic</option>
-				  <option value="3R">3R</option>
-				  <option value="diy">DIY</option>
-				  <option value="solidari" selected>Solidari</option>
+				  <option value="Esports">Esports</option>
+				  <option value="Gastronomic">Gastronòmic</option>
+				  <option value="3R">4R</option>
+				  <option value="DIY">DIY</option>
+				  <option value="Solidari" selected>Solidari</option>
 				</select>
 				</label>
 				<br>
