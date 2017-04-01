@@ -3,9 +3,8 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {//esto nos dejará e
 					include_once '../../includes/visualizarPermisivo.php';
 				}else{
 					include_once 'php/includes/visualizarPermisivo.php';
-				}
-	 ?>
-?><?php 
+				} 
+
 //Pagina de visualitzacio i modificacio del usuari
 //Mediante ajax puedes accerder a modificar usuario o a cambiar conntraseña
 //Se validan ambos formulario y si todo esta correcto va cada pagina a su resectivo .proc.php
@@ -129,6 +128,23 @@ extract($_REQUEST);
 
 		}
 
+		function cambiarFoto(){
+			document.getElementById('foto').innerHTML = "<img src='../../../img/usuari/0.jpg' class='img-thumbnail' width='250'/>";
+			document.getElementById('noFoto').value = "0.jpg";
+		}
+
+
+	function verFoto(val){
+
+				var file = (val.files[0].name).toString();
+				var reader = new FileReader();
+
+				reader.onload = function(e){
+					$('#foto img').attr('src', e.target.result);
+				}
+
+				 reader.readAsDataURL(val.files[0]);
+	}
 
 		window.onload = enviarDatos('usuario_perfil.php'); 
 
