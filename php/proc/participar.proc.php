@@ -1,8 +1,15 @@
+<?php
+ob_start();
+if (file_exists('../includes/visualizarPermisivo.php')) {//esto nos dejará el id del usuario en la variable $usu
+					include_once '../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+	 ?>
 <?php 
 	//este lo he agregado porque sino me daba error
 	include '../conexio/conexio.php';
 
-	include '../includes/visualizarPermisivo.php'; //esto nos dejará el id del usuario en la variable $usu
 	//recogemos el id del evento
 	$eve_id = $_GET['eve_id'];
 
@@ -26,4 +33,6 @@
 
   	//echo "T'has apuntat correctament. <a href='../main/body/eventos.php'>Tornar a la pàgina d'events</a>.";
 ?>
-
+<?php
+ob_end_flush();
+?>

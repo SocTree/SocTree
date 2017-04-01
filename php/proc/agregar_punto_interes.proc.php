@@ -1,4 +1,7 @@
 <?php
+ob_start();
+?>
+<?php
 include("../conexio/conexio.php");
 
 extract($_REQUEST);
@@ -42,4 +45,7 @@ $marc_nom_lloc = addslashes($marc_nom_lloc);
 
 	mysqli_close($conexion);
 	header('location: ../main/body/visualizarPuntosInteres.php ');
+?>
+<?php
+ob_end_flush();
 ?>

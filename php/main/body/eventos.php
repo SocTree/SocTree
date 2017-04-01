@@ -1,4 +1,12 @@
 <?php
+ob_start();
+if (file_exists('../../includes/visualizarPermisivo.php')) {
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+?>
+<?php
 	include '../../conexio/conexio.php';
 	// include '../header/header.php' ;
  ?>

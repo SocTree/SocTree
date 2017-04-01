@@ -1,7 +1,14 @@
+<?php
+ob_start();
+if (file_exists('../../includes/visualizarPermisivo.php')) {
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+?>
 <?php 
 //Esta pagina muestra que se ha realizado correctamente la inscripción como participante.
 include '../../conexio/conexio.php';
-include '../../includes/visualizarRestrictivo.php';
 ?>
 <!DOCTYPE html>
 <html>

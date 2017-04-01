@@ -1,5 +1,13 @@
+<?php
+ob_start();
+?>
 <?php //session_start();
-include '../includes/visualizarPermisivo.php';
+if (file_exists('../includes/visualizarPermisivo.php')) {
+					include_once '../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}?>
+<?php				
 extract($_REQUEST);
 
 // Con el extract recojemos las siguientes variables:
@@ -29,7 +37,7 @@ mail("soctree.joan23@gmail.com","nuevo evento",$email);
 
 //De momento redirige al índice, pendiente de cambio.
 header('Location:../main/body/eventos.php');
-
-
-
  ?>
+ <?php
+ob_end_flush();
+?>

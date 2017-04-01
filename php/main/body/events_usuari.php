@@ -1,6 +1,12 @@
 <?php 
+ob_start();
+if (file_exists('../../includes/visualizarPermisivo.php')) {//esto nos dejará el id del usuario en la variable $usu
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				}
+
 	include '../../conexio/conexio.php';
-	include_once '../../includes/visualizarPermisivo.php';
 
 	$hoy = date("Y-m-d");
 

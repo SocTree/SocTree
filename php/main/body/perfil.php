@@ -1,11 +1,15 @@
-<?php 
+<?php
+if (file_exists('../../includes/visualizarPermisivo.php')) {//esto nos dejará el id del usuario en la variable $usu
+					include_once '../../includes/visualizarPermisivo.php';
+				}else{
+					include_once 'php/includes/visualizarPermisivo.php';
+				} 
+
 //Pagina de visualitzacio i modificacio del usuari
 //Mediante ajax puedes accerder a modificar usuario o a cambiar conntraseña
 //Se validan ambos formulario y si todo esta correcto va cada pagina a su resectivo .proc.php
 //Si hay error lo muestra en el div respuesta-consulta o en el caso de cambio de contraseña muestra si la contraseña se ha modificado correctamente
-
 include '../../conexio/conexio.php';
-include '../../includes/visualizarRestrictivo.php';
 extract($_REQUEST);
 
 ?>
@@ -124,6 +128,23 @@ extract($_REQUEST);
 
 		}
 
+		function cambiarFoto(){
+			document.getElementById('foto').innerHTML = "<img src='../../../img/usuari/0.jpg' class='img-thumbnail' width='250'/>";
+			document.getElementById('noFoto').value = "0.jpg";
+		}
+
+
+	function verFoto(val){
+
+				var file = (val.files[0].name).toString();
+				var reader = new FileReader();
+
+				reader.onload = function(e){
+					$('#foto img').attr('src', e.target.result);
+				}
+
+				 reader.readAsDataURL(val.files[0]);
+	}
 
 		window.onload = enviarDatos('usuario_perfil.php'); 
 

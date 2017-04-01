@@ -21,7 +21,4 @@ $resultado=mysqli_query($conexion, $sqlTokens);
 			mysqli_query($conexion, $sqlDarTokens);
 		}
 	}
-
-
-
  ?>

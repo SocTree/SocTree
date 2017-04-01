@@ -6,14 +6,17 @@ $sql_usuari = "SELECT * FROM tbl_usuari WHERE usu_id='$usu'";
 		
 		while ($usuari = mysqli_fetch_object($usuaris)) {
 		echo "<form id='form' action='../../proc/usuario_mod.proc.php' method='post' enctype='multipart/form-data' onsubmit='return validarForm();'>";
-	echo "<div class='col-sm-5'>";
+	echo "<div class='col-sm-5' id='foto'>";
 			echo "<img src='../../../img/usuari/$usuari->usu_foto' class='img-thumbnail' width='250'/>";
-
+			if ($usuari->usu_foto != "0.jpg"){
+				echo "<p><a href='#' onclick='cambiarFoto();'>X Eliminar foto</a></p>";
+			}
 	echo "</div>";
 	echo "<div class='col-sm-7'>";
 		echo "<div class='form-group'>";
 			echo "<label for='usu_foto'>Foto de perfil</label>";
-			echo "<input type='file' id='usu_foto' name='usu_foto'/>";
+			echo "<input type='file' id='usu_foto' name='usu_foto' onchange='verFoto(this);'";
+			echo "<input type='hidden' name='noFoto' id='noFoto'";
 		echo "</div>";
 		echo "<div class='form-group'>";
 			echo "<label for='usu_nom'>Nom</label>";

@@ -1,3 +1,10 @@
+<?php
+        if (file_exists('../../includes/visualizarPermisivo.php')) {
+          include_once '../../includes/visualizarPermisivo.php';
+        }else{
+          include_once 'php/includes/visualizarPermisivo.php';
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,20 +22,9 @@
         
       </div>
       <div class="modal-body">
-       
-          
           <?php
-
             //cuando esten las sesiones  funcionando se cambiara este valor por el de la sesion
-  
-        if (file_exists('../../includes/visualizarPermisivo.php')) {
-          include_once '../../includes/visualizarPermisivo.php';
-        }else{
-          include_once 'php/includes/visualizarPermisivo.php';
-        }
-
-        if (isset($usu)) { 
-
+          if (isset($usu)) {
 ?>
 <div class="col-md-12">
 
