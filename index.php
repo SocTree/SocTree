@@ -80,7 +80,7 @@
 		<div class="jobs-content">
 			<img src="img/web/icon/png/premis.png">
 			<h3>Premis pel medi</h3>
-			<p>Pots vescanviar els teus trofeus per diferents premis o millor encara, permet que plantem un arbre.</p>
+			<p>Pots bescanviar els teus trofeus per diferents premis o millor encara, permet que plantem un arbre.</p>
 		</div>	
 	</div>
 </section>
