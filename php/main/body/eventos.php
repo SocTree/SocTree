@@ -58,6 +58,21 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 <?php include("../header/header.php");?>
 <!-- fin header -->
 
+<?php // CÓDIGO TEMPORAL SUBSTITUTO DEL CRON PARA FINALIZAR EVENTOS PASADOS
+	$date = date('Y/m/d H:i:s', time());
+	$sqlEventosPasados = "UPDATE `tbl_events` SET `eve_estat` = 'finalitzat' WHERE `tbl_events`.`eve_data` < '$date';";
+	mysqli_query($conexion, $sqlEventosPasados);
+
+
+
+
+
+
+
+
+
+
+ ?>
 <div class="contenido_index event_main">
 	<!-- Este es el divisor verde superior -->
 	<div class="row">
