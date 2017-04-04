@@ -100,27 +100,27 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 
 	<div class="row">
 		<div class="col-md-12 text-center iconos_eventos">
-			<label class="col-md-2">
+			<label class="col-md-2 icon_pointer">
 				<img src="../../../img/events/loupe.png">
 				Tots<input type="radio" name="tipo" value="0" onchange="enviarDatos(this.value)">
 			</label>
-			<label class="col-md-2">
+			<label class="col-md-2 icon_pointer">
 				<img src="../../../img/events/sport.png">
 				Esport<input type="radio" name="tipo" value="1" onchange="enviarDatos(this.value)">
 			</label>
-			<label class="col-md-2">
+			<label class="col-md-2 icon_pointer">
 				<img src="../../../img/events/stew-3.png">
 				Gastronòmic<input type="radio" name="tipo" value="2" onchange="enviarDatos(this.value)">
-			</label class="col-md-2">
-			<label>
+			</label>
+			<label class="col-md-2 icon_pointer">
 				<img src="../../../img/events/recycle.png">
 				4R<input type="radio" name="tipo" value="3" onchange="enviarDatos(this.value)">
 			</label>
-			<label class="col-md-2">
+			<label class="col-md-2 icon_pointer">
 				<img src="../../../img/events/drawing.png">
 				DIY<input type="radio" name="tipo" value="4" onchange="enviarDatos(this.value)">
 			</label>
-			<label class="col-md-2">
+			<label class="col-md-2 icon_pointer">
 				<img src="../../../img/events/charity.png">
 				Solidari<input type="radio" name="tipo" value="5" onchange="enviarDatos(this.value)">
 			</label>

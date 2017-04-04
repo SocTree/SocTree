@@ -49,6 +49,10 @@ label > input + img{ /* estilo para la imagen */
 	padding: 10px;	
 }
 
+.icon_pointer {
+	cursor: pointer;
+}
+
 .iconos_eventos:hover, .iconos_eventos:active{
 	text-decoration: underline;
 	/*color:white;*/
