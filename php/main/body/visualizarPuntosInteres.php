@@ -145,10 +145,11 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {
 
                 google.maps.event.addListener(marker,'click', (function(marker,i) {
                   return function() {
-                    contentString = '<div id="content">'+
-                        '<p>Tipo de punto de interes: '+datosCargados.marcadores[i].tipo+'"<br> "Nombre del punto: '+datosCargados.marcadores[i].nombre+'"</p><br><p> Usuario que lo ha creado: '+datosCargados.marcadores[i].usuario+'</p><br><p> Descripcion: '+datosCargados.marcadores[i].descripcion+'"</p>';
-                        '</div>';
+                    contentString = '<div id="content" style="font-size:15px;">'+
+                        '<h4>Tipus de punt d\'interès: <span style="color:green">'+datosCargados.marcadores[i].tipo+'</span></h4><b>Nom:</b> '+datosCargados.marcadores[i].nombre+'<br> '+datosCargados.marcadores[i].descripcion+'<br><br><b>Creat per: </b>'+datosCargados.marcadores[i].usuario+'';
+                        '</div></div>';
                     infowindow.setContent(contentString);
+                    // infowindow.opacity:0.5;
                     infowindow.open(map, marker);
                   }
 

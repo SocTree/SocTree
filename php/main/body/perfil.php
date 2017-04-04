@@ -128,10 +128,10 @@ extract($_REQUEST);
 
 		}
 
-		function cambiarFoto(){
-			document.getElementById('foto').innerHTML = "<img src='../../../img/usuari/0.jpg' class='img-thumbnail' width='250'/>";
-			document.getElementById('noFoto').value = "0.jpg";
-		}
+		// function cambiarFoto(){
+		// 	document.getElementById('foto').innerHTML = "<img src='../../../img/usuari/0.jpg' class='img-thumbnail' width='250'/>";
+		// 	document.getElementById('noFoto').value = "0.jpg";
+		// }
 
 
 	function verFoto(val){
