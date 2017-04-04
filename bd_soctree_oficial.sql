@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2017 a las 17:05:42
+-- Tiempo de generación: 04-04-2017 a las 20:44:51
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 5.6.19
 
@@ -99,11 +99,14 @@ CREATE TABLE `tbl_events` (
 --
 
 INSERT INTO `tbl_events` (`eve_id`, `eve_nom`, `eve_descripcio`, `eve_tipus`, `eve_data`, `eve_localitzacio`, `usu_id`, `eve_estat`, `eve_min_part`, `eve_max_part`) VALUES
-(1, '', '', '', '2017-03-28 00:00:00', '', NULL, '', 0, 0),
-(2, 'Classe de ioga', 'classe de ioga amb el gran mestre Miquel Gómez, aprèn a relaxar-te i descobreix un nou món. Domina l''art fenshui de les mans combinats amb el massatge tailandès.', 'Esports', '2017-04-03 15:00:00', 'Av. Mare de Deu de Bellvitge 184, 08907', 7, 'actiu', 2, 5),
+(1, '', '', '', '2017-03-28 00:00:00', '', NULL, 'finalitzat', 0, 0),
+(2, 'Classe de ioga', 'classe de ioga amb el gran mestre Miquel Gómez, aprèn a relaxar-te i descobreix un nou món. Domina l''art fenshui de les mans combinats amb el massatge tailandès.', 'Esports', '2017-04-03 15:00:00', 'Av. Mare de Deu de Bellvitge 184, 08907', 7, 'finalitzat', 2, 5),
 (3, 'Cocina Peruana', 'Aprende a cocinar comida de Perú. Ricos tallarines saltados, ceviche, causa rellena, papa a la Huancaina. Ven y disfruta de un trato agradable y del buen ambiente.', 'Gastronomic', '2017-04-12 09:00:00', 'Carrer Provença 12, Hospitalet de Llobregat', 8, 'actiu', 2, 10),
 (4, 'Fira de Webs', 'Benvingut a la segona Fira de webs de la institució educativa JOAN XXIII. \r\nOn els alumnes de DAW2 mostraran les seves pàgines web que han realizat aquests dies.', 'Solidari', '2017-04-05 10:00:00', 'Av. Mare de Deu de Bellvitge 100-110', 10, 'actiu', 0, 100),
-(5, 'Cosplay casero', 'Hola otakus!! En este evento aprenderemos a hacer nuestros propios cosplays para el saló del manga que está cerca :D', 'DIY', '2017-05-24 17:00:00', 'Av. Mare de Deu de Bellvitge 184', 9, 'actiu', 2, 5);
+(5, 'Cosplay casero', 'Hola otakus!! En este evento aprenderemos a hacer nuestros propios cosplays para el saló del manga que está cerca :D', 'DIY', '2017-05-24 17:00:00', 'Av. Mare de Deu de Bellvitge 184', 9, 'actiu', 2, 5),
+(6, 'Canicross', '6a Cursa i marxa popular de la Policia Municipal de Girona. Participa amb el teu gos i li donarem un obsequi !!', 'Esports', '2017-04-02 09:00:00', 'GESPA DEL PAVELLÓ DE FONTAJAU', 7, 'finalitzat', 10, 100),
+(7, 'Zumba!!', 'Vine a gaudir d''un matí per descarregar l''energia negativa del món en el que vivim.', 'Esports', '2017-04-09 10:00:00', 'Parc Bellvitge', 10, 'actiu', 2, 20),
+(8, 'Taller Reciclaje de botellas ', '¿Quieres aprender a hacer juguetes con las botellas de agua pequeñas? Podemos enseñarte a crear unos perfectos tirachinas, unas muñecas terroríficas o unas luces espectaculares', '3R', '2017-04-16 18:30:00', 'Aula de CETEI', 10, 'actiu', 2, 10);
 
 -- --------------------------------------------------------
 
@@ -204,7 +207,7 @@ CREATE TABLE `tbl_inter_tip` (
 CREATE TABLE `tbl_marcador` (
   `marc_id` int(11) NOT NULL,
   `tip_marc_id` int(11) DEFAULT NULL,
-  `marc_nom_lloc` varchar(40) NOT NULL,
+  `marc_nom_lloc` varchar(100) NOT NULL,
   `marc_descripcio` text NOT NULL,
   `marc_foto` varchar(20) DEFAULT NULL,
   `marc_adreca` varchar(100) DEFAULT NULL,
@@ -221,11 +224,15 @@ INSERT INTO `tbl_marcador` (`marc_id`, `tip_marc_id`, `marc_nom_lloc`, `marc_des
 (21, NULL, 'ruta de senderisme a collserola', 'per aquesta zona es pot fer un bon senderisme', NULL, 'Ctra. de l''Església, 92, 08017 Barcelona, Spain ', NULL, 54, 1),
 (22, NULL, 'parc de la ermita de bellvitge', 'es un bon parc per pasejar i anar amb bici', NULL, 'Av. Mare de Déu de Bellvitge, 1, 08907 L''Hospitalet de Llobregat, Barcelona ', NULL, 63, 1),
 (23, NULL, 'zona riu llobregat bici', 'es una bona zona del riu llobregat per anar amb bici ', NULL, 'Parc agrari del Baix Llobregat, 08830 Sant Boi de Llobregat, Barcelona ', NULL, 66, 1),
-(24, NULL, 'j23', 'cole ', NULL, NULL, '{"lat": 41.3517501, "lng": 2.1155787}', 59, 1),
-(25, NULL, 'fbhadgh', 'afbgadf', NULL, NULL, '{"lat": 41.3517501, "lng": 2.1155787}', 0, 1),
 (26, NULL, 'Parc de Can Xic, viladecans', 'el parc de la biblioteca de viladecans', NULL, 'Carrer de Jaume Abril, 79, 08840 Viladecans, Barcelona, Spain ', NULL, 63, 1),
 (27, NULL, 'Parc de la Torre-roja', 'parc de la torre roja viladecans', NULL, 'Lloc Torre Roja, 201B, 08840 Viladecans, Barcelona, Spain ', NULL, 64, 1),
-(29, NULL, 'sadfg', 'sadfgh', NULL, NULL, '{"lat": 41.3517501, "lng": 2.1155787}', 2, 1);
+(30, NULL, 'Escola JOAN XXIII', 'Escola ecològica.', NULL, 'Av. mare de deu de bellvitge 110 ', NULL, 60, 7),
+(31, NULL, 'Plaça Macba', 'La plaça del macba és una bona zona per practicar skate a la ciutat de barcelona. ', NULL, 'Plaça dels Àngels, 1, 08001 Barcelona ', NULL, 65, 7),
+(32, NULL, 'Pista basquet ciutat vella', 'Pista de basquet al aire lliure al centre de la ciutat de barcelona.', NULL, 'C Valldonzella, 6, barcelona ', NULL, 45, 7),
+(33, NULL, 'Àrea d''Esbarjo per a Gossos - Parc del C', 'Parc per a gossos a poble nou, al disctricte de sant martí , barcelona', NULL, 'Av Diagonal, 130 barcelona ', NULL, 59, 7),
+(34, NULL, 'taules de ping pong a la barcelonta', 'Si vols jugar a tenis taula a la vora de la platja de la barceloneta, has de vindre al parc del passeig marítim de la barceloneta a jugar!', NULL, 'Passeig Marítim de la Barceloneta, 15-21  Barcelona  ', NULL, 50, 7),
+(35, NULL, 'BeOrganic Tienda de Alimentación Ecológica en Barcelona', 'Frutas y verduras, productos de alimentación y artículos de higiene en tienda ecológica coqueta.', NULL, 'Carrer dels Corders, 9, 08003 Barcelona ', NULL, 57, 8),
+(36, NULL, 'Jardiland', 'Botiga de plantes i arbres . el millor loc per decorar el teu jardi a bon preu. omple de verd la teva casa!', NULL, ' Carretera B-210, Km. 2,4, 08850 Gavà, Barcelona ', NULL, 61, 8);
 
 -- --------------------------------------------------------
 
@@ -244,11 +251,12 @@ CREATE TABLE `tbl_moneder` (
 --
 
 INSERT INTO `tbl_moneder` (`mon_id`, `usu_id`, `mon_quantitat`) VALUES
-(1, 7, 2000),
-(2, 8, 0),
+(1, 7, 4000),
+(2, 8, 7880),
 (3, 9, 0),
 (4, 10, 0),
-(5, 1, 0);
+(5, 1, 0),
+(6, 11, 0);
 
 -- --------------------------------------------------------
 
@@ -268,7 +276,13 @@ CREATE TABLE `tbl_participants` (
 
 INSERT INTO `tbl_participants` (`part_id`, `eve_id`, `usu_id`) VALUES
 (1, 4, 7),
-(2, 3, 7);
+(2, 3, 7),
+(3, 2, 8),
+(4, 6, 8),
+(5, 6, 10),
+(6, 6, 1),
+(7, 2, 1),
+(8, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -349,7 +363,7 @@ CREATE TABLE `tbl_usuari` (
   `usu_cognom` varchar(30) NOT NULL,
   `usu_email` varchar(40) NOT NULL,
   `usu_password` varchar(500) NOT NULL,
-  `usu_foto` varchar(20) NOT NULL,
+  `usu_foto` varchar(20) NOT NULL DEFAULT '0.jpg',
   `usu_tipus` enum('admin','normal','','') NOT NULL DEFAULT 'normal',
   `usu_data_registre` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -360,10 +374,11 @@ CREATE TABLE `tbl_usuari` (
 
 INSERT INTO `tbl_usuari` (`usu_id`, `usu_nom`, `usu_cognom`, `usu_email`, `usu_password`, `usu_foto`, `usu_tipus`, `usu_data_registre`) VALUES
 (1, 'marc', 'mpetit', 'mpetit@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '', 'normal', '2017-03-15'),
-(7, 'Miquel', 'Gómez', 'mgomez@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '0.jpg', 'normal', '2017-03-29'),
+(7, 'Miquelinchi', 'Gómez', 'mgomez@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', '7.png', 'normal', '2017-03-29'),
 (8, 'Edhu', 'chacaliaza', 'echacaliaza@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '0.jpg', 'normal', '2017-03-29'),
 (9, 'Eric', 'Petit', 'epetit@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '0.jpg', 'normal', '2017-03-29'),
-(10, 'Esther', 'Rovira', 'erovira@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '0.jpg', 'normal', '2017-03-29');
+(10, 'Esther', 'Rovira', 'erovira@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '0.jpg', 'normal', '2017-03-29'),
+(11, 'Toni EL BOSS', 'Fernández', 'tfernandez@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', '11.jpg', 'normal', '2017-03-30');
 
 -- --------------------------------------------------------
 
@@ -547,7 +562,7 @@ ALTER TABLE `tbl_ecochange`
 -- AUTO_INCREMENT de la tabla `tbl_events`
 --
 ALTER TABLE `tbl_events`
-  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `tbl_foto`
 --
@@ -577,17 +592,17 @@ ALTER TABLE `tbl_inter_tip`
 -- AUTO_INCREMENT de la tabla `tbl_marcador`
 --
 ALTER TABLE `tbl_marcador`
-  MODIFY `marc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `marc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT de la tabla `tbl_moneder`
 --
 ALTER TABLE `tbl_moneder`
-  MODIFY `mon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `mon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `tbl_participants`
 --
 ALTER TABLE `tbl_participants`
-  MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `tbl_patrocinador`
 --
@@ -607,7 +622,7 @@ ALTER TABLE `tbl_tipus_marcador`
 -- AUTO_INCREMENT de la tabla `tbl_usuari`
 --
 ALTER TABLE `tbl_usuari`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `tbl_valoracio`
 --
