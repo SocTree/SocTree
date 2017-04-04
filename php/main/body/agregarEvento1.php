@@ -49,6 +49,11 @@ include '../../conexio/conexio.php';
 				<label>
 				Dia de l'event:<br>
 				<input type="date" name="eve_data">
+				</label><br>
+				<label>
+				Hora:<br>
+				<input type="number" name="eve_hour" min="1" max="24" step="1" style="text-align: right;"> :
+				<input type="number" name="eve_minute" min="00" max="60" step="1">
 				</label>
 				<br>
 				<label>
@@ -61,7 +66,7 @@ include '../../conexio/conexio.php';
 				<!-- Aun no se si el estado lo controlamos nosotros o el dueño del evento. Lo pongo por si acaso -->
 				<label>
 				Participants:<br>
-					<li><i>Mínim:</i><input type="number" name="eve_min_part"><br><br></li>
+					<li><i>Mínim:</i><input type="number" name="eve_min_part" min="1"><br><br></li>
 					<li><i>Màxim:</i><input type="number" name="eve_max_part"><br><br></li>
 				</label>
 		</div>
