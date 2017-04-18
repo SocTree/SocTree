@@ -176,6 +176,8 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {//esto nos dejará e
 
 				if (mysqli_num_rows($creats1)){
 					while ($creat = mysqli_fetch_object($creats1)) {
+						$sql = "SELECT * FROM tbl_usauri where usu_id = ''";
+
 
 						$hora=strstr($creat->eve_data, ' ');
 						$data=strstr($creat->eve_data, ' ', true);
@@ -186,7 +188,7 @@ if (file_exists('../../includes/visualizarPermisivo.php')) {//esto nos dejará e
 							echo "<td>$hora</td>";
 							echo "<td>$data</td>";
 							echo "<td>$creat->eve_localitzacio</td>";
-							echo "<td>$creat->usu_email</td>";
+							echo "<td>$creador->usu_email</td>";
 						echo "</tr>";
 
 					}
